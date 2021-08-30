@@ -7,8 +7,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/cbd967892d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="slideShow.css">
+    <link rel="stylesheet" href="player-profile.css">
+
     <title>FootBall Manager</title>
 
 </head>
@@ -114,7 +117,7 @@
             <div>
                 <h4>שוערים</h4>
                 <ul id='team-goalKeeper'>
-                    
+
                 </ul>
                 <hr>
             </div>
@@ -122,17 +125,17 @@
                 <h4>הגנה</h4>
                 <ul id='team-defence'>
                 </ul>
-                <hr>                
+                <hr>
             </div>
             <div>
                 <h4>קישור</h4>
-                <ul id='team-middle'>                  
+                <ul id='team-middle'>
                 </ul>
                 <hr>
             </div>
             <div>
                 <h4>חלוצים</h4>
-                <ul id='team-attack'>                   
+                <ul id='team-attack'>
                 </ul>
                 <hr>
             </div>
@@ -174,6 +177,142 @@
         <hr>
         <h2 id='home' class='left-title-panel-menu' onclick="SetPlayersScreen(screens[0])">Home</h2>
         <hr>
+
+    </div>
+    <!--left menu pannel end-->
+
+    <!--player profile-->
+    <div class='player-profile'>
+        <i class="far fa-window-close" onclick="ShowHide('.player-profile','hidden')"></i>
+        <div>
+            <h5>Player Name:</h5>
+            <h5 id='player-Profile-name'>1</h5>
+            <h5>Player Position:</h5>
+            <h5 id='player-Profile-position'>2</h5>
+            <h5>Player number:</h5>
+            <h5 id='player-Profile-number'>3</h5>
+        </div>
+
+        <table class='atributes'>
+            <tr>
+                <th colspan="2">Technical</th>
+                <th colspan="2">Mental</th>
+                <th colspan="2">Physical</th>         
+            </tr>
+           
+            <tr>
+                <td>Corners </td>
+                <td id='Corners'>poor</td>
+                <td>Aggression</td>
+                <td id='Aggression'>superb</td>
+                <td>Acceleration</td>
+                <td id='Acceleration'>superb</td>
+
+            </tr>
+            <tr>
+                <td>Crossing</td>
+                <td id='Crossing'>12500</td>
+                <td>Anticipation</td>
+                <td id='Anticipation'>superb</td>
+                <td>Agillity</td>
+                <td id='Agillity'>superb</td>
+
+
+            </tr>
+            <tr>
+                <td>Dribbling</td>
+                <td id='Dribbling'>1500$</td>
+                <td>Bravery</td>
+                <td id='Bravery'>superb</td>
+                <td>Ballance</td>
+                <td id='Ballance'>superb</td>
+
+            </tr>
+            <tr>
+                <td>Finishing</td>
+                <td id='Finishing'>1500$</td>
+                <td>Composure</td>
+                <td id='Composure'>superb</td>
+                <td>Jumping</td>
+                <td id='Jumping'>superb</td>
+
+            </tr>
+            <tr>
+                <td>Free Kicks</td>
+                <td id='Free Kicks'>superb</td>
+                <td>Concentrations</td>
+                <td id='Concentration'>superb</td>
+                <td>Natural Fithness</td>
+                <td id='Natural Fithness'>superb</td>
+
+            </tr>
+            <tr>
+                <td>Heading</td>
+                <td id='Heading'>superb</td>
+                <td>Determination</td>
+                <td id='Determination'>superb</td>
+                <td>Pace</td>
+                <td id='Pace'>superb</td>
+
+            </tr>
+            <tr>
+                <td>Long shots</td>
+                <td id='Long shots'>superb</td>
+                <td>Flair</td>
+                <td id='Flair'>superb</td>
+                <td>Stamina</td>
+                <td id='Stamina'>superb</td>
+
+            </tr>
+            <tr>
+                <td>Marking</td>
+                <td id='Marking'>superb</td>
+                <td>Leadeship</td>
+                <td id='Leadeship'>superb</td>
+                
+
+            </tr>
+            <tr>
+                <td>Passing</td>
+                <td id='Passing'>superb</td>
+                <td>Off the ball</td>
+                <td id='Off the ball'>superb</td>
+                
+
+            </tr>
+            <tr>
+                <td>Penelty</td>
+                <td id='Penelty'>superb</td>
+                <td>Positioning</td>
+                <td id='Positioning'>superb</td>
+                
+
+            </tr>
+            <tr>
+                <td>Tackeling</td>
+                <td id='Tackeling'>superb</td>
+                <td>TeamWork</td>
+                <td id='TeamWork'>superb</td>
+              
+
+            </tr>
+            <tr>
+                <td>Technique</td>
+                <td id='Technique'>superb</td>
+                <td>Vision</td>
+                <td id='Vision'>superb</td>
+               
+
+            </tr>
+            <tr>
+                <td>Long Throws</td>
+                <td id='Long Throws'>superb</td>
+                <td>Work Rate</td>
+                <td id='Work Rate'>superb</td>
+               
+
+            </tr>
+        </table>
 
     </div>
     <!--

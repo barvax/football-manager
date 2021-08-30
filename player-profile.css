@@ -1,0 +1,28 @@
+.player-profile{
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    width:80%;
+    height: 85%;
+    top:5%;
+    left:10%;
+    background-color: rgba(85, 85, 85, 0.973);
+    visibility: hidden;
+    padding: 10px;
+}
+.player-profile > div{
+    display: flex;
+   
+}
+.player-profile > div >h5{
+    padding: 8px;
+   
+}
+.atributes{
+    font-size: 8px;
+}
+.atributes > tr td{
+    border-top: 1px solid #9b9b9b;
+    text-align: left;
+    padding: 2px;
+    border-bottom: 1px solid #dddddd;
+}
