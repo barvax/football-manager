@@ -218,7 +218,7 @@ var player90 = new Player('סתיו טוריאל','87',position[3],technical,men
 var player91 = new Player('עידן דהן','24',position[3],technical,mental,physical);NewRandom();
 var player92 = new Player('אדגי הייפורד','52',position[3],technical,mental,physical);NewRandom();
 
-var ashdodPlayers = [player69,player70,player71,player72,player73,player74,player75,player76,player77,player78,player79,player80,player81,player82,player83,player84,player85,player86,player87,player88,player89,player90,player91,player92]
+var ashdodPlayers = [player69,player70,player71,player72,player73,player74,player75,player76,player77,player78,player79,player80,player81,player83,player84,player85,player86,player87,player88,player89,player90,player91,player92]
 
 ///ביתר ירושליים
 var player93 = new Player('איתמר ניצן','1',position[0],technical,mental,physical);NewRandom();
