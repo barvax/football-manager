@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+* {box-sizing:border-box}
+body{
+    font-family: 'Staatliches', cursive;
+}
+.team-img{
+    width: 100px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+h4{
+    color: aliceblue;
+}
+.team-pick{
+    margin-top: 100px;
+    text-align: center;
+    
+}
+.card{
+    width: 450px;
+    height: 350px;
+    background-color: rgba(97, 97, 97, 0.514);
+    display: inline-block;
+    border-radius: 8px;
+   
+}
+.skills-box{
+  
+    
+    width: 70%;
+  margin-left: 80px;
+  color: azure;
+    
+}
+.container {
+    width: 100%; 
+    background-color: #ddd; 
+    padding: 0;
+  }
+  .skills {
+    text-align: right; /* Right-align text */
+    font-size: 12px;
+   
+   
+   
+    color: white; /* White text color */
+  }
+  .attack   {
+      width: 90%; background-color: #04AA6D;       
+    } 
+    .defence{
+        width: 70%; background-color: #dd691b; 
+    }
+    .popularity{
+        width: 88%; background-color: #5023cc; 
+    }
+
+    .arrows{
+        display: flex;
+        justify-content: space-around;
+    }
+    .pickTeamBtn{
+        text-align: center;
+    }
+
+    .slideshow{
+        visibility:visible ;
+    }

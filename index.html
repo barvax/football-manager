@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="slideShow.css">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <!--the slideShow screen-->
+    <div class='slideshow'>
+        <div class='team-pick'>
+            <div class="card">
+                <img class='team-img' src="images/M.Haifa.png" alt="" id='team-image'>
+                <div class="arrows">
+                    <h1 onclick="pickTeam('-')" style="font-size: 40px; color: aliceblue;cursor: pointer;">
+                        < </h1>
+                            <h4 id='team-name'>Maccabi Haifa</h4>
+                            <h1 onclick="pickTeam('+')" style="font-size: 40px; color: aliceblue;cursor: pointer;">>
+                            </h1>
+                </div>
+
+                <div class="skills-box">
+                    <p style="text-align: left; margin: 0;">Attack</p>
+                    <div class="container" style="text-align: left;">
+                        <div id='attack' class="skills attack">90%</div>
+                    </div>
+
+                    <p style="text-align: left; margin: 0;">Defence</p>
+                    <div class="container" style="text-align: left;">
+                        <div id='defence' class="skills defence">70%</div>
+                    </div>
+
+                    <p style="text-align: left; margin: 0;">popularity</p>
+                    <div class="container" style="text-align: left;">
+                        <div id='popularity' class="skills popularity">88%</div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class='pickTeamBtn'><button onclick="StartGame()">Choose Team</button></div>
+    </div>
+    <!--end of slideShow screen-->
+    <!--main screen-->
+    <div class='section-main'>
+        <div class='main-screen'>
+            <div class='head-left'>
+
+                <img id='my-team-img' src="" alt="">
+                <h3 id='my-team-name'>asdasd</h3>
+
+
+            </div>
+
+            <div class='head-right'>
+                <div class='stadium'>
+                    <h5>Stadium:</h5>
+                    <h5 id='stadium-name'>sdfds</h5>
+
+
+
+                </div>
+            </div>
+            <div class='stadium'>
+                <h5>capasity:</h5>
+                <h5 id='stadium-capacity'>1524</h5>
+
+
+            </div>
+
+            <table>
+                <tr>
+                    <td>Financial State</th>
+                    <td id='financial'>rich</th>
+
+                </tr>
+                <tr>
+                    <td>Traning Facilities</td>
+                    <td id='Traning'>superb</td>
+
+                </tr>
+                <tr>
+                    <td>Staff </td>
+                    <td id='staff'>poor</td>
+
+                </tr>
+                <tr>
+                    <td>Avrege Atended</td>
+                    <td id='avg-atended'>12500</td>
+
+                </tr>
+                <tr>
+                    <td>Balance</td>
+                    <td id='balance'>1500$</td>
+
+                </tr>
+            </table>
+
+        </div>
+    </div>
+    <!--main screen end-->
+    <!--team screen start-->
+    <div class='section-team'>
+        <div class='main-screen'>
+            <div>
+                <h4>שוערים</h4>
+                <ul id='team-goalKeeper'>
+                    
+                </ul>
+                <hr>
+            </div>
+            <div>
+                <h4>הגנה</h4>
+                <ul id='team-defence'>
+                </ul>
+                <hr>                
+            </div>
+            <div>
+                <h4>קישור</h4>
+                <ul id='team-middle'>                  
+                </ul>
+                <hr>
+            </div>
+            <div>
+                <h4>חלוצים</h4>
+                <ul id='team-attack'>                   
+                </ul>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <!--team screen end-->
+    <!--team staff start-->
+    <div class='section-staff'>
+        <div class='main-screen'>
+            <div>
+                <ul id='team-goalKeeper'>
+                </ul>
+            </div>
+            <div>
+                <ul id='team-defence'>
+                </ul>
+            </div>
+            <div>
+                <ul id='team-middle'>
+                </ul>
+            </div>
+            <div>
+                <ul id='team-attack'>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--team staff end-->
+    <!--left menu pannel-->
+    <div class='left-menu-panel'>
+        <hr>
+        <h2 id='team' class='left-title-panel-menu' onclick="SetPlayersScreen(screens[1])">Team</h2>
+        <hr>
+        <h2 id='staff' class='left-title-panel-menu' onclick="SetPlayersScreen(screens[2])">Staff</h2>
+        <hr>
+        <h2 id='finance' class='left-title-panel-menu'>Finance</h2>
+        <hr>
+        <h2 id='leage-table' class='left-title-panel-menu'>League Table</h2>
+        <hr>
+        <h2 id='home' class='left-title-panel-menu' onclick="SetPlayersScreen(screens[0])">Home</h2>
+        <hr>
+
+    </div>
+    <!--
+    <button onclick="team1.Increasr()">increase money</button>
+    <button onclick="Test()">show money</button>
+    <button onclick="team1.ShowPlayers()">show players</button>
+    <button onclick="console.log(player1.GetPosition())">show player position</button>
+-->
+    <script src="players.js"></script>
+    <script src="team.js"></script>
+    <script src="slideShow.js"></script>
+    <script src="functions.js"></script>
+    <script src="main.js"></script>
+
+</body>
+
+</html>

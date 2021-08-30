@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+body{
+    background-image: url("images/mainStadium.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: cornsilk;
+}
+.section-main{
+    display: none;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+.main-screen{
+width: 70%;
+height: 500px;
+background-color: rgba(97, 97, 97, 0.6);
+display: inline-block;
+margin-top: 100px;
+border-radius: 10px;
+overflow-y: scroll;
+
+}.main-screen::-webkit-scrollbar {
+    display: none;
+}
+.stadium{
+    display: flex;
+}
+.stadium > h5{
+    padding-left: 10px;
+}
+.head-left{
+    display: flex;
+}
+.head-right{
+    display: flex;
+    padding: 10px;
+}
+#my-team-name{
+    margin-top: 40px;;
+}
+#stadium-name{
+    padding-left: 10px;
+}
+#my-team-shirt{
+    width: 50px;
+}
+hr{
+    border-top: 1px solid rgb(231, 193, 24);
+}
+
+/*טבלה*/
+table {
+   margin-top: 30px;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: rgba(160, 146, 125, 0.267);
+  }
+  
+  td, th {
+    border-top: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #dddddd;
+  }
+  .left-menu-panel{
+      position: absolute;
+      top: 100px;
+      left: 20px;
+      width:150px;
+      height: 500px;
+      background-color: rgba(97, 97, 97, 0.8);
+      visibility: hidden;
+  }
+  .left-title-panel-menu{
+      padding: 8px;
+  }
+  .left-title-panel-menu:hover{
+      cursor: pointer;
+      color: rgb(235, 190, 43);
+  }
+  .section-team{
+    display: none;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+   
+  }
+  .section-staff{
+    display: none;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .playerImgrCircle {
+	border: 1px solid black;
+	width: 70px;
+	height: 70px;
+	margin: 20px;
+	border-radius: 50%;
+	display: inline-block;
+   
+}
+ul {
+    list-style: none;
+    display: flex;
+flex-wrap: wrap;
+}
+
+  
