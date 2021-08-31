@@ -50,10 +50,14 @@ hr{
 
 /*טבלה*/
 table {
-   margin-top: 30px;
+  
     border-collapse: collapse;
     width: 100%;
     background-color: rgba(160, 146, 125, 0.267);
+  }
+  .handle:hover{
+      cursor: pointer;
+      color:rgb(238, 224, 27)
   }
   
   td, th {
@@ -90,13 +94,14 @@ table {
     font-family: 'Montserrat', sans-serif;
   }
   .playerImgrCircle {
-	border: 1px solid black;
+	border: 1px solid rgb(110, 110, 110);
 	width: 70px;
 	height: 70px;
 	margin: 20px;
     margin-left: 50px;
 	border-radius: 50%;
 	display: inline-block;
+    background-color: rgb(233, 233, 233);
    
 }
 ul {

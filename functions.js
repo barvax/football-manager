@@ -1,5 +1,7 @@
 var screens = ['.section-main','.section-team','.section-staff']
 var menu = ['team','staff','finance','leage-table','home']
+
+var ron = 0;
 function setMenu(){
     for (let index = 0; index < menu.length; index++) {
        document.getElementById(menu[index]).addEventListener('click',PlaySound);
@@ -64,7 +66,7 @@ function ShowPlayers(){
 function insertPlayers(index){
     var elementLi = document.createElement('li');
     var elementImg = document.createElement('img');
-    elementImg.src = 'images/male-figure-man-boy-profile.jpg.png';
+    elementImg.src = myTeam.players[index].img;
     var elementNum = document.createElement('h5');
     var elementName = document.createElement('h5');
     elementImg.classList.add("playerImgrCircle");
@@ -76,12 +78,19 @@ function insertPlayers(index){
     elementLi.append(elementNum);
     elementLi.append(elementName);
     elementImg.item = myTeam.players[index];
+    elementImg.veryCool = index;// מגניב שאפשר לעשות את זה!!
     elementImg.addEventListener('click',Test);
 }
 
 function Test(e){
-    console.log(e.target.item.name);
+    console.log(e.target.veryCool);
+    console.log(ron);
+    ron = e.target.veryCool;
+    console.log(ron);
+    
     document.querySelector('.player-profile').style.visibility = 'visible';
+    var playerImg = document.getElementById('playerImg-card');
+    var fieldImg = document.getElementById('field-img-card');
     var name = document.getElementById('player-Profile-name');
     var number = document.getElementById('player-Profile-number');
     var position = document.getElementById('player-Profile-position');
@@ -118,7 +127,10 @@ function Test(e){
     var vision = document.getElementById('Vision');
     var longThrows = document.getElementById('Long Throws');
     var workRate = document.getElementById('Work Rate');
-   
+   var avgTech = document.getElementById('avg tech');
+   var avgMental = document.getElementById('avg mental');
+   var avgPhysical = document.getElementById('avg Physical');
+   var totalScore = document.getElementById('total score');
 
     name.innerHTML = e.target.item.name;
     number.innerHTML = e.target.item.number;
@@ -156,4 +168,10 @@ function Test(e){
     longThrows.innerHTML = e.target.item.technical.longThrows;
     vision.innerHTML = e.target.item.mental.Vision;
     workRate.innerHTML = e.target.item.mental.WorkRate;
+    avgTech.innerHTML = e.target.item.technical.avgTechn;
+    avgMental.innerHTML = e.target.item.mental.avgmental;
+    avgPhysical.innerHTML = e.target.item.physical.avgPhysical;
+    totalScore.innerHTML = e.target.item.total +' / 100';
+    playerImg.src = e.target.item.img;
+    fieldImg.src = e.target.item.positionImg;
 }

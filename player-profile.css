@@ -2,7 +2,7 @@
     font-family: 'Montserrat', sans-serif;
     position: absolute;
     width:80%;
-    height: 85%;
+    height: 98%;
     top:5%;
     left:10%;
     background-color: rgba(85, 85, 85, 0.973);
@@ -12,9 +12,11 @@
 .player-profile > div{
     display: flex;
    
+   
 }
 .player-profile > div >h5{
     padding: 8px;
+    font-size: 16px;
    
 }
 .atributes{
@@ -26,3 +28,18 @@
     padding: 2px;
     border-bottom: 1px solid #dddddd;
 }
+.player-img-card{
+    width: 100px;
+    background-color: rgb(230, 230, 230);
+    border-radius: 10px;
+}
+.player-img-card >img{
+    width: 100px;
+}
+.field-img-card{
+    position:absolute;
+    width: 100px;
+    top:70%;
+    right:20%;
+}
+

@@ -1,4 +1,4 @@
-function Player(name,number,position,technical,mental,physical){
+function Player(name,number,position,technical,mental,physical,total,img,positionImg){
     {
         this.name = name;
         this.number = number;
@@ -6,6 +6,9 @@ function Player(name,number,position,technical,mental,physical){
         this.mental = mental;
         this.technical = technical;
         this.physical = physical;
+        this.total = total;
+        this.img = img;
+        this.positionImg = positionImg;
        
         this.GetPosition = function(){
             return this.position;
@@ -15,9 +18,10 @@ function Player(name,number,position,technical,mental,physical){
  
     
 }
-
+var posImg=['images/field/goalKeeper.png','images/field/left-defence.png','images/field/right-defence.png','images/field/left-defender.png','images/field/right-defender.png','images/field/middleBack.png','images/field/center.png','images/field/middle-right.png','images/field/middle-left.png','images/field/attack-middle.png','images/field/forward.png']
+var totalPlayerScore = 99;
 function RandomNum(){
-    return Math.floor(Math.random() * 21);
+    return Math.floor(Math.random() * 20)+1;
 }
 var technical={
     corners: RandomNum(),
@@ -32,8 +36,11 @@ var technical={
     Passing :RandomNum(),
     Penelty: RandomNum(),
     Tackeling:RandomNum(),
-    Technique:RandomNum()
+    Technique:RandomNum(),
+    avgTechn: 0
+
 }
+
 var mental = {
     Aggression: RandomNum(),
     Anticipation: RandomNum(),
@@ -47,7 +54,8 @@ var mental = {
     Positioning:RandomNum(),
     TeamWork: RandomNum(),
     Vision:RandomNum(),
-    WorkRate:RandomNum()
+    WorkRate:RandomNum(),
+    avgmental: 0
 }
 
 var physical = {
@@ -57,7 +65,8 @@ var physical = {
     Jumping:RandomNum(),
     NaturalFithness :RandomNum(),
     Pace:RandomNum(),
-    Stamina:RandomNum()
+    Stamina:RandomNum(),
+    avgPhysical: 0
 
 }
 
@@ -75,7 +84,9 @@ function NewRandom(){
         Passing :RandomNum(),
         Penelty: RandomNum(),
         Tackeling:RandomNum(),
-        Technique:RandomNum()
+        Technique:RandomNum(),
+        avgTechn: 0
+        
     }
     mental = {
         Aggression: RandomNum(),
@@ -90,7 +101,8 @@ function NewRandom(){
         Positioning:RandomNum(),
         TeamWork: RandomNum(),
         Vision:RandomNum(),
-        WorkRate:RandomNum()
+        WorkRate:RandomNum(),
+        avgmental: 0
     }
     physical = {
         Acceleration:RandomNum(),
@@ -99,37 +111,75 @@ function NewRandom(){
         Jumping:RandomNum(),
         NaturalFithness :RandomNum(),
         Pace:RandomNum(),
-        Stamina:RandomNum()
+        Stamina:RandomNum(),
+        avgPhysical: 0
     
     }
    
 }
-console.log(technical);
+
+function AverageTechnical(){
+    var sumtechnical = technical.corners+technical.crossing+technical.dribbling+technical.finishing+technical.FreeKick+technical.Heading+technical.longThrows+technical.Longshots+technical.Marking+technical.Passing+technical.Penelty+technical.Technique+technical.Tackeling;
+    var avgTechnical = Math.floor(sumtechnical/13);
+    technical.avgTechn = avgTechnical;
+   
+    return avgTechnical;
+}
+function AverageMental(){
+    var sumMental = mental.Aggression+mental.Anticipation+mental.Bravery+mental.Composure+mental.Concentration+mental.Determination+mental.Flair+mental.Leadeship+mental.Offtheball+mental.Positioning+mental.TeamWork+mental.Vision+mental.WorkRate;
+    var avgMental = Math.floor(sumMental/13);
+    mental.avgmental = avgMental;
+  
+   return avgMental;
+}
+function AveragePhysical(){
+    var sumPhysical = physical.Acceleration+physical.Agillity+physical.Ballance+physical.Jumping+physical.NaturalFithness+physical.Pace+physical.Stamina;
+    var avgPhysicl = Math.floor(sumPhysical/8);
+    physical.avgPhysical = avgPhysicl;
+    return avgPhysicl;
+  
+}
+function TotalScore(){
+var sum  = AverageTechnical()+AverageMental()+AveragePhysical();
+var total =Math.floor(sum/60*100);
+totalPlayerScore = total;
+//console.log('totalPlayerScore: '+totalPlayerScore);
+
+}
+function AddExtars(){
+    AverageTechnical();
+    AverageMental();
+    AveragePhysical();
+    TotalScore();
+}
+AddExtars();
+
+//    'images/male-figure-man-boy-profile.jpg.png'
 var position = ['goal-keeper','back','center','forward']
 ///מכבי חיפה////
-var player1 = new Player('גוש כהן','40',position[0],technical,mental,physical);NewRandom();
-var player2 = new Player('איתמר ישראלי','41',position[0],technical,mental,physical);NewRandom();
-var player3 = new Player('בוגדן פלאניץ','5',position[1],technical,mental,physical);NewRandom();
-var player4 = new Player('סאן מנחם','12',position[1],technical,mental,physical);NewRandom();
-var player5 = new Player('רמי גרשון','5',position[1],technical,mental,physical);NewRandom();
-var player6 = new Player('עפרי ארד','15',position[1],technical,mental,physical);NewRandom();
-var player7= new Player('שון גולדברג','13',position[1],technical,mental,physical);NewRandom();
-var player8= new Player('אורי דהן','6',position[1],technical,mental,physical);NewRandom();
-var player9= new Player('ראיין סטריין','0',position[1],technical,mental,physical);NewRandom();
-var player10 = new Player('רז מאיר','25',position[1],technical,mental,physical);NewRandom();
-var player11 = new Player('רוני לאופר','0',position[1],technical,mental,physical);NewRandom();
-var player12 = new Player('טאלב טוואטחה','17',position[1],technical,mental,physical);NewRandom();
-var player13 = new Player('חוסה רודריגס','8',position[2],technical,mental,physical);NewRandom();
-var player14 = new Player('יובל אשכנזי','18',position[2],technical,mental,physical);NewRandom();
-var player15 = new Player('מאור לוי','33',position[2],technical,mental,physical);NewRandom();
-var player16 = new Player('נטע לביא','6',position[2],technical,mental,physical);NewRandom();
-var player17 = new Player('צירון שרי','10',position[2],technical,mental,physical);NewRandom();
-var player18 = new Player('עומר אצילי','7',position[2],technical,mental,physical);NewRandom();
-var player19 = new Player('עלי מוחמד','55',position[2],technical,mental,physical);NewRandom();
-var player20 = new Player('אבו פאני','16',position[2],technical,mental,physical);NewRandom();
-var player21 = new Player('גודסווי דוניו','11',position[3],technical,mental,physical);NewRandom();
-var player22 = new Player('בן סהר','24',position[3],technical,mental,physical);NewRandom();
-var player23 = new Player('דין דוד','99',position[3],technical,mental,physical);NewRandom();
+var player1 = new Player('גוש כהן','40',position[0],technical,mental,physical,totalPlayerScore,"players/M.haifa/joshCohen.gif",posImg[0]);NewRandom();AddExtars();
+var player2 = new Player('איתמר ישראלי','41',position[0],technical,mental,physical,totalPlayerScore,"players/M.haifa/איתמר ישראלי.gif",posImg[0]);NewRandom();AddExtars();
+var player3 = new Player('בוגדן פלאניץ','5',position[1],technical,mental,physical,totalPlayerScore,"players/M.haifa/bogdanPlanich.gif",posImg[1]);NewRandom();AddExtars();
+var player4 = new Player('סאן מנחם','12',position[1],technical,mental,physical,totalPlayerScore,"players/M.haifa/sanMenahem.gif",posImg[1]);NewRandom();AddExtars();
+var player5 = new Player('רמי גרשון','5',position[1],technical,mental,physical,totalPlayerScore,"players/M.haifa/144876.gif",posImg[1]);NewRandom();AddExtars();
+var player6 = new Player('עפרי ארד','15',position[1],technical,mental,physical,totalPlayerScore,"players/M.haifa/144873.gif",posImg[2]);NewRandom();AddExtars();
+var player7= new Player('שון גולדברג','13',position[1],technical,mental,physical,totalPlayerScore,"players/M.haifa/144880.gif",posImg[2]);NewRandom();AddExtars();
+var player8= new Player('אורי דהן','6',position[1],technical,mental,physical,totalPlayerScore,"players/M.haifa/144875.gif",posImg[3]);NewRandom();AddExtars();
+var player9= new Player('ראיין סטריין','0',position[1],technical,mental,physical,totalPlayerScore,"players/M.haifa/144879.gif",posImg[4]);NewRandom();AddExtars();
+var player10 = new Player('רז מאיר','25',position[1],technical,mental,physical,totalPlayerScore,"players/M.haifa/144877.gif",posImg[3]);NewRandom();AddExtars();
+var player11 = new Player('רוני לאופר','0',position[1],technical,mental,physical,totalPlayerScore,'images/male-figure-man-boy-profile.jpg.png',posImg[4]);NewRandom();AddExtars();
+var player12 = new Player('טאלב טוואטחה','17',position[1],technical,mental,physical,totalPlayerScore,"players/M.haifa/144882.gif",posImg[5]);NewRandom();AddExtars();
+var player13 = new Player('חוסה רודריגס','8',position[2],technical,mental,physical,totalPlayerScore,"players/M.haifa/144866.gif",posImg[5]);NewRandom();AddExtars();
+var player14 = new Player('יובל אשכנזי','18',position[2],technical,mental,physical,totalPlayerScore,"players/M.haifa/144885.gif",posImg[6]);NewRandom();AddExtars();
+var player15 = new Player('מאור לוי','33',position[2],technical,mental,physical,totalPlayerScore,"players/M.haifa/144869.gif",posImg[6]);NewRandom();AddExtars();
+var player16 = new Player('נטע לביא','6',position[2],technical,mental,physical,totalPlayerScore,"players/M.haifa/144872.gif",posImg[7]);NewRandom();AddExtars();
+var player17 = new Player('צירון שרי','10',position[2],technical,mental,physical,totalPlayerScore,"players/M.haifa/144884.gif",posImg[7]);NewRandom();AddExtars();
+var player18 = new Player('עומר אצילי','7',position[2],technical,mental,physical,totalPlayerScore,"players/M.haifa/144874.gif",posImg[8]);NewRandom();AddExtars();
+var player19 = new Player('עלי מוחמד','55',position[2],technical,mental,physical,totalPlayerScore,"players/M.haifa/144859.gif",posImg[8]);NewRandom();AddExtars();
+var player20 = new Player('אבו פאני','16',position[2],technical,mental,physical,totalPlayerScore,"players/M.haifa/144870.gif",posImg[9]);NewRandom();AddExtars();
+var player21 = new Player('גודסווי דוניו','11',position[3],technical,mental,physical,totalPlayerScore,"players/M.haifa/donio.gif",posImg[9]);NewRandom();AddExtars();
+var player22 = new Player('בן סהר','24',position[3],technical,mental,physical,totalPlayerScore,"players/M.haifa/benShar.gif",posImg[9]);NewRandom();AddExtars();
+var player23 = new Player('דין דוד','99',position[3],technical,mental,physical,totalPlayerScore,"players/M.haifa/dinDavid.gif",posImg[9]);NewRandom();AddExtars();
 var haifaPlayers = [player1,player2,player3,player4,player5,player6,player7,player8,player9,player10,player11,player12,player13,player14,player15,player16,player17,player18,player19,player20,player21,player22,player23]
 
 ///מכבי תל אביב////
