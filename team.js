@@ -26,12 +26,16 @@ function Team(name,players,stadium,money,image,attack,defence,popularity,stadium
                 
             }
         }
+
+        this.games = function(){
+            this.statistics.played++;
+        }
     }
     
  
     
 }
-var stats = {
+var stats0 = {
     played:0,
     wins: 0,
     draw: 0,
@@ -46,11 +50,12 @@ var stats = {
     last2 : '<i class="far fa-circle"></i>',
     last1: '<i class="far fa-circle"></i>'
 }
+var stats=0;
 
 financial = ['at risk','poor','fair','good','rich']
 training = ['shit hole','poor','avrage','good','exelent','world class']
 staff = ['avrage']
-var Ashdod = new Team('F.C Ashdod',ashdodPlayers,'Yud-Alef Stadium',1500,'images/ashdod.png',75,75,35,7800,4500,financial[1],training[0],staff[0],stats);
+var Ashdod = new Team('F.C Ashdod',ashdodPlayers,'Yud-Alef Stadium',1500,'images/ashdod.png',75,75,35,7800,4500,financial[1],training[0],staff[0],stats0);
 var MHaifa = new Team('Maccabi Haifa',haifaPlayers,'sami-ofer',1500,'images/M.Haifa.png',90,75,88,30780,24000,financial[4],training[5],staff[0],stats);
 var MtelAviv = new Team('Maccabi Tel-Aviv',mTelAvivPlayers,'bloomfield',1500,'images/M tel-aviv.png',85,92,89,29400,25000,financial[4],training[5],staff[0],stats);
 var beitarJerusalem = new Team('Beitar Jerusalem',bitarJerusalemPlayers,'Teddy Stadium',1500,'images/Beitar jerusalem.png',80,78,82,34000,18000,financial[4],training[5],staff[0],stats);

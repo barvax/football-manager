@@ -20,6 +20,7 @@
 
 <body>
     <!--the slideShow screen-->
+    
     <div class='slideshow'>
         <div class='team-pick'>
             <div class="card">
@@ -113,6 +114,8 @@
 
         </div>
     </div>
+    <button onclick="TheGame()">start the game</button>
+    <button onclick="DestroyTable()">clear table</button>
     <!--main screen end-->
     <!--team screen start-->
     <div class='section-team'>
@@ -176,7 +179,7 @@
         <hr>
         <h2 id='finance' class='left-title-panel-menu'>Finance</h2>
         <hr>
-        <h2 id='leage-table' class='left-title-panel-menu' onclick="SetPlayersScreen(screens[3])">League Table</h2>
+        <h2 id='leage-table' class='left-title-panel-menu' onclick="SetPlayersScreen(screens[3]),DisplayTable();">League Table</h2>
         <hr>
         <h2 id='home' class='left-title-panel-menu' onclick="SetPlayersScreen(screens[0])">Home</h2>
         <hr>
@@ -360,7 +363,7 @@
 
      <!--leaguTable-->
      <div class='section-leaguTable'>
-        <div class='main-screen '>
+        <div class='main-screen ' >
           
             <section id='leagueTable'>
                 <table id='theTable' class='leagueTable'>
@@ -403,6 +406,7 @@
     <script src="movePlayerAtribute.js"></script>
     <script src="fixturs.js"></script>
     <script src="leagueTable.js"></script>
+    <script src="theGame.js"></script>
 
 </body>
 

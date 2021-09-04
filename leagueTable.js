@@ -5,24 +5,10 @@
 
 var myTable = document.getElementById('theTable');
 
-function DisplayTable() {
-   /* var teamIndex = document.getElementById('table-index');
-    var imgSrc = document.getElementById('tableImgSrc');
-    var tableTeamName = document.getElementById('tableTeamName');
-    var gamesPlayed = document.getElementById('tablePlayed');
-    var teamWins = document.getElementById('tableWins');
-    var teamDraw = document.getElementById('tableDraw');
-    var teamLoss = document.getElementById('tableLoss');
-    var teamGF = document.getElementById('TableGF');
-    var teamGA = document.getElementById('TableGA');
-    var teamGD = document.getElementById('TableGD');
-    var Points = document.getElementById('TablePoints');
-    var last5 = document.getElementById('tableLast5');
-    var last4 = document.getElementById('tableLast4');
-    var last3 = document.getElementById('tableLast3');
-    var last2 = document.getElementById('tableLast2');
-    var last1 = document.getElementById('tableLast1');*/
-
+function DisplayTable() {  
+  
+   alert("building table")
+   myTable = document.getElementById('theTable');
     for (let i = 0; i < 14; i++) {
         var tr = document.createElement('tr');
         myTable.append(tr);
@@ -103,4 +89,13 @@ function DisplayTable() {
 
 }
 
-DisplayTable();
+//DisplayTable();
+function DestroyTable(){
+   myTable.remove();
+  var restart =  document.createElement('table');
+  restart.id='theTable';
+  restart.classList.add("leagueTable");
+  document.getElementById('leagueTable').append(restart);
+  alert('destroyed')
+}
+
