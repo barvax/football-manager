@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Glory:wght@300&display=swap');
+#leagueTable{
+    text-align: center;
+}
+.section-leaguTable{
+    text-align: center;
+    margin-left: 10%;
+    display: none;
+    font-family: 'Glory', sans-serif;
+}
+.leagueTable{
+    background-color: cornsilk;
+    color: rgb(53, 53, 53);
+    font-size: 12px;
+    table-layout: fixed;
+  width: 100%;  
+}
+.leagueTable tr th{
+   background-color: darkgrey;
+  
+}
+.leagueTable tr img{
+    width: 30px;
+    height: 30px;
+   
+ }

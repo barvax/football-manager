@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Glory:wght@300&display=swap');
+.section-fixturs{
+    display: none;
+       text-align: center;
+       font-family: 'Glory', sans-serif;
+   
+}
+#fixtures{
+    width: 80%;
+    text-align: center;
+}
+.fixture-table{
+    width: 100%;
+    margin-left: 10%;
+    
+}
+
+
+.fixtureTd{
+    border: 1px solid #494949;
+    background-color: rgb(240, 230, 215);
+    width: 150px;
+  
+
+}
+.fixtureInnerBox{
+    display: flex;
+   
+}
+.fixtureInnerBox h4{
+    color: rgb(39, 39, 39);
+    margin-top: 15px;
+    width: 250px;
+    font-size: 16px;
+}
+.fixtureInnerBox img{
+width:40px;
+height: 40px;
+margin-left: 20px;
+margin-top: 3px;
+margin-bottom: 3px;
+}
+.fixtureInnerBox div{
+ width: 100%;
+    }
+.fixtureResult{
+    text-align: right;
+    margin-right: 25px;
+}
+.roundName-div{
+    background-color: rgb(255, 210, 88);
+    margin-left: 10%;
+    width: 100%;
+    font-family: 'Staatliches', cursive;
+    color: rgb(94, 94, 94);
+    font-size: 16px;
+    padding: 5px;
+
+}

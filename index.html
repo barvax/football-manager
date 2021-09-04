@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="slideShow.css">
     <link rel="stylesheet" href="player-profile.css">
+    <link rel="stylesheet" href="fixtures.css">
+    <link rel="stylesheet" href="leagueTable.css">
 
     <title>FootBall Manager</title>
 
@@ -83,7 +85,8 @@
             <table>
                 <tr>
                     <td>Financial State</th>
-                    <td id='financial'></th>
+                    <td id='financial'>
+                        </th>
 
                 </tr>
                 <tr>
@@ -169,11 +172,11 @@
         <hr>
         <h2 id='team' class='left-title-panel-menu' onclick="SetPlayersScreen(screens[1])">Team</h2>
         <hr>
-        <h2 id='staff' class='left-title-panel-menu' onclick="SetPlayersScreen(screens[2])">Staff</h2>
+        <h2 id='staff' class='left-title-panel-menu' onclick="SetPlayersScreen(screens[2])">Fixtures</h2>
         <hr>
         <h2 id='finance' class='left-title-panel-menu'>Finance</h2>
         <hr>
-        <h2 id='leage-table' class='left-title-panel-menu'>League Table</h2>
+        <h2 id='leage-table' class='left-title-panel-menu' onclick="SetPlayersScreen(screens[3])">League Table</h2>
         <hr>
         <h2 id='home' class='left-title-panel-menu' onclick="SetPlayersScreen(screens[0])">Home</h2>
         <hr>
@@ -184,8 +187,8 @@
     <!--player profile-->
     <div class='player-profile'>
         <i class="far fa-window-close" onclick="ShowHide('.player-profile','hidden')"></i>
-        <div ><img id='field-img-card' class='field-img-card' src="" alt="" ></div>
-        
+        <div><img id='field-img-card' class='field-img-card' src="" alt=""></div>
+
 
         <div>
             <h5>Player Name:</h5>
@@ -194,19 +197,19 @@
             <h5 id='player-Profile-position'>2</h5>
             <h5>Player number:</h5>
             <h5 id='player-Profile-number'>3</h5>
-            <div class='player-img-card'><img  src="" alt="" id='playerImg-card'></div>
-            
-            
+            <div class='player-img-card'><img src="" alt="" id='playerImg-card'></div>
+
+
         </div>
-       
-       
+
+
         <table style="width: 50%;" class='atributes'>
             <tr style='color: rgb(235, 220, 17);font-size: 10px;'>
-                <th  colspan="2">Technical</th>
+                <th colspan="2">Technical</th>
                 <th colspan="2">Mental</th>
-                <th colspan="2">Physical</th>         
+                <th colspan="2">Physical</th>
             </tr>
-           
+
             <tr>
                 <td>Corners </td>
                 <td id='Corners'></td>
@@ -276,7 +279,7 @@
                 <td id='Marking'></td>
                 <td>Leadeship</td>
                 <td id='Leadeship'></td>
-                
+
 
             </tr>
             <tr>
@@ -286,7 +289,7 @@
                 <td id='Off the ball'></td>
                 <td style='color: rgb(235, 220, 17);font-size: 10px;'>Total Score</td>
                 <td style='color: rgb(235, 220, 17);font-size: 10px;' id='total score'></td>
-              
+
 
             </tr>
             <tr>
@@ -294,7 +297,7 @@
                 <td id='Penelty'></td>
                 <td>Positioning</td>
                 <td id='Positioning'></td>
-                
+
 
             </tr>
             <tr>
@@ -302,7 +305,7 @@
                 <td id='Tackeling'></td>
                 <td>TeamWork</td>
                 <td id='TeamWork'></td>
-              
+
 
             </tr>
             <tr>
@@ -310,7 +313,7 @@
                 <td id='Technique'></td>
                 <td>Vision</td>
                 <td id='Vision'></td>
-               
+
 
             </tr>
             <tr>
@@ -318,27 +321,74 @@
                 <td id='Long Throws'></td>
                 <td>Work Rate</td>
                 <td id='Work Rate'></td>
-               
+
 
             </tr>
-            <tr style="color: rgb(236, 195, 13);font-size: 10px;font-weight: 700;";>
-                <td >Avrage Technivcal</td>
+            <tr style="color: rgb(236, 195, 13);font-size: 10px;font-weight: 700;" ;>
+                <td>Avrage Technivcal</td>
                 <td id='avg tech'></td>
                 <td>Avrage Mental</td>
                 <td id='avg mental'></td>
                 <td>Avrage Physical</td>
                 <td id='avg Physical'></td>
-               
+
 
             </tr>
-        
-            <div  style="display: flex;justify-content: space-between;font-size: 40px;">
-            <h1 class='handle' onclick="MoveSlide('-')"><</h1><h1 class='handle' onclick="MoveSlide('+')">></h1>
+
+            <div style="display: flex;justify-content: space-between;font-size: 40px;">
+                <h1 class='handle' onclick="MoveSlide('-')">
+                    <</h1>
+                        <h1 class='handle' onclick="MoveSlide('+')">></h1>
             </div>
         </table>
-   
+
 
     </div>
+    <!--end of player profile-->
+    <!--fixturs-->
+    <div class='section-fixturs'>
+        <div class='main-screen '>
+          
+            <section id='fixtures'></section>
+           
+        </div>
+
+
+
+    </div>
+    <!--end of fixturs-->
+
+     <!--leaguTable-->
+     <div class='section-leaguTable'>
+        <div class='main-screen '>
+          
+            <section id='leagueTable'>
+                <table id='theTable' class='leagueTable'>
+                    <tr style="color: cornsilk;" >
+                        <th colspan="5">Club</th>
+                        <th >MP</th>
+                        <th >W</th>
+                        <th >D</th>
+                        <th >L</th>
+                        <th >GF</th>
+                        <th >GA</th>
+                        <th >GD</th>
+                        <th >Pts</th>
+                        <th colspan="5" style="text-align: center;">Last 5</th>
+                    </tr>
+        
+                  
+                </table>
+            </section>
+           
+        </div>
+
+
+
+    </div>
+    <!--end of leaguTable-->
+
+
     <!--
     <button onclick="team1.Increasr()">increase money</button>
     <button onclick="Test()">show money</button>
@@ -351,6 +401,8 @@
     <script src="functions.js"></script>
     <script src="main.js"></script>
     <script src="movePlayerAtribute.js"></script>
+    <script src="fixturs.js"></script>
+    <script src="leagueTable.js"></script>
 
 </body>
 
