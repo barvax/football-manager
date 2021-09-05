@@ -99,16 +99,14 @@ function DestroyTable(){
   alert('destroyed')
 }
 ///// sample///
-var ron = [500,2,7,7,4100];
-var max = 0;
-var temp;
-var index;
+
 function Sort(){
 	for (i=0;i<ron.length;i++){
-		max = ron[i]
+		max = ron[i].ee
+		
 		for (j=i;j<ron.length;j++){
-			if(ron[j]>=max){
-			max = ron[j];
+			if(ron[j].ee>=max){
+			max = ron[j].ee;
 			index=j;
 			
 		}
@@ -120,11 +118,52 @@ function Sort(){
 		
 		
 		
-console.log(max)
+
 
 	
 		
 }
 
-console.log (ron);
+
 }
+
+Sort();
+console.log (ron);
+var newTemp = [];
+function SecondSortPart1(){
+	
+	for (i=0; i<ron.length-1; i++){
+		if(ron[i].ee == ron[i+1].ee){
+			if(newTemp[newTemp.length-1] != i){
+				newTemp.push(i);
+				newTemp.push(i+1);;
+			}else{
+				
+				
+				newTemp.push(i+1);
+			}
+			
+			
+		}
+		
+		
+	}
+	
+}
+console.log(newTemp)
+SecondSortPart1();
+
+function SecondSortPart2 (){
+	
+	for (i=0;i<newTemp.length;i++){
+		
+console.log(ron[newTemp[i]])
+if(ron[newTemp[i]].ff >0){
+	max = ron[newTemp[i]].ff
+}
+	
+		
+}
+console.log(max)
+}
+SecondSortPart2();
