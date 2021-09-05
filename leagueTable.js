@@ -98,4 +98,33 @@ function DestroyTable(){
   document.getElementById('leagueTable').append(restart);
   alert('destroyed')
 }
+///// sample///
+var ron = [500,2,7,7,4100];
+var max = 0;
+var temp;
+var index;
+function Sort(){
+	for (i=0;i<ron.length;i++){
+		max = ron[i]
+		for (j=i;j<ron.length;j++){
+			if(ron[j]>=max){
+			max = ron[j];
+			index=j;
+			
+		}
+			
+		}
+		temp =ron[i] ;
+		ron[i] = ron[index]
+		ron[index] = temp
+		
+		
+		
+console.log(max)
 
+	
+		
+}
+
+console.log (ron);
+}
