@@ -9,14 +9,14 @@
     font-family: 'Glory', sans-serif;
 }
 .leagueTable{
-    background-color: cornsilk;
+    background-color: rgb(255, 255, 255);
     color: rgb(53, 53, 53);
     font-size: 12px;
     table-layout: fixed;
   width: 100%;  
 }
 .leagueTable tr th{
-   background-color: darkgrey;
+   background-color: rgb(228, 227, 227);
   
 }
 .leagueTable tr img{

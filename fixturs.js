@@ -37,7 +37,7 @@ function AllGamesPerGameCycle(){
 
 fixturesSection  = document.getElementById('fixtures');
 
-function setOnScreen(team1,team2,src1,src2){
+function setOnScreen(team1,team2,src1,src2,score1,score2){
     //create the round number title//
 /*var roundDiv = document.createElement('div');
 roundDiv.classList.add('roundName-div');
@@ -71,10 +71,11 @@ function Test(){
     //create the result//
     var div = document.createElement('div');
     fixtureInnerBox.append(div);
-    var resultTitle = document.createElement('h4');
-    resultTitle.classList.add('fixtureResult');
-    resultTitle.innerHTML = "0";
-    div.append(resultTitle);
+    var resultTitle1 = document.createElement('h4');
+    resultTitle1.classList.add('fixtureResult');
+    resultTitle1.id=score1;
+    resultTitle1.innerHTML = "0";
+    div.append(resultTitle1);
     var fixtureInnerBox = document.createElement('div');
     fixtureInnerBox.classList.add('fixtureInnerBox');
     tr.append(fixtureInnerBox);
@@ -89,15 +90,19 @@ function Test(){
     //create the result//
     var div = document.createElement('div');
     fixtureInnerBox.append(div);
-    var resultTitle = document.createElement('h4');
-    resultTitle.classList.add('fixtureResult');
-    resultTitle.innerHTML = '0';
-    div.append(resultTitle);
+    var resultTitle2 = document.createElement('h4');
+    resultTitle2.id=score2;
+    resultTitle2.classList.add('fixtureResult');
+    resultTitle2.innerHTML = '0';
+    div.append(resultTitle2);
 }
 Test();
 
 
 }
+console.log('team fixtures')
+console.log(teamsFixtures)
+var FixturesArray = [] ///את זה בניתי בשביל לגשת ל Id של כל תוצאה בכל סיבוב בשביל לעדכן. קצת עקום אבל זה מה יש...
 //////////בהזדמנות צריך להוסיף עוד סיבוב להפוך ביתיות
 function Round1(){
     for (let i = 0; i < round.length/2; i++) {
@@ -108,11 +113,11 @@ roundDiv.innerHTML = 'Round '+(i/[teamsFixtures.length/2]+1) +' /' + (teamsFixtu
 fixturesSection.append(roundDiv);
         }
         if(i==0){
-            setOnScreen(theTeamsArray[round[i]].name,theTeamsArray[round[i+1]].name,theTeamsArray[round[i]].image,theTeamsArray[round[i+1]].image);
+            setOnScreen(theTeamsArray[round[i]].name,theTeamsArray[round[i+1]].name,theTeamsArray[round[i]].image,theTeamsArray[round[i+1]].image,round[i],round[i+1]);
         }else if(i==1){
-            setOnScreen(theTeamsArray[round[i+1]].name,theTeamsArray[round[i+2]].name,theTeamsArray[round[i+1]].image,theTeamsArray[round[i+2]].image);
+            setOnScreen(theTeamsArray[round[i+1]].name,theTeamsArray[round[i+2]].name,theTeamsArray[round[i+1]].image,theTeamsArray[round[i+2]].image,round[i],round[i+1]);
         }else{
-            setOnScreen(theTeamsArray[round[i*2]].name,theTeamsArray[round[i*2+1]].name,theTeamsArray[round[i*2]].image,theTeamsArray[round[i*2+1]].image);
+            setOnScreen(theTeamsArray[round[i*2]].name,theTeamsArray[round[i*2+1]].name,theTeamsArray[round[i*2]].image,theTeamsArray[round[i*2+1]].image,round[i],round[i+1]);
         }
         
         
