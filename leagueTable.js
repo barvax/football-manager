@@ -7,7 +7,7 @@ var myTable = document.getElementById('theTable');
 
 function DisplayTable() {
 
-  alert("building table")
+ 
   myTable = document.getElementById('theTable');
   //the th//
   var header = document.createElement('tr');
@@ -142,7 +142,7 @@ function DestroyTable() {
   restart.id = 'theTable';
   restart.classList.add("leagueTable");
   document.getElementById('leagueTable').append(restart);
-  alert('destroyed')
+  
   Sort();
 }
 

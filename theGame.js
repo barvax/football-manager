@@ -3,7 +3,8 @@ function StartTheGame() {
   //
 }
 
-
+var roundCount = 1;
+var factor = 0;
 function RandomWin() {
     var whoWins = Math.floor(Math.random() * 5);
     return whoWins;
@@ -20,9 +21,11 @@ function TheGame() {
             console.log("this is the round.."+round[j+i+1])
             theTeamsArray[round[j+i]].statistics.played++;
             theTeamsArray[round[j+i]].statistics.Gf += Gf1;
+            theTeamsArray[round[j+i]].roundResults.push(Gf1)
             theTeamsArray[round[j+i]].statistics.Ga += Gf2;
-            theTeamsArray[round[j+i]].statistics.Gd =  theTeamsArray[round[j+i]].statistics.Gf-theTeamsArray[round[j+i]].statistics.Ga;
             
+            theTeamsArray[round[j+i]].statistics.Gd =  theTeamsArray[round[j+i]].statistics.Gf-theTeamsArray[round[j+i]].statistics.Ga;
+            theTeamsArray[round[j+i+1]].roundResults.push(Gf2);
             theTeamsArray[round[j+i+1]].statistics.played++;
             theTeamsArray[round[j+i+1]].statistics.Gf += Gf2;
             theTeamsArray[round[j+i+1]].statistics.Ga += Gf1;
@@ -53,10 +56,12 @@ function TheGame() {
            i+=1;
         }
        
-      
+       
         
     }
-   // console.log(theTeamsArray[0].statistics)
+    UpdateTheFixtures(roundCount,factor)
+    roundCount+=1;
+    factor+=14;
    DestroyTable();
    DisplayTable();
    console.log(theTeamsArray[0].statistics);
