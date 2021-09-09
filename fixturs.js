@@ -287,8 +287,9 @@ function FinalFixtures() {
 	console.log('--final--')
 	console.log(finalFixtursArray)
 }
-
-/////////////************************************////////////////////
+/*
+/////////////***********************************////////////////////
+/*
 Step1();
 AllGamesPerGameCycle();
 Step3();
