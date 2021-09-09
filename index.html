@@ -7,13 +7,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <script src="https://kit.fontawesome.com/cbd967892d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="slideShow.css">
     <link rel="stylesheet" href="player-profile.css">
     <link rel="stylesheet" href="fixtures.css">
     <link rel="stylesheet" href="leagueTable.css">
+    <link rel="stylesheet" href="matchDay.css">
 
     <title>FootBall Manager</title>
 
@@ -21,7 +22,7 @@
 
 <body>
     <!--the slideShow screen-->
-    
+
     <div class='slideshow'>
         <div class='team-pick'>
             <div class="card">
@@ -116,6 +117,8 @@
         </div>
     </div>
     <button onclick="TheGame()">play round of games</button>
+    <button onclick="SetTimer()">Show me </button>
+   
     <!--<button onclick="SortTeamsByTablePlace()">sort table</button>-->
     <!--main screen end-->
     <!--team screen start-->
@@ -178,9 +181,10 @@
         <hr>
         <h2 id='staff' class='left-title-panel-menu' onclick="SetPlayersScreen(screens[2])">Fixtures</h2>
         <hr>
-        <h2 id='finance' class='left-title-panel-menu'>Finance</h2>
+        <h2 id='finance' class='left-title-panel-menu' onclick="SetPlayersScreen(screens[4])">Match Day</h2>
         <hr>
-        <h2 id='leage-table' class='left-title-panel-menu' onclick="SetPlayersScreen(screens[3]),DestroyTable(),DisplayTable();">League Table</h2>
+        <h2 id='leage-table' class='left-title-panel-menu'
+            onclick="SetPlayersScreen(screens[3]),DestroyTable(),DisplayTable();">League Table</h2>
         <hr>
         <h2 id='home' class='left-title-panel-menu' onclick="SetPlayersScreen(screens[0])">Home</h2>
         <hr>
@@ -341,7 +345,7 @@
 
             <div style="display: flex;justify-content: space-between;font-size: 40px;">
                 <h1 class='handle' onclick="MoveSlide('-')">
-                    <</h1>
+                    << /h1>
                         <h1 class='handle' onclick="MoveSlide('+')">></h1>
             </div>
         </table>
@@ -352,28 +356,96 @@
     <!--fixturs-->
     <div class='section-fixturs'>
         <div class='main-screen '>
-          
+
             <section id='fixtures'></section>
-           
+
         </div>
 
 
 
     </div>
     <!--end of fixturs-->
+    <!--match day-->
+    <div class='section-fixturs'>
+        <div class='main-screen '>
 
-     <!--leaguTable-->
-     <div class='section-leaguTable'>
-        <div class='main-screen ' >
-          
+            <section id='fixtures'></section>
+
+        </div>
+
+
+
+    </div>
+    <!--end of match day-->
+    <div class='section-match'>
+        <div class='main-screen rt'>
+
+            <section id='match'>
+
+                <div class='theMatch' id='theMatchStartTableHere'>
+                    <h6 class="timer" id='timer'> time: 60 min</h6>
+                    <h6 class="timer" id='extra'> time: 60 min</h6>
+                    <div class="match-title">
+                        <h5 class="roundMatch">מחזור 21/34</h5>
+                        <h5>21/10/2021</h5>
+                        <h5>ליגת העל</h5>
+
+
+                    </div>
+                    <div class="matchTheTeams" id='matchTheTeams'>
+                        <div>
+                            <img id='homeTeramImageRealTime'src="" alt="">
+                            <h5 id = homeTeramNameRealTime>שם הקבוצה</h5>
+                            <h5 id = 'home-team'>תוצאה</h5>
+                        </div>
+                        <h4>Vs</h4>
+                        <div>
+                            <img id='awayTeramImageRealTime' src="" alt="">
+                            <h5 id='awayTeramNameRealTime'>שם הקבוצה</h5>
+                            <h5 id = 'away-team'>תוצאה</h5>
+                        </div>
+                        
+                    </div>
+                    <!--<table class="matchTableHead" >
+                        <tr >
+                            <td class='tabletdmatch' id='tableMatchHome'>
+                               
+                                
+                            </td>
+                            
+                            
+                            <td class='tabletdmatch' id='tableMatchAway'>
+                                
+                            </td>
+                            
+                           
+            
+                        </tr>
+                    </table>-->
+                    
+                    
+
+
+                </div>
+            </section>
+
+        </div>
+
+
+
+    </div>
+    <!--leaguTable-->
+    <div class='section-leaguTable'>
+        <div class='main-screen '>
+
             <section id='leagueTable'>
                 <table id='theTable' class='leagueTable'>
-                   
-        
-                  
+
+
+
                 </table>
             </section>
-           
+
         </div>
 
 

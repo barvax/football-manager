@@ -1,6 +1,6 @@
 var teamIndex = 0;
 
-var teams = [MHaifa,Ashdod, MtelAviv,beitarJerusalem,bneiShacnin,beerSheva,hapoelJerusalem,kiryatShmona,hapoelHaifa,maccabiNetanya,mPetachTikva,hapoelNofHaGalil,hapoelHadera,hapoelTelAviv]
+var teams = [Ashdod,MHaifa,MtelAviv,beitarJerusalem,bneiShacnin,beerSheva,hapoelJerusalem,kiryatShmona,hapoelHaifa,maccabiNetanya,mPetachTikva,hapoelNofHaGalil,hapoelHadera,hapoelTelAviv]
 var myTeam = teams[teamIndex];
 function pickTeam(oparator) {
     if (oparator == '+') {
@@ -17,6 +17,8 @@ function pickTeam(oparator) {
             teamIndex = 13;
         }
        
+    }else{
+        teamIndex = 0;
     }
 
     var image = document.getElementById('team-image');
@@ -35,7 +37,7 @@ function pickTeam(oparator) {
     document.querySelector('.popularity').style.width = teams[teamIndex].popularity+'%';
 
 }
-
+pickTeam('test');
 function StartGame(){
 myTeam = teams[teamIndex];
 document.querySelector('.slideshow').style.display = 'none';

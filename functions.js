@@ -1,4 +1,4 @@
-var screens = ['.section-main','.section-team','.section-fixturs','.section-leaguTable']
+var screens = ['.section-main','.section-team','.section-fixturs','.section-leaguTable','.section-match']
 var menu = ['team','staff','finance','leage-table','home']
 
 var ron = 0;
