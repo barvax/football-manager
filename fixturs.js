@@ -167,3 +167,132 @@ function AllGameDisplayOnScreen() {
 }
 
 AllGameDisplayOnScreen();
+
+
+
+
+//////////////////////////new///////////
+/*
+var teamsFixtures = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+var tempForfixturs;
+var gamesForFixtures = [];
+var round = [];
+var roundTemp = [];
+
+var finalFixtursArray = []
+
+
+var round2 = round;
+
+function Step1() {
+	for (i = 0; i < 26; i++) {
+		finalFixtursArray.push([]);
+		for (j = 0; j < 7; j++) {
+			finalFixtursArray[i].push([]);
+
+		}
+	}
+
+
+}
+
+function Step3() {
+
+	var temp;
+	for (i = 14; i < 182; i++) {
+		for (j = 0; j < 14; j++) {
+			temp = round[j + i]
+			round[j + i] = round[j + 1 + i]
+			round[j + 1 + i] = temp
+			j++
+		}
+		i += 24
+	}
+
+
+	for (t = 0; t < 182; t++) {
+
+		roundTemp.push(round[t])
+	}
+
+}
+
+function InsertRound2() {
+	for (j = 0; j < 182; j++) {
+		roundTemp.push(round2[j])
+	}
+
+
+}
+
+function Round2() {
+	var temp;
+
+	for (i = 0; i < 182; i++) {
+
+		temp = round2[i];
+		round2[i] = round2[i + 1]
+		round2[i + 1] = temp
+		i++
+	}
+}
+
+function SetGamesPerRound() {
+	for (let i = 0; i < teamsFixtures.length / 2; i++) {
+		gamesForFixtures.push(teamsFixtures[i]);
+		gamesForFixtures.push(teamsFixtures[teamsFixtures.length - i - 1])
+
+	}
+
+	for (let i = 0; i < gamesForFixtures.length; i++) {
+		round.push(gamesForFixtures[i]);
+
+	}
+	gamesForFixtures = [];
+}
+
+function NextRound() {
+	tempForfixturs = teamsFixtures[1];
+	for (let i = 1; i < teamsFixtures.length; i++) {
+		teamsFixtures[i] = teamsFixtures[i + 1];
+
+	}
+	teamsFixtures[teamsFixtures.length - 1] = tempForfixturs;
+
+}
+
+function AllGamesPerGameCycle() {
+	for (let i = 0; i < teamsFixtures.length - 1; i++) {
+		SetGamesPerRound();
+		NextRound();
+
+	}
+
+
+
+}
+
+function FinalFixtures() {
+	x = 0
+	for (i = 0; i < 26; i++) {
+
+		for (j = 0; j < 7; j++) {
+			finalFixtursArray[i][j].push(roundTemp[x]);
+			finalFixtursArray[i][j].push(roundTemp[x + 1]);
+			x += 2
+
+		}
+	}
+
+	console.log('--final--')
+	console.log(finalFixtursArray)
+}
+
+/////////////************************************////////////////////
+Step1();
+AllGamesPerGameCycle();
+Step3();
+Round2();
+InsertRound2();
+FinalFixtures();
+*/
