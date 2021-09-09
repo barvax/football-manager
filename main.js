@@ -11,3 +11,5 @@ function setMainScreen(){
     document.getElementById('balance').innerHTML = myTeam.money;
 console.log(myTeam.name)
 }
+
+

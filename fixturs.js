@@ -2,47 +2,98 @@ var teamsFixtures = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 var tempForfixturs;
 var gamesForFixtures = [];
 var round = [];
+var roundTemp = [];
+var finalFixtursArray = []
+var round2 = round;
+
+
+function Step1() {
+	for (i = 0; i < 26; i++) {
+		finalFixtursArray.push([]);
+		for (j = 0; j < 7; j++) {
+			finalFixtursArray[i].push([]);
+		}
+	}
+}
+function Step3() {////ההיפןך של בית חוץ
+	var temp;
+	for (i = 14; i < 182; i++) {
+		for (j = 0; j < 13; j++) {
+			temp = round[j + i]
+			round[j + i] = round[j + 1 + i]
+			round[j + 1 + i] = temp
+			j++
+		}
+		i += 27
+	}
+	for (t = 0; t < 182; t++) {
+		roundTemp.push(round[t])
+	}
+}
+function InsertRound2() {
+	for (j = 0; j < 182; j++) {
+		roundTemp.push(round2[j])
+	}
+}
+function RoundTwo() {
+	var temp;
+	for (i = 0; i < 182; i++) {
+		temp = round2[i];
+		round2[i] = round2[i + 1]
+		round2[i + 1] = temp
+		i++
+	}
+}
 function SetGamesPerRound() {
-    for (let i = 0; i < teamsFixtures.length / 2; i++) {
-        gamesForFixtures.push(teamsFixtures[i]);
-        gamesForFixtures.push(teamsFixtures[teamsFixtures.length - i - 1])
-
-    }
-
-    for (let i = 0; i < gamesForFixtures.length; i++) {
-        round.push(gamesForFixtures[i]);
-
-    }
-    gamesForFixtures = [];
+	for (let i = 0; i < teamsFixtures.length / 2; i++) {
+		gamesForFixtures.push(teamsFixtures[i]);
+		gamesForFixtures.push(teamsFixtures[teamsFixtures.length - i - 1])
+	}
+	for (let i = 0; i < gamesForFixtures.length; i++) {
+		round.push(gamesForFixtures[i]);
+	}
+	gamesForFixtures = [];
 }
-
 function NextRound() {
-    tempForfixturs = teamsFixtures[1];
-    for (let i = 1; i < teamsFixtures.length; i++) {
-        teamsFixtures[i] = teamsFixtures[i + 1];
-
-    }
-    teamsFixtures[teamsFixtures.length - 1] = tempForfixturs;
-
+	tempForfixturs = teamsFixtures[1];
+	for (let i = 1; i < teamsFixtures.length; i++) {
+		teamsFixtures[i] = teamsFixtures[i + 1];
+	}
+	teamsFixtures[teamsFixtures.length - 1] = tempForfixturs;
 }
-
 function AllGamesPerGameCycle() {
-    for (let i = 0; i < teamsFixtures.length - 1; i++) {
-        SetGamesPerRound();
-        NextRound();
-
-    }
-    console.log(round)
+	for (let i = 0; i < teamsFixtures.length - 1; i++) {
+		SetGamesPerRound();
+		NextRound();
+	}
+  
+}
+function FinalFixtures() {
+	x = 0
+	for (i = 0; i < 26; i++) {
+		for (j = 0; j < 7; j++) {
+			finalFixtursArray[i][j].push(roundTemp[x]);
+			finalFixtursArray[i][j].push(roundTemp[x + 1]);
+			x += 2
+		}
+	}
+	console.log('--final--')
+	console.log(finalFixtursArray)
 }
 
+AllGamesPerGameCycle();
+Step1();
+Step3();
+
+RoundTwo();
+InsertRound2();
+FinalFixtures();
+//////////////////////////////////////////////////////////////////////////////
 fixturesSection = document.getElementById('fixtures');
 
 function setOnScreen(team1, team2, src1, src2, score1, score2) {
     //create the round number title//
-    /*var roundDiv = document.createElement('div');
-    roundDiv.classList.add('roundName-div');
-    roundDiv.innerHTML = 'Round'+'/ 34'
-    fixturesSection.append(roundDiv);*/
+   
     //create the table//
     var table = document.createElement('table');
     table.classList.add('fixture-table');
@@ -87,6 +138,11 @@ function setOnScreen(team1, team2, src1, src2, score1, score2) {
         var teamName = document.createElement('h4');
         teamName.innerHTML = team2;
         fixtureInnerBox.append(teamName);
+        //create the stadium//
+        var stadium = document.createElement('h6');
+        stadium.classList.add('stadiumName');
+        stadium.innerHTML = 'איצטדיון';
+        teamName.append(stadium);
         //create the result//
         var div = document.createElement('div');
         fixtureInnerBox.append(div);
@@ -116,10 +172,29 @@ function UpdateTheFixtures(theRound, factor) {
 
 
 }
-console.log('team fixtures')
-console.log(teamsFixtures)
-var FixturesArray = [] ///את זה בניתי בשביל לגשת ל Id של כל תוצאה בכל סיבוב בשביל לעדכן. קצת עקום אבל זה מה יש...
-//////////בהזדמנות צריך להוסיף עוד סיבוב להפוך ביתיות
+
+function InsertStadiumName(){
+    var ron = document.querySelectorAll('.stadiumName');
+   
+    for (let k = 0; k < ron.length; k++) {
+        ron[k].id = 'stadiumName'+k;
+       
+    }
+   
+
+console.log('**********')
+x=0
+    for (let i = 0; i < (theTeamsArray.length-1)*2; i++) {
+        for (let j = 0; j < theTeamsArray.length/2; j++) {
+           var set = document.getElementById('stadiumName'+x)
+           set.innerHTML = 'stadium: '+(theTeamsArray[finalFixtursArray[i][j][0]].stadium) 
+            x++
+        }
+        
+        
+    }
+}
+
 function Round1() {
     for (let i = 0; i < round.length / 2; i++) {
         if (i % [teamsFixtures.length / 2] == 0) {
@@ -177,123 +252,11 @@ var teamsFixtures = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 var tempForfixturs;
 var gamesForFixtures = [];
 var round = [];
-var roundTemp = [];
 
-var finalFixtursArray = []
+*/
 
-
-var round2 = round;
-
-function Step1() {
-	for (i = 0; i < 26; i++) {
-		finalFixtursArray.push([]);
-		for (j = 0; j < 7; j++) {
-			finalFixtursArray[i].push([]);
-
-		}
-	}
-
-
-}
-
-function Step3() {
-
-	var temp;
-	for (i = 14; i < 182; i++) {
-		for (j = 0; j < 14; j++) {
-			temp = round[j + i]
-			round[j + i] = round[j + 1 + i]
-			round[j + 1 + i] = temp
-			j++
-		}
-		i += 24
-	}
-
-
-	for (t = 0; t < 182; t++) {
-
-		roundTemp.push(round[t])
-	}
-
-}
-
-function InsertRound2() {
-	for (j = 0; j < 182; j++) {
-		roundTemp.push(round2[j])
-	}
-
-
-}
-
-function Round2() {
-	var temp;
-
-	for (i = 0; i < 182; i++) {
-
-		temp = round2[i];
-		round2[i] = round2[i + 1]
-		round2[i + 1] = temp
-		i++
-	}
-}
-
-function SetGamesPerRound() {
-	for (let i = 0; i < teamsFixtures.length / 2; i++) {
-		gamesForFixtures.push(teamsFixtures[i]);
-		gamesForFixtures.push(teamsFixtures[teamsFixtures.length - i - 1])
-
-	}
-
-	for (let i = 0; i < gamesForFixtures.length; i++) {
-		round.push(gamesForFixtures[i]);
-
-	}
-	gamesForFixtures = [];
-}
-
-function NextRound() {
-	tempForfixturs = teamsFixtures[1];
-	for (let i = 1; i < teamsFixtures.length; i++) {
-		teamsFixtures[i] = teamsFixtures[i + 1];
-
-	}
-	teamsFixtures[teamsFixtures.length - 1] = tempForfixturs;
-
-}
-
-function AllGamesPerGameCycle() {
-	for (let i = 0; i < teamsFixtures.length - 1; i++) {
-		SetGamesPerRound();
-		NextRound();
-
-	}
-
-
-
-}
-
-function FinalFixtures() {
-	x = 0
-	for (i = 0; i < 26; i++) {
-
-		for (j = 0; j < 7; j++) {
-			finalFixtursArray[i][j].push(roundTemp[x]);
-			finalFixtursArray[i][j].push(roundTemp[x + 1]);
-			x += 2
-
-		}
-	}
-
-	console.log('--final--')
-	console.log(finalFixtursArray)
-}
 /*
 /////////////***********************************////////////////////
 /*
-Step1();
-AllGamesPerGameCycle();
-Step3();
-Round2();
-InsertRound2();
-FinalFixtures();
 */
+InsertStadiumName();
