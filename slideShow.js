@@ -45,4 +45,6 @@ document.querySelector('.left-menu-panel').style.visibility = 'visible';
 document.querySelector('.section-main').style.display = 'block';
 
 setMainScreen();
+
 }
+

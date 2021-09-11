@@ -17,7 +17,10 @@
     color: teal;
     margin-left: 20%;
     margin-top: 10%;
+    
+   
 }
+
 .match-title{
     padding: 30px;
     
@@ -66,4 +69,7 @@
 .soccerball{
     width: 24px;
     height: 24px;
+}
+#playThisRound{
+    visibility: hidden;
 }
