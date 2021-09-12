@@ -43,3 +43,8 @@
     right:20%;
 }
 
+.playerCard{
+    background-image: url(images/PngItem_2198207.png);
+    background-size: 300px 100px;
+    background-repeat: no-repeat;
+}

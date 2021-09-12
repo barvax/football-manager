@@ -20,7 +20,8 @@
 
 </head>
 
-<body>
+<body >
+   
     <!--the slideShow screen-->
 
     <div class='slideshow'>
@@ -28,10 +29,9 @@
             <div class="card">
                 <img class='team-img' src="images/M.Haifa.png" alt="" id='team-image'>
                 <div class="arrows">
-                    <h1 onclick="pickTeam('-')" style="font-size: 40px; color: aliceblue;cursor: pointer;">
-                        < </h1>
+                    <h1 onclick="pickTeam('-')" style="font-size: 40px; color: aliceblue;cursor: pointer;"><i class="far fa-arrow-alt-circle-left"></i></h1>
                             <h4 id='team-name'>Maccabi Haifa</h4>
-                            <h1 onclick="pickTeam('+')" style="font-size: 40px; color: aliceblue;cursor: pointer;">>
+                            <h1 onclick="pickTeam('+')" style="font-size: 40px; color: aliceblue;cursor: pointer;"><i class="far fa-arrow-alt-circle-right"></i>
                             </h1>
                 </div>
 
@@ -116,9 +116,9 @@
 
         </div>
     </div>
-    <button onclick="TheGame()">play round of games</button>
-    <button onclick="SetTimer()">Show me </button>
-   
+    <button onclick=" ">none</button>
+
+
     <!--<button onclick="SortTeamsByTablePlace()">sort table</button>-->
     <!--main screen end-->
     <!--team screen start-->
@@ -210,7 +210,8 @@
 
         </div>
 
-
+       
+<!--
         <table style="width: 50%;" class='atributes'>
             <tr style='color: rgb(235, 220, 17);font-size: 10px;'>
                 <th colspan="2">Technical</th>
@@ -344,14 +345,14 @@
             </tr>
 
             <div style="display: flex;justify-content: space-between;font-size: 40px;">
-                <h1 class='handle' onclick="MoveSlide('-')">
-                    << /h1>
-                        <h1 class='handle' onclick="MoveSlide('+')">></h1>
+                <h1 class='handle' onclick="MoveSlide('-')"><i class="far fa-arrow-alt-circle-left"></i> </h1>
+                        <h1 class='handle' onclick="MoveSlide('+')"><i class="far fa-arrow-alt-circle-right"></i></h1>
             </div>
         </table>
-
-
+       
+        -->
     </div>
+    <div class='playerCard'> <h1>ron</h1></div>
     <!--end of player profile-->
     <!--fixturs-->
     <div class='section-fixturs'>
@@ -378,52 +379,39 @@
     </div>
     <!--end of match day-->
     <div class='section-match'>
-        <div class='main-screen rt'>
 
+        <div class='main-screen rt'>
+            <button id='playThisRound' onclick="PlayTest()">play round</button>
+            <button id='SetNextMatchFixturesInGameView' onclick="SetNextMatchFixturesInGameView()">next round</button>
             <section id='match'>
 
-                <div class='theMatch' id='theMatchStartTableHere'>
-                    <h6 class="timer" id='timer'> time: 60 min</h6>
-                    <h6 class="timer" id='extra'> time: 60 min</h6>
+                <div class='theMatch ' id='theMatchStartTableHere'>
+                    <h6 class="timer" id='timer'> </h6>
+                    <h6 class="timer" id='extra'> </h6>
                     <div class="match-title">
-                        <h5 class="roundMatch">מחזור 21/34</h5>
-                        <h5>21/10/2021</h5>
-                        <h5>ליגת העל</h5>
+                        <h5 class="roundMatch" id='roundMatchInGameView'></h5>
+                        <h5></h5>
+                        <h5></h5>
 
 
                     </div>
                     <div class="matchTheTeams" id='matchTheTeams'>
                         <div>
-                            <img id='homeTeramImageRealTime'src="" alt="">
-                            <h5 id = homeTeramNameRealTime>שם הקבוצה</h5>
-                            <h5 id = 'home-team'>תוצאה</h5>
+                            <img id='homeTeramImageRealTime' src="" alt="">
+                            <h5 id=homeTeramNameRealTime></h5>
+                            <h5 id='home-team'></h5>
                         </div>
-                        <h4>Vs</h4>
+                        <h4></h4>
                         <div>
                             <img id='awayTeramImageRealTime' src="" alt="">
-                            <h5 id='awayTeramNameRealTime'>שם הקבוצה</h5>
-                            <h5 id = 'away-team'>תוצאה</h5>
+                            <h5 id='awayTeramNameRealTime'></h5>
+                            <h5 id='away-team'></h5>
                         </div>
-                        
+
                     </div>
-                    <!--<table class="matchTableHead" >
-                        <tr >
-                            <td class='tabletdmatch' id='tableMatchHome'>
-                               
-                                
-                            </td>
-                            
-                            
-                            <td class='tabletdmatch' id='tableMatchAway'>
-                                
-                            </td>
-                            
-                           
-            
-                        </tr>
-                    </table>-->
-                    
-                    
+
+
+
 
 
                 </div>
@@ -454,12 +442,7 @@
     <!--end of leaguTable-->
 
 
-    <!--
-    <button onclick="team1.Increasr()">increase money</button>
-    <button onclick="Test()">show money</button>
-    <button onclick="team1.ShowPlayers()">show players</button>
-    <button onclick="console.log(player1.GetPosition())">show player position</button>
--->
+   
     <script src="players.js"></script>
     <script src="team.js"></script>
     <script src="slideShow.js"></script>

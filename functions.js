@@ -63,6 +63,7 @@ function ShowPlayers(){
 
    
 }
+
 function insertPlayers(index){
     var elementLi = document.createElement('li');
     var elementImg = document.createElement('img');
@@ -84,9 +85,10 @@ function insertPlayers(index){
 
 function Test(e){
     console.log(e.target.veryCool);
-    console.log(ron);
-    ron = e.target.veryCool;
-    console.log(ron);
+   
+    ron = e.target.item;
+    
+    
     
     document.querySelector('.player-profile').style.visibility = 'visible';
     var playerImg = document.getElementById('playerImg-card');
