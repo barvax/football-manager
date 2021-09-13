@@ -581,4 +581,101 @@ function UpdateArrayAtr(){
 }
 
 UpdateArrayAtr();
+/*
+	<style>
+	
+	
+	h3{
+	margin:0;
+	margin-top:10%;
+	
+	}
+	.maindiv{
+	color:white;
 
+		background-image: url("1.png");
+  background-repeat: no-repeat;
+  width:400px;
+  height:400px;
+    background-size: contain;
+	background-position: center;
+	text-align:center;
+	}
+	
+	.div1{
+	height:54%;
+	background-image: url("2.jpg");
+	  background-size: 40%;
+	background-position: center;
+	  background-repeat: no-repeat;
+	 
+	}
+	.div2{
+	
+	height:11%;
+	}
+	.div3{
+	
+	height:35%;
+	display:flex;
+	justify-content: space-evenly;
+	}
+	
+	.left{
+	margin-left:9%;
+	margin-top:2%
+	}
+	
+	.right{
+	margin-right:9%;
+	margin-top:2%
+	}
+	
+	h1{
+	margin:0;
+	}
+.score{
+
+padding-right:40%;
+padding-top: 20%;
+font-size:46px;
+}
+.pos{
+padding-right:40%;
+font-size:26px;
+}
+	</style>
+    <title>ron</title>
+   
+  </head>
+  <body>
+<div class="maindiv">
+<div class="div1">
+<h1 class="score">92</h1>
+<h1 class="pos">ST</h1>
+
+</div>
+<div class='div2'>
+<h1>My Name</h1>
+</div>
+<div class='div3'>
+<div class="left">
+<h3>PAC 54</h3>
+<h3>PAC 54</h3>
+<h3>PAC 54</h3>
+</div>
+<div class="right">
+<h3>PAC 54</h3>
+<h3>PAC 54</h3>
+<h3>PAC 54</h3>
+</div>
+
+
+</div>
+
+</div>
+  
+	
+  </body>
+
+*/
