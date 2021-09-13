@@ -95,9 +95,10 @@ function _TheGame(round) {
     
     
         }else{
-            var Gf1 = RandomWin();
-            var Gf2 = RandomWin();
-    
+          //  var Gf1 = RandomWin();
+           // var Gf2 = RandomWin();
+    var Gf1 = 980 -  ((theTeamsArray[finalFixtursArray[round][j][0]].attack - theTeamsArray[finalFixtursArray[round][j][1]].defence)/2)
+     var Gf2 = 980 -  ((theTeamsArray[finalFixtursArray[round][j][1]].attack - theTeamsArray[finalFixtursArray[round][j][0]].defence)/2)
     
                 
     
@@ -218,12 +219,13 @@ if(isHomeTeam){
 }
 
 function WhoScores() {
+    var baseChanceToScore = 980;
 //alert(teamHomeGlobal.attack);
 //alert(teamAwayGlobal.defence);
-//var homeAttack = teamHomeGlobal.attack-teamAwayGlobal.defence;
-//var awayAttack = teamAwayGlobal.attack-teamHomeGlobal.defence;
-    var team1Chance = 97;
-    var team2Chance = 97;
+var homeAttack = baseChanceToScore - ((teamHomeGlobal.attack-teamAwayGlobal.defence)/2);
+var awayAttack =baseChanceToScore - ((teamAwayGlobal.attack-teamHomeGlobal.defence)/2);
+  //  var team1Chance = 97;
+ //   var team2Chance = 97;
 
     var playerRandom1 = Math.floor(Math.random() * teamHomeGlobal.players.length - 1) + 1;
     console.log(playerRandom1);
@@ -232,12 +234,12 @@ function WhoScores() {
     var playerRandom2 = Math.floor(Math.random() * teamAwayGlobal.players.length - 1) + 1;
     var player2 = teamAwayGlobal.players[playerRandom2].name;
     //alert(playerRandom2)
-    var chanceToScore1 = Math.floor(Math.random() * 100);
-    var chanceToScore2 = Math.floor(Math.random() * 100);
+    var chanceToScore1 = Math.floor(Math.random() * 1000);
+    var chanceToScore2 = Math.floor(Math.random() * 1000);
 
 
 
-    if (chanceToScore1 > team1Chance) {
+    if (chanceToScore1 > homeAttack) {
         BuildScorers('tableMatchHome', 'home');
         goal1 += 1;
         Team1Scorers.push(player1);
@@ -257,7 +259,7 @@ function WhoScores() {
 
 
     }
-    if (chanceToScore2 > team2Chance) {
+    if (chanceToScore2 > awayAttack) {
         BuildScorers('tableMatchAway', 'away');
         goal2 += 1;
         Team2Scorers.push(player2);
