@@ -252,11 +252,14 @@ var awayAttack =baseChanceToScore - ((teamAwayGlobal.attack-teamHomeGlobal.defen
     //alert(playerRandom2)
     var chanceToScore1 = Math.floor(Math.random() * 1000);
     var chanceToScore2 = Math.floor(Math.random() * 1000);
-    console.log(chanceToScore1);
+   
 
 
 
     if (chanceToScore1 > homeAttack) {
+         console.log('chanceToScore1');
+         console.log(chanceToScore1);
+         console.log('-------');
         var playerRandom1 = Math.floor(Math.random() * teamHomeGlobal.players.length - 1) + 1;
           var player1 = teamHomeGlobal.players[playerRandom1].name;
         BuildScorers('tableMatchHome', 'home');
@@ -279,6 +282,9 @@ var awayAttack =baseChanceToScore - ((teamAwayGlobal.attack-teamHomeGlobal.defen
 
     }
     if (chanceToScore2 > awayAttack) {
+         console.log('chanceToScore2');
+         console.log(chanceToScore2);
+         console.log('-------');
          var playerRandom2 = Math.floor(Math.random() * teamAwayGlobal.players.length - 1) + 1;
     var player2 = teamAwayGlobal.players[playerRandom2].name;
         BuildScorers('tableMatchAway', 'away');
