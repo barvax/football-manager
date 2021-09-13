@@ -8,6 +8,8 @@ var wereIsMyTeam; //אני מקבל כאן את האינדקס של המקום �
 var myTeamGoals=8;
 var compTeamGoals=8;
 var isHomeTeam = false;
+
+alert('o.k')
 function StartTheGame(){
     _StartTheGame(roundCount);
 }
@@ -95,10 +97,25 @@ function _TheGame(round) {
     
     
         }else{
-          //  var Gf1 = RandomWin();
-           // var Gf2 = RandomWin();
-    var Gf1 = 980 -  ((theTeamsArray[finalFixtursArray[round][j][0]].attack - theTeamsArray[finalFixtursArray[round][j][1]].defence)/2)
-     var Gf2 = 980 -  ((theTeamsArray[finalFixtursArray[round][j][1]].attack - theTeamsArray[finalFixtursArray[round][j][0]].defence)/2)
+          ///////////////קצת טוחן את המחשב פה- צריך למצוא אלגוריתם אחר  
+             var Gf1 =0;
+            var Gf2 = 0;
+             var team1attack = 980 -  ((theTeamsArray[finalFixtursArray[round][j][0]].attack - theTeamsArray[finalFixtursArray[round][j][1]].defence)/2)
+     var team2attack = 980 -  ((theTeamsArray[finalFixtursArray[round][j][1]].attack - theTeamsArray[finalFixtursArray[round][j][0]].defence)/2)
+            for(i=0;i<90;i++){
+            var chanceToScore1 = Math.floor(Math.random() * 1000);
+             var chanceToScore2 = Math.floor(Math.random() * 1000);    
+                if(chanceToScore1>team1attack){
+                Gf1++;
+                }
+                if(chanceToScore2>team2attack){
+                 Gf2++;
+                }
+            }
+              
+  
+           
+   
     
                 
     
