@@ -18,6 +18,32 @@ function MoveSlide(sign){
     var name = document.getElementById('player-Profile-name');
     var number = document.getElementById('player-Profile-number');
     var position = document.getElementById('player-Profile-position');
+
+    //////new new new //////
+var xTotal = document.getElementById('player-Total-score');
+xTotal.innerHTML = myTeam.players[ron].newAtr[6];
+var xPos =  document.getElementById('player-position');
+xPos.innerHTML = myTeam.players[ron].position;
+var playerNewImg =  document.getElementById('player-img-new');
+playerNewImg.src = myTeam.players[ron].img;
+var xName = document.getElementById('player-NaMe');
+xName.innerHTML = myTeam.players[ron].name;
+var xPAC = document.getElementById('PAC');
+xPAC.innerHTML = myTeam.players[ron].newAtr[0]+' PAC';
+var xSHO = document.getElementById('SHO');
+xSHO.innerHTML = myTeam.players[ron].newAtr[1]+' SHO';
+var xPAS = document.getElementById('PAS');
+xPAS.innerHTML = myTeam.players[ron].newAtr[2]+' PAS';
+var xDRI = document.getElementById('DRI');
+xDRI.innerHTML = myTeam.players[ron].newAtr[3]+' DRI';
+var xDEF = document.getElementById('DEF');
+xDEF.innerHTML = myTeam.players[ron].newAtr[4]+' DEF';
+var xPHY = document.getElementById('PHY');
+xPHY.innerHTML = myTeam.players[ron].newAtr[5]+' PHY';
+
+
+///end   end /////////
+    /*
     var corners = document.getElementById('Corners');
     var aggression = document.getElementById('Aggression');
     var acceleration = document.getElementById('Acceleration');
@@ -55,12 +81,14 @@ function MoveSlide(sign){
    var avgMental = document.getElementById('avg mental');
    var avgPhysical = document.getElementById('avg Physical');
    var totalScore = document.getElementById('total score');
+   */
    var playerImg = document.getElementById('playerImg-card');
    var fieldImg = document.getElementById('field-img-card');
 
     name.innerHTML = myTeam.players[ron].name;
     number.innerHTML = myTeam.players[ron].number;
     position.innerHTML = myTeam.players[ron].position;
+    /*
     corners.innerHTML = myTeam.players[ron].technical.corners;
     aggression.innerHTML = myTeam.players[ron].mental.Aggression;
     acceleration.innerHTML = myTeam.players[ron].physical.Acceleration;
@@ -98,6 +126,8 @@ function MoveSlide(sign){
     avgMental.innerHTML = myTeam.players[ron].mental.avgmental;
     avgPhysical.innerHTML = myTeam.players[ron].physical.avgPhysical;
     totalScore.innerHTML = myTeam.players[ron].total +' / 100';
+    */
     playerImg.src = myTeam.players[ron].img;
     fieldImg.src = myTeam.players[ron].positionImg;
+    
 }

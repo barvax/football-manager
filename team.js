@@ -68,7 +68,9 @@ var stats0 = {
     last4:'<i class="far fa-circle"></i>',
     last3 : '<i class="far fa-circle"></i>',
     last2 : '<i class="far fa-circle"></i>',
-    last1: '<i class="far fa-circle"></i>'
+    last1: '<i class="far fa-circle"></i>',
+    avgAttack: 0,
+    avgDefence:0
 }
 var stats1 = {
     played:0,
@@ -83,7 +85,9 @@ var stats1 = {
     last4:'<i class="far fa-circle"></i>',
     last3 : '<i class="far fa-circle"></i>',
     last2 : '<i class="far fa-circle"></i>',
-    last1: '<i class="far fa-circle"></i>'
+    last1: '<i class="far fa-circle"></i>',
+    avgAttack: 0,
+    avgDefence:0
 }
 var stats2 = {
     played:0,
@@ -98,7 +102,9 @@ var stats2 = {
     last4:'<i class="far fa-circle"></i>',
     last3 : '<i class="far fa-circle"></i>',
     last2 : '<i class="far fa-circle"></i>',
-    last1: '<i class="far fa-circle"></i>'
+    last1: '<i class="far fa-circle"></i>',
+    avgAttack: 0,
+    avgDefence:0
 }
 var stats3 = {
     played:0,
@@ -113,7 +119,9 @@ var stats3 = {
     last4:'<i class="far fa-circle"></i>',
     last3 : '<i class="far fa-circle"></i>',
     last2 : '<i class="far fa-circle"></i>',
-    last1: '<i class="far fa-circle"></i>'
+    last1: '<i class="far fa-circle"></i>',
+    avgAttack: 0,
+    avgDefence:0
 }
 var stats4 = {
     played:0,
@@ -128,7 +136,9 @@ var stats4 = {
     last4:'<i class="far fa-circle"></i>',
     last3 : '<i class="far fa-circle"></i>',
     last2 : '<i class="far fa-circle"></i>',
-    last1: '<i class="far fa-circle"></i>'
+    last1: '<i class="far fa-circle"></i>',
+    avgAttack: 0,
+    avgDefence:0
 }
 var stats5 = {
     played:0,
@@ -143,7 +153,9 @@ var stats5 = {
     last4:'<i class="far fa-circle"></i>',
     last3 : '<i class="far fa-circle"></i>',
     last2 : '<i class="far fa-circle"></i>',
-    last1: '<i class="far fa-circle"></i>'
+    last1: '<i class="far fa-circle"></i>',
+    avgAttack: 0,
+    avgDefence:0
 }
 var stats6 = {
     played:0,
@@ -158,7 +170,9 @@ var stats6 = {
     last4:'<i class="far fa-circle"></i>',
     last3 : '<i class="far fa-circle"></i>',
     last2 : '<i class="far fa-circle"></i>',
-    last1: '<i class="far fa-circle"></i>'
+    last1: '<i class="far fa-circle"></i>',
+    avgAttack: 0,
+    avgDefence:0
 }
 var stats7 = {
     played:0,
@@ -173,7 +187,9 @@ var stats7 = {
     last4:'<i class="far fa-circle"></i>',
     last3 : '<i class="far fa-circle"></i>',
     last2 : '<i class="far fa-circle"></i>',
-    last1: '<i class="far fa-circle"></i>'
+    last1: '<i class="far fa-circle"></i>',
+    avgAttack: 0,
+    avgDefence:0
 }
 var stats8 = {
     played:0,
@@ -188,7 +204,9 @@ var stats8 = {
     last4:'<i class="far fa-circle"></i>',
     last3 : '<i class="far fa-circle"></i>',
     last2 : '<i class="far fa-circle"></i>',
-    last1: '<i class="far fa-circle"></i>'
+    last1: '<i class="far fa-circle"></i>',
+    avgAttack: 0,
+    avgDefence:0
 }
 var stats9 = {
     played:0,
@@ -203,7 +221,9 @@ var stats9 = {
     last4:'<i class="far fa-circle"></i>',
     last3 : '<i class="far fa-circle"></i>',
     last2 : '<i class="far fa-circle"></i>',
-    last1: '<i class="far fa-circle"></i>'
+    last1: '<i class="far fa-circle"></i>',
+    avgAttack: 0,
+    avgDefence:0
 }
 var stats10 = {
     played:0,
@@ -218,7 +238,9 @@ var stats10 = {
     last4:'<i class="far fa-circle"></i>',
     last3 : '<i class="far fa-circle"></i>',
     last2 : '<i class="far fa-circle"></i>',
-    last1: '<i class="far fa-circle"></i>'
+    last1: '<i class="far fa-circle"></i>',
+    avgAttack: 0,
+    avgDefence:0
 }
 var stats11 = {
     played:0,
@@ -233,7 +255,9 @@ var stats11 = {
     last4:'<i class="far fa-circle"></i>',
     last3 : '<i class="far fa-circle"></i>',
     last2 : '<i class="far fa-circle"></i>',
-    last1: '<i class="far fa-circle"></i>'
+    last1: '<i class="far fa-circle"></i>',
+    avgAttack: 0,
+    avgDefence:0
 }
 var stats12 = {
     played:0,
@@ -248,7 +272,9 @@ var stats12 = {
     last4:'<i class="far fa-circle"></i>',
     last3 : '<i class="far fa-circle"></i>',
     last2 : '<i class="far fa-circle"></i>',
-    last1: '<i class="far fa-circle"></i>'
+    last1: '<i class="far fa-circle"></i>',
+    avgAttack: 0,
+    avgDefence:0
 }
 var stats13 = {
     played:0,
@@ -263,7 +289,9 @@ var stats13 = {
     last4:'<i class="far fa-circle"></i>',
     last3 : '<i class="far fa-circle"></i>',
     last2 : '<i class="far fa-circle"></i>',
-    last1: '<i class="far fa-circle"></i>'
+    last1: '<i class="far fa-circle"></i>',
+    avgAttack: 0,
+    avgDefence:0
 }
 
 

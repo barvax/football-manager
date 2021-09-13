@@ -87,7 +87,8 @@ function Test(e){
     console.log(e.target.veryCool);
    
     ron = e.target.item;
-    
+    console.log('///////////*********//////////// */')
+    console.log(ron)
     
     
     document.querySelector('.player-profile').style.visibility = 'visible';
@@ -96,7 +97,32 @@ function Test(e){
     var name = document.getElementById('player-Profile-name');
     var number = document.getElementById('player-Profile-number');
     var position = document.getElementById('player-Profile-position');
-    var corners = document.getElementById('Corners');
+//////new new new //////
+var xTotal = document.getElementById('player-Total-score');
+xTotal.innerHTML = e.target.item.newAtr[6];
+var xPos =  document.getElementById('player-position');
+xPos.innerHTML = e.target.item.position;
+var playerNewImg =  document.getElementById('player-img-new');
+playerNewImg.src = e.target.item.img;
+var xName = document.getElementById('player-NaMe');
+xName.innerHTML = e.target.item.name;
+var xPAC = document.getElementById('PAC');
+xPAC.innerHTML = e.target.item.newAtr[0]+' PAC';
+var xSHO = document.getElementById('SHO');
+xSHO.innerHTML = e.target.item.newAtr[1]+' SHO';
+var xPAS = document.getElementById('PAS');
+xPAS.innerHTML = e.target.item.newAtr[2]+' PAS';
+var xDRI = document.getElementById('DRI');
+xDRI.innerHTML = e.target.item.newAtr[3]+' DRI';
+var xDEF = document.getElementById('DEF');
+xDEF.innerHTML = e.target.item.newAtr[4]+' DEF';
+var xPHY = document.getElementById('PHY');
+xPHY.innerHTML = e.target.item.newAtr[5]+' PHY';
+
+
+///end   end /////////
+
+   /* var corners = document.getElementById('Corners');
     var aggression = document.getElementById('Aggression');
     var acceleration = document.getElementById('Acceleration');
     var crossing = document.getElementById('Crossing');
@@ -133,11 +159,11 @@ function Test(e){
    var avgMental = document.getElementById('avg mental');
    var avgPhysical = document.getElementById('avg Physical');
    var totalScore = document.getElementById('total score');
-
+*/
     name.innerHTML = e.target.item.name;
     number.innerHTML = e.target.item.number;
     position.innerHTML = e.target.item.position;
-    corners.innerHTML = e.target.item.technical.corners;
+  /*  corners.innerHTML = e.target.item.technical.corners;
     aggression.innerHTML = e.target.item.mental.Aggression;
     acceleration.innerHTML = e.target.item.physical.Acceleration;
     crossing.innerHTML = e.target.item.technical.crossing;
@@ -174,6 +200,7 @@ function Test(e){
     avgMental.innerHTML = e.target.item.mental.avgmental;
     avgPhysical.innerHTML = e.target.item.physical.avgPhysical;
     totalScore.innerHTML = e.target.item.total +' / 100';
+    */
     playerImg.src = e.target.item.img;
     fieldImg.src = e.target.item.positionImg;
 }

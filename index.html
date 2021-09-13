@@ -20,8 +20,8 @@
 
 </head>
 
-<body >
-   
+<body>
+
     <!--the slideShow screen-->
 
     <div class='slideshow'>
@@ -29,10 +29,12 @@
             <div class="card">
                 <img class='team-img' src="images/M.Haifa.png" alt="" id='team-image'>
                 <div class="arrows">
-                    <h1 onclick="pickTeam('-')" style="font-size: 40px; color: aliceblue;cursor: pointer;"><i class="far fa-arrow-alt-circle-left"></i></h1>
-                            <h4 id='team-name'>Maccabi Haifa</h4>
-                            <h1 onclick="pickTeam('+')" style="font-size: 40px; color: aliceblue;cursor: pointer;"><i class="far fa-arrow-alt-circle-right"></i>
-                            </h1>
+                    <h1 onclick="pickTeam('-')" style="font-size: 40px; color: aliceblue;cursor: pointer;"><i
+                            class="far fa-arrow-alt-circle-left"></i></h1>
+                    <h4 id='team-name'>Maccabi Haifa</h4>
+                    <h1 onclick="pickTeam('+')" style="font-size: 40px; color: aliceblue;cursor: pointer;"><i
+                            class="far fa-arrow-alt-circle-right"></i>
+                    </h1>
                 </div>
 
                 <div class="skills-box">
@@ -198,7 +200,7 @@
         <div><img id='field-img-card' class='field-img-card' src="" alt=""></div>
 
 
-        <div>
+        <div style="display: none;">
             <h5>Player Name:</h5>
             <h5 id='player-Profile-name'>1</h5>
             <h5>Player Position:</h5>
@@ -209,9 +211,23 @@
 
 
         </div>
+        <div class='myNewPlayerCard playerCard' id='myNewPlayerCard'>
 
-       
-<!--
+            <h6 id='player-Total-score'>Total score</h6>
+            <h6 id='player-position'>ST</h6>
+            <h6 id='player-NaMe'>ST</h6>
+            <img id='player-img-new' src="players/M.haifa/144877.gif">
+            <h6 id='PAC'>PAC</h6>
+            <h6 id='SHO'>SHO</h6>
+            <h6 id='PAS'>PAS</h6>
+            <h6 id='DRI'>DRI</h6>
+            <h6 id='DEF'>DEF</h6>
+            <h6 id='PHY'>PHY</h6>
+
+
+        </div>
+
+        <!--
         <table style="width: 50%;" class='atributes'>
             <tr style='color: rgb(235, 220, 17);font-size: 10px;'>
                 <th colspan="2">Technical</th>
@@ -344,15 +360,15 @@
 
             </tr>
 
-            <div style="display: flex;justify-content: space-between;font-size: 40px;">
-                <h1 class='handle' onclick="MoveSlide('-')"><i class="far fa-arrow-alt-circle-left"></i> </h1>
-                        <h1 class='handle' onclick="MoveSlide('+')"><i class="far fa-arrow-alt-circle-right"></i></h1>
-            </div>
+           
         </table>
-       
-        -->
+       -->
+        <div style="display: flex;justify-content: space-between;font-size: 40px;">
+            <h1 class='handle' onclick="MoveSlide('-')"><i class="far fa-arrow-alt-circle-left"></i> </h1>
+            <h1 class='handle' onclick="MoveSlide('+')"><i class="far fa-arrow-alt-circle-right"></i></h1>
+        </div>
     </div>
-    <div class='playerCard'> <h1>ron</h1></div>
+
     <!--end of player profile-->
     <!--fixturs-->
     <div class='section-fixturs'>
@@ -442,7 +458,7 @@
     <!--end of leaguTable-->
 
 
-   
+
     <script src="players.js"></script>
     <script src="team.js"></script>
     <script src="slideShow.js"></script>

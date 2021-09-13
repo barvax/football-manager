@@ -213,6 +213,3 @@ function Round1() {
 
 Round1();
 InsertStadiumName();
-
-
-
