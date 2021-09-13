@@ -88,7 +88,7 @@ function _TheGame(round) {
             } else if (myTeamGoals < compTeamGoals) {
     
                 theTeamsArray[finalFixtursArray[round][j][0]].statistics.lose++;
-                theTeamsArray[finalFixtursArray[round][j][1]].wins++;
+                theTeamsArray[finalFixtursArray[round][j][1]].statistics.wins++;
                 theTeamsArray[finalFixtursArray[round][j][1]].statistics.points += 3;
             }
     
@@ -130,7 +130,7 @@ function _TheGame(round) {
             } else if (Gf1 < Gf2) {
     
                 theTeamsArray[finalFixtursArray[round][j][0]].statistics.lose++;
-                theTeamsArray[finalFixtursArray[round][j][1]].wins++;
+                theTeamsArray[finalFixtursArray[round][j][1]].statistics.wins++;
                 theTeamsArray[finalFixtursArray[round][j][1]].statistics.points += 3;
             }
     
