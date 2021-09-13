@@ -100,11 +100,11 @@ function _TheGame(round) {
           ///////////////קצת טוחן את המחשב פה- צריך למצוא אלגוריתם אחר  
              var Gf1 =0;
             var Gf2 = 0;
-             var team1attack = 980 -  ((theTeamsArray[finalFixtursArray[round][j][0]].attack - theTeamsArray[finalFixtursArray[round][j][1]].defence)/2)
-     var team2attack = 980 -  ((theTeamsArray[finalFixtursArray[round][j][1]].attack - theTeamsArray[finalFixtursArray[round][j][0]].defence)/2)
+             var team1attack = 1980 -  ((theTeamsArray[finalFixtursArray[round][j][0]].attack - theTeamsArray[finalFixtursArray[round][j][1]].defence)/2)
+     var team2attack = 1980 -  ((theTeamsArray[finalFixtursArray[round][j][1]].attack - theTeamsArray[finalFixtursArray[round][j][0]].defence)/2)
             for(i=0;i<90;i++){
-            var chanceToScore1 = Math.floor(Math.random() * 1000);
-             var chanceToScore2 = Math.floor(Math.random() * 1000);    
+            var chanceToScore1 = Math.floor(Math.random() * 2000);
+             var chanceToScore2 = Math.floor(Math.random() * 2000);    
                 if(chanceToScore1>team1attack){
                 Gf1++;
                 }
@@ -236,7 +236,7 @@ if(isHomeTeam){
 }
 
 function WhoScores() {
-    var baseChanceToScore = 980;
+    var baseChanceToScore = 1980;
 //alert(teamHomeGlobal.attack);
 //alert(teamAwayGlobal.defence);
 var homeAttack = baseChanceToScore - ((teamHomeGlobal.attack-teamAwayGlobal.defence)/2);
@@ -250,8 +250,8 @@ var awayAttack =baseChanceToScore - ((teamAwayGlobal.attack-teamHomeGlobal.defen
     // console.log(player1);
    
     //alert(playerRandom2)
-    var chanceToScore1 = Math.floor(Math.random() * 1000);
-    var chanceToScore2 = Math.floor(Math.random() * 1000);
+    var chanceToScore1 = Math.floor(Math.random() * 2000);
+    var chanceToScore2 = Math.floor(Math.random() * 2000);
    
 
 
