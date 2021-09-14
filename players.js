@@ -561,22 +561,22 @@ function UpdateArrayAtr(){
                
           }else if(AllPlayersArray[i][j].position == 'center'){
             console.log('updated middle')
-            pace=(Math.floor(Math.random() * 51)+50)//pace
-            shot=(Math.floor(Math.random() * 51)+50)//shot
-            pas=(Math.floor(Math.random() * 51)+50)//pas
-            dri=(Math.floor(Math.random() * 51)+50)//dribling
-            def=(Math.floor(Math.random() * 51)+50)//def
-            phy=(Math.floor(Math.random() * 51)+50)// phy
+            pace[0]=(Math.floor(Math.random() * 51)+50)//pace
+            shot[1]=(Math.floor(Math.random() * 51)+50)//shot
+            pas[2]=(Math.floor(Math.random() * 51)+50)//pas
+            dri[3]=(Math.floor(Math.random() * 51)+50)//dribling
+            def[4]=(Math.floor(Math.random() * 51)+50)//def
+            phy[5]=(Math.floor(Math.random() * 51)+50)// phy
             total=(Math.floor((pace[0]+shot[1]+pas[2]+dri[3]+def[4]+phy[5])/6))
            }else if(AllPlayersArray[i][j].position == 'forward'){
            console.log('updated forward')
-            pace=(Math.floor(Math.random() * 51)+50)//pace
-            shot=(Math.floor(Math.random() * 41)+60)//shot
-            pas=(Math.floor(Math.random() * 71)+30)//pas
-            dri=(Math.floor(Math.random() * 51)+50)//dribling
-            def=(Math.floor(Math.random() * 31)+30)//def
-            phy=(Math.floor(Math.random() * 71)+30)// phy
-            total=(Math.floor((pace[0]*3+shot[1]*5+pas[2]*2+dri[3]*5+def[4]+phy[5]*6)/20))
+            pace[0]=(Math.floor(Math.random() * 51)+50)//pace
+            shot[1]=(Math.floor(Math.random() * 41)+60)//shot
+            pas[2]=(Math.floor(Math.random() * 71)+30)//pas
+            dri[3]=(Math.floor(Math.random() * 51)+50)//dribling
+            def[4]=(Math.floor(Math.random() * 31)+30)//def
+            phy[5]=(Math.floor(Math.random() * 71)+30)// phy
+            total[6]=(Math.floor((pace[0]*3+shot[1]*5+pas[2]*2+dri[3]*5+def[4]+phy[5]*6)/20))
            }
             
 
