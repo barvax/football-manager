@@ -60,7 +60,14 @@ function setNewArrayAtr(){
             var phy =playerAtr[i][j];
             var total =playerAtr[i][j];
        
-             if(true){
+		pace.push(10)//pace
+                shot.push(10)//shot
+                pas.push(10)//pas
+                dri.push(10)//dribling
+                def.push(10)//def
+                phy.push(10)// phy
+                total.push(20)  
+           /*  if(true){
                 pace.push(Math.floor(Math.random() * (71-bonus))+30+bonus)//pace
                 shot.push(Math.floor(Math.random() * (71-bonus))+30+bonus)//shot
                 pas.push(Math.floor(Math.random() * (71-bonus))+30+bonus)//pas
@@ -68,7 +75,7 @@ function setNewArrayAtr(){
                 def.push(Math.floor(Math.random() * (71-bonus))+30+bonus)//def
                 phy.push(Math.floor(Math.random() * (71-bonus))+30+bonus)// phy
                 total.push(Math.floor((pace[0]+shot[1]+pas[2]+dri[3]+def[4]+phy[5])/6))  
-             }  
+             }  */
                     
                         
         }
