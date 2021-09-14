@@ -539,7 +539,16 @@ var AllPlayersArray = [ashdodPlayers,haifaPlayers,mTelAvivPlayers,bitarJerusalem
 function UpdateArrayAtr(){
 	alert('O.K?')
     for (let i = 0; i < AllPlayersArray.length; i++) {
-      
+       
+      if(i==1||i==2){
+          bonus=40;
+      }else if(i==3||i==5){
+          bonus=25;
+      }else if(i==4||i==6||i==11||i==12){
+        bonus=0;
+      }else{
+          bonus=10;
+      }
         for (let j = 0; j < NumOfPlayerInTeam[i]; j++) {
             var pace =AllPlayersArray[i][j].newAtr;
             var shot=AllPlayersArray[i][j].newAtr;
@@ -551,31 +560,31 @@ function UpdateArrayAtr(){
             if(AllPlayersArray[i][j].position == 'goal-keeper'||AllPlayersArray[i][j].position=='back'){
               console.log('updated defence')
                
-                pace[0]=(Math.floor(Math.random() * 51)+30)//pace
-                shot[1]=(Math.floor(Math.random() * 41)+30)//shot
-                pas[2]=(Math.floor(Math.random() * 71)+30)//pas
-                dri[3]=(Math.floor(Math.random() * 41)+30)//dribling
-                def[4]=(Math.floor(Math.random() * 51)+50)//def
-                phy[5]=(Math.floor(Math.random() * 51)+50)// phy
+                pace[0]=(Math.floor(Math.random() * 51-bonus)+30+bonus)//pace
+                shot[1]=(Math.floor(Math.random() * 41-bonus)+30+bonus)//shot
+                pas[2]=(Math.floor(Math.random() * 71-bonus)+30+bonus)//pas
+                dri[3]=(Math.floor(Math.random() * 41-bonus)+30+bonus)//dribling
+                def[4]=(Math.floor(Math.random() * 51-bonus)+50+bonus)//def
+                phy[5]=(Math.floor(Math.random() * 51-bonus)+50+bonus)// phy
                 total[6]=(Math.floor((pace[0]+shot[1]+pas[2]+dri[3]+def[4]*10+phy[5]*10)/24))
                
           }else if(AllPlayersArray[i][j].position == 'center'){
             console.log('updated middle')
-            pace[0]=(Math.floor(Math.random() * 51)+50)//pace
-            shot[1]=(Math.floor(Math.random() * 51)+50)//shot
-            pas[2]=(Math.floor(Math.random() * 51)+50)//pas
-            dri[3]=(Math.floor(Math.random() * 51)+50)//dribling
-            def[4]=(Math.floor(Math.random() * 51)+50)//def
-            phy[5]=(Math.floor(Math.random() * 51)+50)// phy
+            pace[0]=(Math.floor(Math.random() * 51-bonus)+50+bonus)//pace
+            shot[1]=(Math.floor(Math.random() * 51-bonus)+50+bonus)//shot
+            pas[2]=(Math.floor(Math.random() * 51-bonus)+50+bonus)//pas
+            dri[3]=(Math.floor(Math.random() * 51-bonus)+50+bonus)//dribling
+            def[4]=(Math.floor(Math.random() * 51-bonus)+50+bonus)//def
+            phy[5]=(Math.floor(Math.random() * 51-bonus)+50+bonus)// phy
             total[6]=(Math.floor((pace[0]+shot[1]+pas[2]+dri[3]+def[4]+phy[5])/6))
            }else if(AllPlayersArray[i][j].position == 'forward'){
            console.log('updated forward')
-            pace[0]=(Math.floor(Math.random() * 51)+50)//pace
-            shot[1]=(Math.floor(Math.random() * 41)+60)//shot
-            pas[2]=(Math.floor(Math.random() * 71)+30)//pas
-            dri[3]=(Math.floor(Math.random() * 51)+50)//dribling
-            def[4]=(Math.floor(Math.random() * 31)+30)//def
-            phy[5]=(Math.floor(Math.random() * 71)+30)// phy
+            pace[0]=(Math.floor(Math.random() * 51-bonus)+50+bonus)//pace
+            shot[1]=(Math.floor(Math.random() * 41-bonus)+60+bonus)//shot
+            pas[2]=(Math.floor(Math.random() * 71-bonus)+30+bonus)//pas
+            dri[3]=(Math.floor(Math.random() * 51-bonus)+50+bonus)//dribling
+            def[4]=(Math.floor(Math.random() * 31-bonus)+30+bonus)//def
+            phy[5]=(Math.floor(Math.random() * 71-bonus)+30+bonus)// phy
             total[6]=(Math.floor((pace[0]*3+shot[1]*5+pas[2]*2+dri[3]*5+def[4]+phy[5]*6)/20))
            }
             
