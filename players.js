@@ -577,7 +577,11 @@ function UpdateArrayAtr(){
         }
         
     }
+   
+	 console.log(' new playerAtr')
     console.log(playerAtr)
+     console.log(AllPlayersArray[1][22].name)
+      console.log(AllPlayersArray[1][22].newAtr)
    
 }
 
