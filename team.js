@@ -316,11 +316,4 @@ var hapoelTelAviv = new Team('Hapoel Tel-Aviv',hapoelTelAvivPlayers,'bloomfield'
 
 var theTeamsArray = [Ashdod,MHaifa,MtelAviv,beitarJerusalem,bneiShacnin,beerSheva,hapoelJerusalem,kiryatShmona,hapoelHaifa,maccabiNetanya,mPetachTikva,hapoelNofHaGalil,hapoelHadera,hapoelTelAviv]
 var sortedTeamsArray = [Ashdod,MHaifa,MtelAviv,beitarJerusalem,bneiShacnin,beerSheva,hapoelJerusalem,kiryatShmona,hapoelHaifa,maccabiNetanya,mPetachTikva,hapoelNofHaGalil,hapoelHadera,hapoelTelAviv];
-console.log(theTeamsArray[1].players[22].name);
-console.log(theTeamsArray[1].players[22].newAtr);
-console.log('----')
-console.log(theTeamsArray[1].players[23].name);
-console.log(theTeamsArray[1].players[23].newAtr);
-console.log('----')
-console.log(theTeamsArray[1].players[2].name);
-console.log(theTeamsArray[1].players[2].newAtr);
+
