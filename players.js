@@ -530,6 +530,7 @@ var AllPlayersArray = [ashdodPlayers,haifaPlayers,mTelAvivPlayers,bitarJerusalem
 //console.log(AllPlayersArray[0].length);
 
 function UpdateArrayAtr(){
+	alert('updated atr')
     for (let i = 0; i < AllPlayersArray.length; i++) {
       
         for (let j = 0; j < NumOfPlayerInTeam[i]; j++) {
@@ -541,7 +542,7 @@ function UpdateArrayAtr(){
             var phy =playerAtr[i][j];
             var total =playerAtr[i][j];
             if(AllPlayersArray[i][j].position == 'goal-keeper'||AllPlayersArray[i][j].position=='back'){
-               
+              console.log('updated defence')
                
                 pace[0]=(Math.floor(Math.random() * 51)+30)//pace
                 shot[1]=(Math.floor(Math.random() * 41)+30)//shot
@@ -552,7 +553,7 @@ function UpdateArrayAtr(){
                 total[6]=(Math.floor((pace[0]+shot[1]+pas[2]+dri[3]+def[4]*10+phy[5]*10)/24))
                
           }else if(AllPlayersArray[i][j].position == 'center'){
-           
+            console.log('updated middle')
             pace=(Math.floor(Math.random() * 51)+50)//pace
             shot=(Math.floor(Math.random() * 51)+50)//shot
             pas=(Math.floor(Math.random() * 51)+50)//pas
@@ -561,7 +562,7 @@ function UpdateArrayAtr(){
             phy=(Math.floor(Math.random() * 51)+50)// phy
             total=(Math.floor((pace[0]+shot[1]+pas[2]+dri[3]+def[4]+phy[5])/6))
            }else if(AllPlayersArray[i][j].position == 'forward'){
-          
+           console.log('updated forward')
             pace=(Math.floor(Math.random() * 51)+50)//pace
             shot=(Math.floor(Math.random() * 41)+60)//shot
             pas=(Math.floor(Math.random() * 71)+30)//pas
