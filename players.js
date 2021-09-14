@@ -530,17 +530,17 @@ var AllPlayersArray = [ashdodPlayers,haifaPlayers,mTelAvivPlayers,bitarJerusalem
 //console.log(AllPlayersArray[0].length);
 
 function UpdateArrayAtr(){
-	alert('updated atr')
+	alert('O.K?')
     for (let i = 0; i < AllPlayersArray.length; i++) {
       
         for (let j = 0; j < NumOfPlayerInTeam[i]; j++) {
-            var pace =playerAtr[i][j];
-            var shot=playerAtr[i][j];
-            var pas = playerAtr[i][j];
-            var dri = playerAtr[i][j];
-            var def = playerAtr[i][j];
-            var phy =playerAtr[i][j];
-            var total =playerAtr[i][j];
+            var pace =AllPlayersArray[i][j].newAtr;
+            var shot=AllPlayersArray[i][j].newAtr;
+            var pas = AllPlayersArray[i][j].newAtr;
+            var dri = AllPlayersArray[i][j].newAtr;
+            var def = AllPlayersArray[i][j].newAtr;
+            var phy =AllPlayersArray[i][j].newAtr;
+            var total =AllPlayersArray[i][j].newAtr;
             if(AllPlayersArray[i][j].position == 'goal-keeper'||AllPlayersArray[i][j].position=='back'){
               console.log('updated defence')
                
