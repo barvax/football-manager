@@ -567,7 +567,7 @@ function UpdateArrayAtr(){
             dri[3]=(Math.floor(Math.random() * 51)+50)//dribling
             def[4]=(Math.floor(Math.random() * 51)+50)//def
             phy[5]=(Math.floor(Math.random() * 51)+50)// phy
-            total=(Math.floor((pace[0]+shot[1]+pas[2]+dri[3]+def[4]+phy[5])/6))
+            total[6]=(Math.floor((pace[0]+shot[1]+pas[2]+dri[3]+def[4]+phy[5])/6))
            }else if(AllPlayersArray[i][j].position == 'forward'){
            console.log('updated forward')
             pace[0]=(Math.floor(Math.random() * 51)+50)//pace
