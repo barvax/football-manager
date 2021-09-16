@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="fixtures.css">
     <link rel="stylesheet" href="leagueTable.css">
     <link rel="stylesheet" href="matchDay.css">
+    <link rel="stylesheet" href="pickTeamMain.css">
 
     <title>FootBall Manager</title>
 
@@ -118,7 +119,7 @@
 
         </div>
     </div>
-    <button onclick=" ">none</button>
+   <!-- <button onclick=" ">none</button>-->
 
 
     <!--<button onclick="SortTeamsByTablePlace()">sort table</button>-->
@@ -196,8 +197,8 @@
 
     <!--player profile-->
     <div class='player-profile'>
-        <i class="far fa-window-close" onclick="ShowHide('.player-profile','hidden')"></i>
-        <div><img id='field-img-card' class='field-img-card' src="" alt=""></div>
+       
+      <div class='closePlayerProfile' onclick="ShowHide('.player-profile','hidden')">X</div>
 
 
         <div style="display: none;">
@@ -211,8 +212,8 @@
 
 
         </div>
-        <div class='myNewPlayerCard playerCard' id='myNewPlayerCard'>
-
+        <div class='myNewPlayerCard ' id='myNewPlayerCard'>
+<!--
             <h6 id='player-Total-score'>Total score</h6>
             <h6 id='player-position'>ST</h6>
             <h6 id='player-NaMe'>ST</h6>
@@ -224,146 +225,40 @@
             <h6 id='DEF'>DEF</h6>
             <h6 id='PHY'>PHY</h6>
 
-
-        </div>
-
-        <!--
-        <table style="width: 50%;" class='atributes'>
-            <tr style='color: rgb(235, 220, 17);font-size: 10px;'>
-                <th colspan="2">Technical</th>
-                <th colspan="2">Mental</th>
-                <th colspan="2">Physical</th>
-            </tr>
-
-            <tr>
-                <td>Corners </td>
-                <td id='Corners'></td>
-                <td>Aggression</td>
-                <td id='Aggression'></td>
-                <td>Acceleration</td>
-                <td id='Acceleration'></td>
-
-            </tr>
-            <tr>
-                <td>Crossing</td>
-                <td id='Crossing'></td>
-                <td>Anticipation</td>
-                <td id='Anticipation'></td>
-                <td>Agillity</td>
-                <td id='Agillity'></td>
-
-
-            </tr>
-            <tr>
-                <td>Dribbling</td>
-                <td id='Dribbling'>$</td>
-                <td>Bravery</td>
-                <td id='Bravery'></td>
-                <td>Ballance</td>
-                <td id='Ballance'></td>
-
-            </tr>
-            <tr>
-                <td>Finishing</td>
-                <td id='Finishing'>$</td>
-                <td>Composure</td>
-                <td id='Composure'></td>
-                <td>Jumping</td>
-                <td id='Jumping'></td>
-
-            </tr>
-            <tr>
-                <td>Free Kicks</td>
-                <td id='Free Kicks'></td>
-                <td>Concentrations</td>
-                <td id='Concentration'></td>
-                <td>Natural Fithness</td>
-                <td id='Natural Fithness'></td>
-
-            </tr>
-            <tr>
-                <td>Heading</td>
-                <td id='Heading'></td>
-                <td>Determination</td>
-                <td id='Determination'></td>
-                <td>Pace</td>
-                <td id='Pace'></td>
-
-            </tr>
-            <tr>
-                <td>Long shots</td>
-                <td id='Long shots'></td>
-                <td>Flair</td>
-                <td id='Flair'></td>
-                <td>Stamina</td>
-                <td id='Stamina'></td>
-
-            </tr>
-            <tr>
-                <td>Marking</td>
-                <td id='Marking'></td>
-                <td>Leadeship</td>
-                <td id='Leadeship'></td>
-
-
-            </tr>
-            <tr>
-                <td>Passing</td>
-                <td id='Passing'></td>
-                <td>Off the ball</td>
-                <td id='Off the ball'></td>
-                <td style='color: rgb(235, 220, 17);font-size: 10px;'>Total Score</td>
-                <td style='color: rgb(235, 220, 17);font-size: 10px;' id='total score'></td>
-
-
-            </tr>
-            <tr>
-                <td>Penelty</td>
-                <td id='Penelty'></td>
-                <td>Positioning</td>
-                <td id='Positioning'></td>
-
-
-            </tr>
-            <tr>
-                <td>Tackeling</td>
-                <td id='Tackeling'></td>
-                <td>TeamWork</td>
-                <td id='TeamWork'></td>
-
-
-            </tr>
-            <tr>
-                <td>Technique</td>
-                <td id='Technique'></td>
-                <td>Vision</td>
-                <td id='Vision'></td>
-
-
-            </tr>
-            <tr>
-                <td>Long Throws</td>
-                <td id='Long Throws'></td>
-                <td>Work Rate</td>
-                <td id='Work Rate'></td>
-
-
-            </tr>
-            <tr style="color: rgb(236, 195, 13);font-size: 10px;font-weight: 700;" ;>
-                <td>Avrage Technivcal</td>
-                <td id='avg tech'></td>
-                <td>Avrage Mental</td>
-                <td id='avg mental'></td>
-                <td>Avrage Physical</td>
-                <td id='avg Physical'></td>
-
-
-            </tr>
-
+        -->
+      
+        <div class="maindiv-player-profile">
+            <div class="div1-player-profile">
+                <h1 id='player-Total-score'  class="score-player-profile">92</h1>
+            <!--    <img id='player-img-new' src='card-img/mcabi-haifa/0.png'>-->
            
-        </table>
-       -->
-        <div style="display: flex;justify-content: space-between;font-size: 40px;">
+            <h1 id='player-position' class="pos-player-profile">ST</h1>
+            
+            </div>
+            <div class='div2-player-profile'>
+            <h1 id='player-NaMe'  class='name-player-profile'>My Name</h1>
+            </div>
+            <div class='div3-player-profile'>
+            <div class="left-player-profile">
+            <h3  id='PAC' class='h3--player-profile'>PAC 54</h3>
+            <h3  id='SHO' class='h3--player-profile'>PAC 54</h3>
+            <h3 id='PAS' class='h3--player-profile'>PAC 54</h3>
+            </div>
+            <div class="right-player-profile">
+            <h3 id='DRI' class='h3--player-profile'>PAC 54</h3>
+            <h3 id='DEF' class='h3--player-profile'>PAC 54</h3>
+            <h3 id='PHY' class='h3--player-profile'>PAC 54</h3>
+            </div>
+            
+            
+            </div>
+            
+            </div>
+        </div>
+  
+      
+      
+        <div class="handels">
             <h1 class='handle' onclick="MoveSlide('-')"><i class="far fa-arrow-alt-circle-left"></i> </h1>
             <h1 class='handle' onclick="MoveSlide('+')"><i class="far fa-arrow-alt-circle-right"></i></h1>
         </div>
@@ -456,6 +351,54 @@
 
     </div>
     <!--end of leaguTable-->
+    <!-- pick Team-->
+<div id='pickTeamMain'>
+  <div class='pickTeamMainUl'>
+      <div>Close</div>
+      <div style="margin-left: 5%;">4-4-2</div>
+      <div>4-5-1</div>
+      <div>3-5-2</div>
+      <div>4-3-3</div>
+      <div style="margin-left: 20%;">x</div>
+      <div>y</div>
+      <div>z</div>
+      <div class="dropdown" style="float: right;">Start Game
+        
+    </div>
+  
+
+  </div>
+  
+  
+  
+
+
+  <div class="grid-container">
+      <div class="grid-item ">
+          <div class='field'>
+              <div id='gk1' onclick="Test('gk','gk1')" class='btn btn1'></div>
+              <div id='def1' onclick="Test('def','def1')" class='btn btn2'></div>
+              <div id='def2' onclick="Test('def','def2')" class='btn btn3'></div>
+              <div id='def3' onclick="Test('def','def3')" class='btn btn4'></div>
+              <div id='def4' onclick="Test('def','def4')" class='btn btn5'></div>
+              <div id='mid1' onclick="Test('mid','mid1')" class='btn btn6'></div>
+              <div id='mid2' onclick="Test('mid','mid2')" class='btn btn7'></div>
+              <div id='mid3' onclick="Test('mid','mid3')" class='btn btn8'></div>
+              <div id='mid4' onclick="Test('mid','mid4')" class='btn btn9'></div>
+              <div id = 'st1' onclick="Test('st','st1')" class='btn btn10'></div>
+              <div id = 'st2' onclick="Test('st','st2')" class='btn btn11'></div>
+
+          </div>
+
+      </div>
+      <div class="grid-item" id='targetidTeamPlayers'></div>
+
+  </div>
+    
+    </div>
+    
+</div>
+     <!--end of pick Team-->
 
 
 
@@ -469,6 +412,7 @@
     <script src="leagueTable.js"></script>
     <script src="theGame.js"></script>
     <script src="test.js"></script>
+    <script src="pickTeamMain.js"></script>
 
 </body>
 

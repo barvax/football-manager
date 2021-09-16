@@ -28,11 +28,12 @@ function AVgTeamStats(){
 }
 AVgTeamStats();
 
-console.log('++++++++++')
-pickTeam('test');
 
+pickTeam('test');
+/*
 for (let i = 0; i < theTeamsArray.length; i++) {
     console.log(theTeamsArray[i].defence)
     console.log(theTeamsArray[i].attack)
     
 }
+*/

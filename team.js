@@ -1,4 +1,4 @@
-function Team(name,players,stadium,money,image,attack,defence,popularity,stadiumCapacity,avgAtended,financialState,traningFacilities,staff,statistics,roundResults){
+function Team(name,players,stadium,money,image,attack,defence,popularity,stadiumCapacity,avgAtended,financialState,traningFacilities,staff,statistics,roundResults,startingLineup){
     {
         this.name = name;
         this.players = players;
@@ -15,6 +15,7 @@ function Team(name,players,stadium,money,image,attack,defence,popularity,stadium
         this.staff = staff;
         this.statistics = statistics;
         this.roundResults = roundResults;
+        this.startingLineup = startingLineup;
         this.GetMoney = function(){
             return this.money;
         }
@@ -41,6 +42,21 @@ function Team(name,players,stadium,money,image,attack,defence,popularity,stadium
 function ShowMeRoundResultTeam(){
     console.log(theTeamsArray[0].roundResults) ;
 }
+var startingLineUp0 = [];
+var startingLineUp1 = [];
+var startingLineUp2 = [];
+var startingLineUp3 = [];
+var startingLineUp4 = [];
+var startingLineUp5 = [];
+var startingLineUp6 = [];
+var startingLineUp7 = [];
+var startingLineUp8 = [];
+var startingLineUp9 = [];
+var startingLineUp10 = [];
+var startingLineUp11 = [];
+var startingLineUp12 = [];
+var startingLineUp13 = [];
+
 var roundResultTeam0 = [];
 var roundResultTeam1 = [];
 var roundResultTeam2 = [];
@@ -299,7 +315,7 @@ financial = ['at risk','poor','fair','good','rich']
 training = ['shit hole','poor','avrage','good','exelent','world class']
 staff = ['avrage']
 var Ashdod = new Team('F.C Ashdod',ashdodPlayers,'Yud-Alef Stadium',1500,'images/ashdod.png',75,75,35,7800,4500,financial[1],training[0],staff[0],stats0,roundResultTeam0);
-var MHaifa = new Team('Maccabi Haifa',haifaPlayers,'sami-ofer',1500,'images/M.Haifa.png',90,75,88,30780,24000,financial[4],training[5],staff[0],stats1,roundResultTeam1);
+var MHaifa = new Team('Maccabi Haifa',haifaPlayers,'sami-ofer',1500,'images/M.Haifa.png',90,75,88,30780,24000,financial[4],training[5],staff[0],stats1,roundResultTeam1,startingLineUp1);
 var MtelAviv = new Team('Maccabi Tel-Aviv',mTelAvivPlayers,'bloomfield',1500,'images/M tel-aviv.png',85,92,89,29400,25000,financial[4],training[5],staff[0],stats2,roundResultTeam2);
 var beitarJerusalem = new Team('Beitar Jerusalem',bitarJerusalemPlayers,'Teddy Stadium',1500,'images/Beitar jerusalem.png',80,78,82,34000,18000,financial[4],training[5],staff[0],stats3,roundResultTeam3);
 var bneiShacnin = new Team('Beni Sakhnin',shkninPlayers,'Doha Stadium',1500,'images/bnei-Sakhnin.png',68,72,32,8500,6300,financial[1],training[1],staff[0],stats4,roundResultTeam4);
@@ -316,11 +332,4 @@ var hapoelTelAviv = new Team('Hapoel Tel-Aviv',hapoelTelAvivPlayers,'bloomfield'
 
 var theTeamsArray = [Ashdod,MHaifa,MtelAviv,beitarJerusalem,bneiShacnin,beerSheva,hapoelJerusalem,kiryatShmona,hapoelHaifa,maccabiNetanya,mPetachTikva,hapoelNofHaGalil,hapoelHadera,hapoelTelAviv]
 var sortedTeamsArray = [Ashdod,MHaifa,MtelAviv,beitarJerusalem,bneiShacnin,beerSheva,hapoelJerusalem,kiryatShmona,hapoelHaifa,maccabiNetanya,mPetachTikva,hapoelNofHaGalil,hapoelHadera,hapoelTelAviv];
-console.log(theTeamsArray[1].players[0].name);
-console.log(theTeamsArray[1].players[0].newAtr);
-console.log('----')
-console.log(theTeamsArray[1].players[1].name);
-console.log(theTeamsArray[1].players[1].newAtr);
-console.log('----')
-console.log(theTeamsArray[1].players[2].name);
-console.log(theTeamsArray[1].players[2].newAtr);
+

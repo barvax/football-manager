@@ -1,0 +1,197 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto;
+            background-color: #2196F3;
+            padding: 10px;
+            height: 100%;
+        }
+
+        .grid-item {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+
+        }
+
+        h5 {
+            margin: 0;
+            font-size: 16px;
+            padding: 2px;
+        }
+
+        .field {
+
+
+            background-image: url(images/football-tactics.jpg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: 0% 50%;
+            width: 400px;
+            height: 500px;
+            background-color: rgba(255, 0, 0, 0.3);
+
+        }
+
+        .btn {
+            width: 10px;
+            height: 10px;
+            background-color: red;
+
+        }
+
+        .btn1 {
+            position: relative;
+            top: 28%;
+            left: 41%;
+        }
+
+        .btn2 {
+            position: relative;
+            top: 27%;
+            left: 56%;
+        }
+
+        .btn3 {
+            position: relative;
+            top: 34%;
+            left: 22%;
+        }
+
+        .btn4 {
+            position: relative;
+            top: 32%;
+            left: 75%;
+        }
+
+        .example {
+            background-color: red;
+        }
+
+        .example-st {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Grid Elements</h1>
+
+
+    <div class="grid-container">
+        <div class="grid-item ">
+            <div class='field'>
+                <div onclick="Test('st')" class='btn btn1'></div>
+                <div onclick="Test('st')" class='btn btn2'></div>
+                <div onclick="Test('mid')" class='btn btn3'></div>
+                <div onclick="Test('mid')" class='btn btn4'></div>
+
+            </div>
+
+        </div>
+        <div class="grid-item" id='targetidTeamPlayers'></div>
+
+    </div>
+
+    <script>
+        function Test(pos) {
+            var ron = document.querySelectorAll(".example");
+
+            if (pos == 'st') {
+                var stList = document.querySelectorAll(".example-st");
+                for (i = 0; i < ron.length; i++) {
+                    ron[i].style.display = 'none'
+
+
+                }
+            }
+        }
+
+
+        function SetPlayersOnMatchScreen() {
+
+
+            var root = document.getElementById('targetidTeamPlayers');
+
+            var MyGK = document.createElement('h2');
+            root.append(MyGK);
+            MyGK.innerHTML = "GK";
+
+            var def = document.createElement('h2');
+            root.append(def);
+            def.innerHTML = "def";
+
+            var mid = document.createElement('h2');
+            root.append(mid);
+            mid.innerHTML = "mid";
+
+            var st = document.createElement('h2');
+            root.append(st);
+            st.innerHTML = "st";
+
+
+
+            for (i = 0; i < NumOfPlayerInTeam[1]; i++) {
+                if (haifaPlayers[i].position == 'goal-keeper') {
+                    var line = document.createElement('h5');
+                    line.innerHTML = haifaPlayers[i].name;
+                    MyGK.appendChild(line);
+                    line.addEventListener("click", MyNewFunction)
+                    line.id = ['gk' + i];
+                    line.index = [i];
+                    line.classList.add('example');
+
+                } else if (haifaPlayers[i].position == 'back') {
+                    var line = document.createElement('h5');
+                    line.innerHTML = haifaPlayers[i].name;
+                    def.appendChild(line);
+                    line.addEventListener("click", MyNewFunction)
+                    line.id = ['def' + i];
+                    line.index = [i];
+                    line.classList.add('example');
+
+                } else if (haifaPlayers[i].position == 'center') {
+                    var line = document.createElement('h5');
+                    line.innerHTML = haifaPlayers[i].name;
+                    mid.appendChild(line);
+                    line.addEventListener("click", MyNewFunction)
+                    line.id = ['mid' + i];
+                    line.index = [i];
+                    line.classList.add('example');
+
+                } else if (haifaPlayers[i].position == 'forward') {
+                    var line = document.createElement('h5');
+                    line.innerHTML = haifaPlayers[i].name;
+                    st.appendChild(line);
+                    line.addEventListener("click", MyNewFunction)
+                    line.id = ['st' + i];
+                    line.index = [i];
+                    line.classList.add('example');
+                    line.classList.add('example-st');
+
+                }
+            }
+
+        }
+
+
+        function MyNewFunction(e) {
+            console.log(haifaPlayers[(e.target.index)].name)
+        }
+
+
+    </script>
+</body>
+
+</html>

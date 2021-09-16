@@ -8,6 +8,8 @@ var wereIsMyTeam; //אני מקבל כאן את האינדקס של המקום �
 var myTeamGoals=8;
 var compTeamGoals=8;
 var isHomeTeam = false;
+
+
 function StartTheGame(){
     _StartTheGame(roundCount);
 }
@@ -95,9 +97,25 @@ function _TheGame(round) {
     
     
         }else{
-            var Gf1 = RandomWin();
-            var Gf2 = RandomWin();
-    
+          ///////////////קצת טוחן את המחשב פה- צריך למצוא אלגוריתם אחר  
+             var Gf1 =0;
+            var Gf2 = 0;
+             var team1attack = 1980 -  ((theTeamsArray[finalFixtursArray[round][j][0]].attack - theTeamsArray[finalFixtursArray[round][j][1]].defence)/2)
+     var team2attack = 1980 -  ((theTeamsArray[finalFixtursArray[round][j][1]].attack - theTeamsArray[finalFixtursArray[round][j][0]].defence)/2)
+            for(i=0;i<90;i++){
+            var chanceToScore1 = Math.floor(Math.random() * 2000);
+             var chanceToScore2 = Math.floor(Math.random() * 2000);    
+                if(chanceToScore1>team1attack){
+                Gf1++;
+                }
+                if(chanceToScore2>team2attack){
+                 Gf2++;
+                }
+            }
+              
+  
+           
+   
     
                 
     
@@ -218,26 +236,32 @@ if(isHomeTeam){
 }
 
 function WhoScores() {
+    var baseChanceToScore = 1980;
 //alert(teamHomeGlobal.attack);
 //alert(teamAwayGlobal.defence);
-//var homeAttack = teamHomeGlobal.attack-teamAwayGlobal.defence;
-//var awayAttack = teamAwayGlobal.attack-teamHomeGlobal.defence;
-    var team1Chance = 97;
-    var team2Chance = 97;
+var homeAttack = baseChanceToScore - ((teamHomeGlobal.attack-teamAwayGlobal.defence)/2);
+var awayAttack =baseChanceToScore - ((teamAwayGlobal.attack-teamHomeGlobal.defence)/2);
+  //  var team1Chance = 97;
+ //   var team2Chance = 97;
 
-    var playerRandom1 = Math.floor(Math.random() * teamHomeGlobal.players.length - 1) + 1;
-    console.log(playerRandom1);
-    var player1 = teamHomeGlobal.players[playerRandom1].name;
+    
+    //console.log(playerRandom1);
+  
     // console.log(player1);
-    var playerRandom2 = Math.floor(Math.random() * teamAwayGlobal.players.length - 1) + 1;
-    var player2 = teamAwayGlobal.players[playerRandom2].name;
+   
     //alert(playerRandom2)
-    var chanceToScore1 = Math.floor(Math.random() * 100);
-    var chanceToScore2 = Math.floor(Math.random() * 100);
+    var chanceToScore1 = Math.floor(Math.random() * 2000);
+    var chanceToScore2 = Math.floor(Math.random() * 2000);
+   
 
 
 
-    if (chanceToScore1 > team1Chance) {
+    if (chanceToScore1 > homeAttack) {
+         console.log('chanceToScore1');
+         console.log(chanceToScore1);
+         console.log('-------');
+        var playerRandom1 = Math.floor(Math.random() * teamHomeGlobal.players.length - 1) + 1;
+          var player1 = teamHomeGlobal.players[playerRandom1].name;
         BuildScorers('tableMatchHome', 'home');
         goal1 += 1;
         Team1Scorers.push(player1);
@@ -257,7 +281,12 @@ function WhoScores() {
 
 
     }
-    if (chanceToScore2 > team2Chance) {
+    if (chanceToScore2 > awayAttack) {
+         console.log('chanceToScore2');
+         console.log(chanceToScore2);
+         console.log('-------');
+         var playerRandom2 = Math.floor(Math.random() * teamAwayGlobal.players.length - 1) + 1;
+    var player2 = teamAwayGlobal.players[playerRandom2].name;
         BuildScorers('tableMatchAway', 'away');
         goal2 += 1;
         Team2Scorers.push(player2);

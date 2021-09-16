@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+#pickTeamMain{
+
+background-color: burlywood;
+
+width:80%;
+height:500px;
+position: absolute;
+top: 5%;
+left: 10%;
+visibility: hidden;
+
+
+}
+
+.pickTeamMainUl {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: block;
+    padding: 8px;
+    background-color: #2c2a2a;
+   
+    
+   
+  }
+  
+  .pickTeamMainUl>div{
+
+    float: left;
+    display: block;
+    padding: 8px;
+  color: aliceblue;
+ 
+
+  
+  }
+  .pickTeamMainUl>div:hover{
+      cursor: pointer;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: 82% auto;
+   
+    padding: 10px;
+    height: 100%;
+}
+
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+
+}
+
+h5 {
+    margin: 0;
+    font-size: 16px;
+    padding: 2px;
+
+}
+
+.field {
+
+
+    background-image: url(images/football-tactics.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 0% 50%;
+    width: 800px;
+    height: 400px;
+  /*  background-color: rgba(255, 0, 0, 0.3);*/
+margin-left: 10%;
+}
+
+.btn {
+    width: 100px;
+    height: 55px;
+  
+    background-image: url(00_Common/btn_color_yellow.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}
+.btn >h6{
+    position: relative;
+    top:150%;
+    right: 100%;
+    font-family: 'Dancing Script', cursive;
+    font-size: 12px;
+    color: rgb(240, 199, 18);
+    width: 50px;
+    height: 20px;
+    background-color: steelblue;
+    border-radius: 5px;
+}
+
+.btn1 {
+    position: relative;
+    top: 43%;
+    right: 3%;
+ 
+}
+
+.btn2 {
+    position: relative;
+    top: 30%;
+    right: 5%;
+    background-image: url(00_Common/btn_color_red.png);
+}
+
+.btn3 {
+    position: relative;
+    top: 57%;
+    right: 18%;
+   
+}
+
+.btn4 {
+    position: relative;
+    top: 9%;
+    right: 27%;
+    
+}
+.btn5 {
+    position: relative;
+    top: 80%;
+    right:40%;
+   
+}
+.btn6 {
+    position: relative;
+    top: 80%;
+    right: 34%;
+    
+}
+.btn7 {
+    position: relative;
+    top: 55%;
+    right: 47%;
+   
+}
+.btn8 {
+    position: relative;
+    top: 18%;
+    right: -12%;
+   
+}
+.btn9 {
+    position: relative;
+    top:-5%;
+    right: 1%;
+    
+}
+.btn10 {
+    position: relative;
+   /* top: 50%;
+    right: 5%;*/
+    top: 45%;
+    right: -13%;
+    background-image: url(00_Common/btn_color_gray.png);
+}
+.btn11 {
+    position: relative;
+    /*top: 30%;
+    right: 10%;*/
+    top: 10%;
+    right: 0%;
+    background-image: url(00_Common/btn_color_gray.png);
+
+}
+
+.example {
+    background-color: red;
+}
+
+.example-st {
+    background-color: green;
+}
+#targetidTeamPlayers{
+    height: 500px;
+}
+#targetidTeamPlayers h2{
+    color: rgba(0, 0, 0, 0.8);
+}

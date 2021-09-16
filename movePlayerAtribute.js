@@ -23,9 +23,10 @@ function MoveSlide(sign){
 var xTotal = document.getElementById('player-Total-score');
 xTotal.innerHTML = myTeam.players[ron].newAtr[6];
 var xPos =  document.getElementById('player-position');
-xPos.innerHTML = myTeam.players[ron].position;
-var playerNewImg =  document.getElementById('player-img-new');
-playerNewImg.src = myTeam.players[ron].img;
+xPos.innerHTML = myTeam.players[ron].shortPos;
+var playerNewImg =  document.querySelector('.div1-player-profile');
+var url = "('"+myTeam.players[ron].img+"')";
+playerNewImg.style.backgroundImage = "url"+url+"";
 var xName = document.getElementById('player-NaMe');
 xName.innerHTML = myTeam.players[ron].name;
 var xPAC = document.getElementById('PAC');
@@ -83,7 +84,7 @@ xPHY.innerHTML = myTeam.players[ron].newAtr[5]+' PHY';
    var totalScore = document.getElementById('total score');
    */
    var playerImg = document.getElementById('playerImg-card');
-   var fieldImg = document.getElementById('field-img-card');
+   //var fieldImg = document.getElementById('field-img-card');
 
     name.innerHTML = myTeam.players[ron].name;
     number.innerHTML = myTeam.players[ron].number;
@@ -127,7 +128,7 @@ xPHY.innerHTML = myTeam.players[ron].newAtr[5]+' PHY';
     avgPhysical.innerHTML = myTeam.players[ron].physical.avgPhysical;
     totalScore.innerHTML = myTeam.players[ron].total +' / 100';
     */
-    playerImg.src = myTeam.players[ron].img;
-    fieldImg.src = myTeam.players[ron].positionImg;
+  //  playerImg.src = myTeam.players[ron].img;
+   // fieldImg.src = myTeam.players[ron].positionImg;
     
 }

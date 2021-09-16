@@ -80,10 +80,12 @@ function insertPlayers(index){
     elementLi.append(elementName);
     elementImg.item = myTeam.players[index];
     elementImg.veryCool = index;// מגניב שאפשר לעשות את זה!!
-    elementImg.addEventListener('click',Test);
+    elementImg.addEventListener('click',TestMe);
+    
 }
 
-function Test(e){
+function TestMe(e){
+   
     console.log(e.target.veryCool);
    
     ron = e.target.item;
@@ -101,9 +103,10 @@ function Test(e){
 var xTotal = document.getElementById('player-Total-score');
 xTotal.innerHTML = e.target.item.newAtr[6];
 var xPos =  document.getElementById('player-position');
-xPos.innerHTML = e.target.item.position;
-var playerNewImg =  document.getElementById('player-img-new');
-playerNewImg.src = e.target.item.img;
+xPos.innerHTML = e.target.item.shortPos;
+var playerNewImg =  document.querySelector('.div1-player-profile');
+var url = "('"+e.target.item.img+"')";
+playerNewImg.style.backgroundImage = "url"+url+"";
 var xName = document.getElementById('player-NaMe');
 xName.innerHTML = e.target.item.name;
 var xPAC = document.getElementById('PAC');
@@ -202,5 +205,5 @@ xPHY.innerHTML = e.target.item.newAtr[5]+' PHY';
     totalScore.innerHTML = e.target.item.total +' / 100';
     */
     playerImg.src = e.target.item.img;
-    fieldImg.src = e.target.item.positionImg;
+    //fieldImg.src = e.target.item.positionImg;
 }

@@ -1,4 +1,4 @@
-function Player(name, number, position, img, positionImg,newAtr) {
+function Player(name, number, position, img, positionImg,newAtr,shortPos) {
     {
         this.name = name;
         this.number = number;
@@ -7,6 +7,7 @@ function Player(name, number, position, img, positionImg,newAtr) {
         this.img = img;
         this.positionImg = positionImg;
         this.newAtr = newAtr;
+        this.shortPos =  shortPos;
 
         this.GetPosition = function () {
             return this.position;
@@ -21,7 +22,7 @@ var totalPlayerScore = 99;
 
 var NumOfPlayerInTeam = [24,23,26,24,27,26,30,26,25,31,34,27,30,28] // מספר השחקנים בכל קבוצה
 var playerAtr = []
-console.log(playerAtr.length)
+//console.log(playerAtr.length)
 function SetNumOfPlayerInTeam(){
    
     for (let i = 0; i < 14; i++) {
@@ -33,7 +34,7 @@ function SetNumOfPlayerInTeam(){
        }
         
     }
-    console.log(playerAtr)
+   // console.log(playerAtr)
 }
 
 var bonus = 0;
@@ -60,15 +61,14 @@ function setNewArrayAtr(){
             var phy =playerAtr[i][j];
             var total =playerAtr[i][j];
        
-             if(true){
-                pace.push(Math.floor(Math.random() * (71-bonus))+30+bonus)//pace
-                shot.push(Math.floor(Math.random() * (71-bonus))+30+bonus)//shot
-                pas.push(Math.floor(Math.random() * (71-bonus))+30+bonus)//pas
-                dri.push(Math.floor(Math.random() * (71-bonus))+30+bonus)//dribling
-                def.push(Math.floor(Math.random() * (71-bonus))+30+bonus)//def
-                phy.push(Math.floor(Math.random() * (71-bonus))+30+bonus)// phy
-                total.push(Math.floor((pace[0]+shot[1]+pas[2]+dri[3]+def[4]+phy[5])/6))  
-             }  
+		pace.push(10)//pace
+                shot.push(10)//shot
+                pas.push(10)//pas
+                dri.push(10)//dribling
+                def.push(10)//def
+                phy.push(10)// phy
+                total.push(20)  
+           
                     
                         
         }
@@ -83,29 +83,29 @@ setNewArrayAtr()
 
 var position = ['goal-keeper', 'back', 'center', 'forward']
 ///מכבי חיפה////
-var player1 = new Player('גוש כהן', '40', position[0],  "players/M.haifa/joshCohen.gif", posImg[0],playerAtr[1][0]);
-var player2 = new Player('איתמר ישראלי', '41', position[0],  "players/M.haifa/איתמר ישראלי.gif", posImg[0],playerAtr[1][1]);
-var player3 = new Player('בוגדן פלאניץ', '5', position[1],  "players/M.haifa/bogdanPlanich.gif", posImg[1],playerAtr[1][2]);
-var player4 = new Player('סאן מנחם', '12', position[1],  "players/M.haifa/sanMenahem.gif", posImg[1],playerAtr[1][3]);
-var player5 = new Player('רמי גרשון', '5', position[1],  "players/M.haifa/144876.gif", posImg[1],playerAtr[1][4]);
-var player6 = new Player('עפרי ארד', '15', position[1],  "players/M.haifa/144873.gif", posImg[2],playerAtr[1][5]);
-var player7 = new Player('שון גולדברג', '13', position[1],  "players/M.haifa/144880.gif", posImg[2],playerAtr[1][6]);
-var player8 = new Player('אורי דהן', '6', position[1],  "players/M.haifa/144875.gif", posImg[3],playerAtr[1][7]);
-var player9 = new Player('ראיין סטריין', '0', position[1],  "players/M.haifa/144879.gif", posImg[4],playerAtr[1][8]);
-var player10 = new Player('רז מאיר', '25', position[1],  "players/M.haifa/144877.gif", posImg[3],playerAtr[1][9]);
-var player11 = new Player('רוני לאופר', '0', position[1],  'images/male-figure-man-boy-profile.jpg.png', posImg[4],playerAtr[1][10]);
-var player12 = new Player('טאלב טוואטחה', '17', position[1],  "players/M.haifa/144882.gif", posImg[5],playerAtr[1][11]);
-var player13 = new Player('חוסה רודריגס', '8', position[2],  "players/M.haifa/144866.gif", posImg[5],playerAtr[1][12]);
-var player14 = new Player('יובל אשכנזי', '18', position[2],  "players/M.haifa/144885.gif", posImg[6],playerAtr[1][13]);
-var player15 = new Player('מאור לוי', '33', position[2],  "players/M.haifa/144869.gif", posImg[6],playerAtr[1][14]);
-var player16 = new Player('נטע לביא', '6', position[2],  "players/M.haifa/144872.gif", posImg[7],playerAtr[1][15]);
-var player17 = new Player('צירון שרי', '10', position[2],  "players/M.haifa/144884.gif", posImg[7],playerAtr[1][16]);
-var player18 = new Player('עומר אצילי', '7', position[2],  "players/M.haifa/144874.gif", posImg[8],playerAtr[1][17]);
-var player19 = new Player('עלי מוחמד', '55', position[2],  "players/M.haifa/144859.gif", posImg[8],playerAtr[1][18]);
-var player20 = new Player('אבו פאני', '16', position[2],  "players/M.haifa/144870.gif", posImg[9],playerAtr[1][19]);
-var player21 = new Player('גודסווי דוניו', '11', position[3],  "players/M.haifa/donio.gif", posImg[9],playerAtr[1][20]);
-var player22 = new Player('בן סהר', '24', position[3],  "players/M.haifa/benShar.gif", posImg[9],playerAtr[1][21]);
-var player23 = new Player('דין דוד', '99', position[3],  "players/M.haifa/dinDavid.gif", posImg[9],playerAtr[1][22]);
+var player1 = new Player('גוש כהן', '40', position[0],  "card-img/mcabi-haifa/0.png", posImg[0],playerAtr[1][0],'gk');
+var player2 = new Player('איתמר ישראלי', '41', position[0],  "card-img/mcabi-haifa/1.png", posImg[0],playerAtr[1][1],'gk');
+var player3 = new Player('בוגדן פלאניץ', '5', position[1],  "card-img/mcabi-haifa/2.png", posImg[1],playerAtr[1][2],'def');
+var player4 = new Player('סאן מנחם', '12', position[1],  "players/M.haifa/sanMenahem.gif", posImg[1],playerAtr[1][3],'def');
+var player5 = new Player('רמי גרשון', '5', position[1],  "players/M.haifa/144876.gif", posImg[1],playerAtr[1][4],'def');
+var player6 = new Player('עפרי ארד', '15', position[1],  "players/M.haifa/144873.gif", posImg[2],playerAtr[1][5],'def');
+var player7 = new Player('שון גולדברג', '13', position[1],  "players/M.haifa/144880.gif", posImg[2],playerAtr[1][6],'def');
+var player8 = new Player('אורי דהן', '6', position[1],  "players/M.haifa/144875.gif", posImg[3],playerAtr[1][7],'def');
+var player9 = new Player('ראיין סטריין', '0', position[1],  "players/M.haifa/144879.gif", posImg[4],playerAtr[1][8],'def');
+var player10 = new Player('רז מאיר', '25', position[1],  "players/M.haifa/144877.gif", posImg[3],playerAtr[1][9],'def');
+var player11 = new Player('רוני לאופר', '0', position[1],  'images/male-figure-man-boy-profile.jpg.png', posImg[4],playerAtr[1][10],'def');
+var player12 = new Player('טאלב טוואטחה', '17', position[1],  "players/M.haifa/144882.gif", posImg[5],playerAtr[1][11],'def');
+var player13 = new Player('חוסה רודריגס', '8', position[2],  "players/M.haifa/144866.gif", posImg[5],playerAtr[1][12],'mid');
+var player14 = new Player('יובל אשכנזי', '18', position[2],  "players/M.haifa/144885.gif", posImg[6],playerAtr[1][13],'mid');
+var player15 = new Player('מאור לוי', '33', position[2],  "players/M.haifa/144869.gif", posImg[6],playerAtr[1][14],'mid');
+var player16 = new Player('נטע לביא', '6', position[2],  "players/M.haifa/144872.gif", posImg[7],playerAtr[1][15],'mid');
+var player17 = new Player('צירון שרי', '10', position[2],  "players/M.haifa/144884.gif", posImg[7],playerAtr[1][16],'mid');
+var player18 = new Player('עומר אצילי', '7', position[2],  "players/M.haifa/144874.gif", posImg[8],playerAtr[1][17],'mid');
+var player19 = new Player('עלי מוחמד', '55', position[2],  "players/M.haifa/144859.gif", posImg[8],playerAtr[1][18],'mid');
+var player20 = new Player('אבו פאני', '16', position[2],  "players/M.haifa/144870.gif", posImg[9],playerAtr[1][19],'mid');
+var player21 = new Player('גודסווי דוניו', '11', position[3],  "players/M.haifa/donio.gif", posImg[9],playerAtr[1][20],'st');
+var player22 = new Player('בן סהר', '24', position[3],  "players/M.haifa/benShar.gif", posImg[9],playerAtr[1][21],'st');
+var player23 = new Player('דין דוד', '99', position[3],  "players/M.haifa/dinDavid.gif", posImg[9],playerAtr[1][22],'st');
 var haifaPlayers = [player1, player2, player3, player4, player5, player6, player7, player8, player9, player10, player11, player12, player13, player14, player15, player16, player17, player18, player19, player20, player21, player22, player23]
 
 ///מכבי תל אביב////
@@ -530,45 +530,55 @@ var AllPlayersArray = [ashdodPlayers,haifaPlayers,mTelAvivPlayers,bitarJerusalem
 //console.log(AllPlayersArray[0].length);
 
 function UpdateArrayAtr(){
+
     for (let i = 0; i < AllPlayersArray.length; i++) {
-      
+       
+      if(i==1||i==2){
+          bonus=40;
+      }else if(i==3||i==5){
+          bonus=25;
+      }else if(i==4||i==6||i==11||i==12){
+        bonus=0;
+      }else{
+          bonus=10;
+      }
         for (let j = 0; j < NumOfPlayerInTeam[i]; j++) {
-            var pace =playerAtr[i][j];
-            var shot=playerAtr[i][j];
-            var pas = playerAtr[i][j];
-            var dri = playerAtr[i][j];
-            var def = playerAtr[i][j];
-            var phy =playerAtr[i][j];
-            var total =playerAtr[i][j];
+            var pace =AllPlayersArray[i][j].newAtr;
+            var shot=AllPlayersArray[i][j].newAtr;
+            var pas = AllPlayersArray[i][j].newAtr;
+            var dri = AllPlayersArray[i][j].newAtr;
+            var def = AllPlayersArray[i][j].newAtr;
+            var phy =AllPlayersArray[i][j].newAtr;
+            var total =AllPlayersArray[i][j].newAtr;
             if(AllPlayersArray[i][j].position == 'goal-keeper'||AllPlayersArray[i][j].position=='back'){
+             
                
-               
-                pace[0]=(Math.floor(Math.random() * 51)+30)//pace
-                shot[1]=(Math.floor(Math.random() * 41)+30)//shot
-                pas[2]=(Math.floor(Math.random() * 71)+30)//pas
-                dri[3]=(Math.floor(Math.random() * 41)+30)//dribling
-                def[4]=(Math.floor(Math.random() * 51)+50)//def
-                phy[5]=(Math.floor(Math.random() * 51)+50)// phy
+                pace[0]=(Math.floor(Math.random() * (51-bonus))+30+bonus)//pace
+                shot[1]=(Math.floor(Math.random() * (41-bonus))+30+bonus)//shot
+                pas[2]=(Math.floor(Math.random() * (71-bonus))+30+bonus)//pas
+                dri[3]=(Math.floor(Math.random() * (41-bonus))+30+bonus)//dribling
+                def[4]=(Math.floor(Math.random() * (51-bonus))+50+bonus)//def
+                phy[5]=(Math.floor(Math.random() * (51-bonus))+50+bonus)// phy
                 total[6]=(Math.floor((pace[0]+shot[1]+pas[2]+dri[3]+def[4]*10+phy[5]*10)/24))
                
           }else if(AllPlayersArray[i][j].position == 'center'){
            
-            pace=(Math.floor(Math.random() * 51)+50)//pace
-            shot=(Math.floor(Math.random() * 51)+50)//shot
-            pas=(Math.floor(Math.random() * 51)+50)//pas
-            dri=(Math.floor(Math.random() * 51)+50)//dribling
-            def=(Math.floor(Math.random() * 51)+50)//def
-            phy=(Math.floor(Math.random() * 51)+50)// phy
-            total=(Math.floor((pace[0]+shot[1]+pas[2]+dri[3]+def[4]+phy[5])/6))
+            pace[0]=(Math.floor(Math.random() * (51-bonus))+50+bonus)//pace
+            shot[1]=(Math.floor(Math.random() * (51-bonus))+50+bonus)//shot
+            pas[2]=(Math.floor(Math.random() * (51-bonus))+50+bonus)//pas
+            dri[3]=(Math.floor(Math.random() * (51-bonus))+50+bonus)//dribling
+            def[4]=(Math.floor(Math.random() * (51-bonus))+50+bonus)//def
+            phy[5]=(Math.floor(Math.random() * (51-bonus))+50+bonus)// phy
+            total[6]=(Math.floor((pace[0]+shot[1]+pas[2]+dri[3]+def[4]+phy[5])/6))
            }else if(AllPlayersArray[i][j].position == 'forward'){
-          
-            pace=(Math.floor(Math.random() * 51)+50)//pace
-            shot=(Math.floor(Math.random() * 41)+60)//shot
-            pas=(Math.floor(Math.random() * 71)+30)//pas
-            dri=(Math.floor(Math.random() * 51)+50)//dribling
-            def=(Math.floor(Math.random() * 31)+30)//def
-            phy=(Math.floor(Math.random() * 71)+30)// phy
-            total=(Math.floor((pace[0]*3+shot[1]*5+pas[2]*2+dri[3]*5+def[4]+phy[5]*6)/20))
+           
+            pace[0]=(Math.floor(Math.random() * (51-bonus))+50+bonus)//pace
+            shot[1]=(Math.floor(Math.random() * (41-bonus))+60+bonus)//shot
+            pas[2]=(Math.floor(Math.random() * (71-bonus))+30+bonus)//pas
+            dri[3]=(Math.floor(Math.random() * (51-bonus))+50+bonus)//dribling
+            def[4]=(Math.floor(Math.random() * (31-bonus))+30+bonus)//def
+            phy[5]=(Math.floor(Math.random() * (71-bonus))+30+bonus)// phy
+            total[6]=(Math.floor((pace[0]*3+shot[1]*5+pas[2]*2+dri[3]*5+def[4]+phy[5]*6)/20))
            }
             
 
@@ -576,12 +586,110 @@ function UpdateArrayAtr(){
         }
         
     }
-     console.log(' new playerAtr')
+   /*
+	 console.log(' new playerAtr')
     console.log(playerAtr)
      console.log(AllPlayersArray[1][22].name)
       console.log(AllPlayersArray[1][22].newAtr)
-   
+   */
 }
 
 UpdateArrayAtr();
+/*
+	<style>
+	
+	
+	h3{
+	margin:0;
+	margin-top:10%;
+	
+	}
+	.maindiv{
+	color:white;
 
+		background-image: url("1.png");
+  background-repeat: no-repeat;
+  width:400px;
+  height:400px;
+    background-size: contain;
+	background-position: center;
+	text-align:center;
+	}
+	
+	.div1{
+	height:54%;
+	background-image: url("2.jpg");
+	  background-size: 40%;
+	background-position: center;
+	  background-repeat: no-repeat;
+	 
+	}
+	.div2{
+	
+	height:11%;
+	}
+	.div3{
+	
+	height:35%;
+	display:flex;
+	justify-content: space-evenly;
+	}
+	
+	.left{
+	margin-left:9%;
+	margin-top:2%
+	}
+	
+	.right{
+	margin-right:9%;
+	margin-top:2%
+	}
+	
+	h1{
+	margin:0;
+	}
+.score{
+
+padding-right:40%;
+padding-top: 20%;
+font-size:46px;
+}
+.pos{
+padding-right:40%;
+font-size:26px;
+}
+	</style>
+    <title>ron</title>
+   
+  </head>
+  <body>
+<div class="maindiv">
+<div class="div1">
+<h1 class="score">92</h1>
+<h1 class="pos">ST</h1>
+
+</div>
+<div class='div2'>
+<h1>My Name</h1>
+</div>
+<div class='div3'>
+<div class="left">
+<h3>PAC 54</h3>
+<h3>PAC 54</h3>
+<h3>PAC 54</h3>
+</div>
+<div class="right">
+<h3>PAC 54</h3>
+<h3>PAC 54</h3>
+<h3>PAC 54</h3>
+</div>
+
+
+</div>
+
+</div>
+  
+	
+  </body>
+
+*/

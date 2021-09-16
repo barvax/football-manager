@@ -77,8 +77,8 @@ function FinalFixtures() {
             x += 2
         }
     }
-    console.log('--final--')
-    console.log(finalFixtursArray)
+  //  console.log('--final--')
+   // console.log(finalFixtursArray)
 }
 
 AllGamesPerGameCycle();
