@@ -81,7 +81,7 @@ margin-left: 10%;
     width: 100px;
     height: 55px;
   
-    background-image: url(00_Common/btn_color_yellow.png);
+    background-image: url(images/bottons/btn_color_yellow.png);
     background-repeat: no-repeat;
     background-size: contain;
 
@@ -110,7 +110,7 @@ margin-left: 10%;
     position: relative;
     top: 30%;
     right: 5%;
-    background-image: url(00_Common/btn_color_red.png);
+   
 }
 
 .btn3 {
@@ -162,7 +162,7 @@ margin-left: 10%;
     right: 5%;*/
     top: 45%;
     right: -13%;
-    background-image: url(00_Common/btn_color_gray.png);
+  
 }
 .btn11 {
     position: relative;
@@ -170,7 +170,7 @@ margin-left: 10%;
     right: 10%;*/
     top: 10%;
     right: 0%;
-    background-image: url(00_Common/btn_color_gray.png);
+  
 
 }
 

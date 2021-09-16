@@ -55,37 +55,37 @@ function SetPlayersOnMatchScreen() {
 
 
 
-    for (i = 0; i < NumOfPlayerInTeam[1]; i++) {
-        if (haifaPlayers[i].position == 'goal-keeper') {
+    for (i = 0; i < NumOfPlayerInTeam[teamIndex]; i++) {
+        if (myTeam.players[i].position == 'goal-keeper') {
             var line = document.createElement('h5');
-            line.innerHTML = haifaPlayers[i].name;
+            line.innerHTML = myTeam.players[i].name;
             MyGK.appendChild(line);
             line.addEventListener("click", MyNewFunction)
             line.id = ['gk' + i];
             line.index = [i];
             line.classList.add('example');
 
-        } else if (haifaPlayers[i].position == 'back') {
+        } else if (myTeam.players[i].position == 'back') {
             var line = document.createElement('h5');
-            line.innerHTML = haifaPlayers[i].name;
+            line.innerHTML = myTeam.players[i].name;
             def.appendChild(line);
             line.addEventListener("click", MyNewFunction)
             line.id = ['def' + i];
             line.index = [i];
             line.classList.add('example');
 
-        } else if (haifaPlayers[i].position == 'center') {
+        } else if (myTeam.players[i].position == 'center') {
             var line = document.createElement('h5');
-            line.innerHTML = haifaPlayers[i].name;
+            line.innerHTML = myTeam.players[i].name;
             mid.appendChild(line);
             line.addEventListener("click", MyNewFunction)
             line.id = ['mid' + i];
             line.index = [i];
             line.classList.add('example');
 
-        } else if (haifaPlayers[i].position == 'forward') {
+        } else if (myTeam.players[i].position == 'forward') {
             var line = document.createElement('h5');
-            line.innerHTML = haifaPlayers[i].name;
+            line.innerHTML = myTeam.players[i].name;
             st.appendChild(line);
             line.addEventListener("click", MyNewFunction)
             line.id = ['st' + i];
@@ -100,63 +100,67 @@ function SetPlayersOnMatchScreen() {
 
 
 function MyNewFunction(e) {
-    console.log(myTeam.players[(e.target.index)].name)
-    var temp;
-    //  var ron = document.querySelectorAll(".example");
-    if (myTeam.startingLineup.length == 0) {
-
-        myTeam.startingLineup.push(myTeam.players[(e.target.index)]);
-        document.getElementById(bottonPlaceId).innerHTML = myTeam.players[(e.target.index)].name;
-
-    } else {
-        if (document.getElementById(bottonPlaceId).innerHTML == "") {
-
-            for (let i = 0; i < myTeam.startingLineup.length; i++) {
-                if (myTeam.startingLineup[i] == myTeam.players[e.target.index]) {
-                   
-                    return;
-
-                }
-            }
+    if(bottonPlaceId!=null){
+        console.log(myTeam.players[(e.target.index)].name)
+        var temp;
+        //  var ron = document.querySelectorAll(".example");
+        if (myTeam.startingLineup.length == 0) {
+    
             myTeam.startingLineup.push(myTeam.players[(e.target.index)]);
             document.getElementById(bottonPlaceId).innerHTML = myTeam.players[(e.target.index)].name;
+    
         } else {
-            
-            var name = document.getElementById(bottonPlaceId).innerHTML;
-            for (let i = 0; i < myTeam.startingLineup.length; i++) {
-                if (myTeam.startingLineup[i].name == myTeam.players[(e.target.index)].name) {
-                    alert(myTeam.startingLineup[i].name)
-                    return;
-
-
+            if (document.getElementById(bottonPlaceId).innerHTML == "") {
+    
+                for (let i = 0; i < myTeam.startingLineup.length; i++) {
+                    if (myTeam.startingLineup[i] == myTeam.players[e.target.index]) {
+                       
+                        return;
+    
+                    }
                 }
-
-            }
-           
-            for (let i = 0; i < myTeam.startingLineup.length; i++) {
-                if (myTeam.startingLineup[i].name == name) {
-                    temp = myTeam.startingLineup[i];
-                    myTeam.startingLineup[i] = myTeam.startingLineup[myTeam.startingLineup.length - 1];
-                    myTeam.startingLineup[myTeam.startingLineup.length - 1] = temp;
-                    myTeam.startingLineup.pop();
-                    myTeam.startingLineup.push(myTeam.players[(e.target.index)]);
-                    document.getElementById(bottonPlaceId).innerHTML = myTeam.players[(e.target.index)].name;
-                    console.log(myTeam.startingLineup)
-                    return;
-
-
+                myTeam.startingLineup.push(myTeam.players[(e.target.index)]);
+                document.getElementById(bottonPlaceId).innerHTML = myTeam.players[(e.target.index)].name;
+            } else {
+                
+                var name = document.getElementById(bottonPlaceId).innerHTML;
+                for (let i = 0; i < myTeam.startingLineup.length; i++) {
+                    if (myTeam.startingLineup[i].name == myTeam.players[(e.target.index)].name) {
+                        alert(myTeam.startingLineup[i].name)
+                        return;
+    
+    
+                    }
+    
                 }
+               
+                for (let i = 0; i < myTeam.startingLineup.length; i++) {
+                    if (myTeam.startingLineup[i].name == name) {
+                        temp = myTeam.startingLineup[i];
+                        myTeam.startingLineup[i] = myTeam.startingLineup[myTeam.startingLineup.length - 1];
+                        myTeam.startingLineup[myTeam.startingLineup.length - 1] = temp;
+                        myTeam.startingLineup.pop();
+                        myTeam.startingLineup.push(myTeam.players[(e.target.index)]);
+                        document.getElementById(bottonPlaceId).innerHTML = myTeam.players[(e.target.index)].name;
+                        console.log(myTeam.startingLineup)
+                        return;
+    
+    
+                    }
+                }
+                
+                
+     
             }
-            
-            
- 
+    
+    
         }
-
+    
+    
+        console.log(myTeam.startingLineup)
 
     }
-
-
-    console.log(myTeam.startingLineup)
+   
   
 }
 SetPlayersOnMatchScreen();
