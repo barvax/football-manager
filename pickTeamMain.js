@@ -16,6 +16,7 @@ function Test(pos, id) {
     bottonPlaceId = id;
 
     if (pos == 'st') {
+     
         var stList = document.querySelectorAll(".example-st");
 
         for (i = 0; i < ron.length; i++) {
@@ -28,6 +29,48 @@ function Test(pos, id) {
             stList[j].style.display = 'block';
 
         }
+    }else if(pos == 'mid'){
+       
+        var midList = document.querySelectorAll(".example-mid");
+        for (i = 0; i < ron.length; i++) {
+            ron[i].style.display = 'none'
+
+
+        }
+        for (let j = 0; j < midList.length; j++) {
+
+            midList[j].style.display = 'block';
+
+        }
+
+    }else if(pos == 'def'){
+       
+        var defList = document.querySelectorAll(".example-def");
+        for (i = 0; i < ron.length; i++) {
+            ron[i].style.display = 'none'
+
+
+        }
+        for (let j = 0; j < defList.length; j++) {
+
+            defList[j].style.display = 'block';
+
+        }
+
+    }else if(pos == 'gk'){
+      
+        var gkList = document.querySelectorAll(".example-gk");
+        for (i = 0; i < ron.length; i++) {
+            ron[i].style.display = 'none'
+
+
+        }
+        for (let j = 0; j < gkList.length; j++) {
+
+            gkList[j].style.display = 'block';
+
+        }
+
     }
 }
 
@@ -57,41 +100,84 @@ function SetPlayersOnMatchScreen() {
 
     for (i = 0; i < NumOfPlayerInTeam[teamIndex]; i++) {
         if (myTeam.players[i].position == 'goal-keeper') {
+            var div = document.createElement('div')
+            div.classList.add('div22');
+            MyGK.append(div);
+            var scoreGk  =document.createElement('h6');
+            scoreGk.innerHTML = myTeam.players[i].newAtr[6];
+            scoreGk.classList.add('example-gk');
+            scoreGk.classList.add('example');
+          
+            div.append(scoreGk)
             var line = document.createElement('h5');
             line.innerHTML = myTeam.players[i].name;
-            MyGK.appendChild(line);
+            div.append(line);
             line.addEventListener("click", MyNewFunction)
             line.id = ['gk' + i];
             line.index = [i];
             line.classList.add('example');
+            line.classList.add('example-gk');
+            
+            
+         
+           
 
         } else if (myTeam.players[i].position == 'back') {
+            var div = document.createElement('div')
+            div.classList.add('div22');
+            def.append(div)
+            var scoreDef  =document.createElement('h6');
+            scoreDef.innerHTML = myTeam.players[i].newAtr[6];
+            scoreDef.classList.add('example-def');
+            scoreDef.classList.add('example');
+            div.appendChild(scoreDef)
             var line = document.createElement('h5');
             line.innerHTML = myTeam.players[i].name;
-            def.appendChild(line);
+            div.appendChild(line);
             line.addEventListener("click", MyNewFunction)
             line.id = ['def' + i];
             line.index = [i];
             line.classList.add('example');
+            line.classList.add('example-def');
+          
 
         } else if (myTeam.players[i].position == 'center') {
+            var div = document.createElement('div')
+            div.classList.add('div22');
+            mid.append(div)
+            var scoreMid  =document.createElement('h6');
+            scoreMid.innerHTML = myTeam.players[i].newAtr[6];
+            scoreMid.classList.add('example-mid');
+            scoreMid.classList.add('example');
+            div.appendChild(scoreMid)
             var line = document.createElement('h5');
             line.innerHTML = myTeam.players[i].name;
-            mid.appendChild(line);
+            div.appendChild(line);
             line.addEventListener("click", MyNewFunction)
             line.id = ['mid' + i];
             line.index = [i];
             line.classList.add('example');
+            line.classList.add('example-mid');
+           
 
         } else if (myTeam.players[i].position == 'forward') {
+            var div = document.createElement('div')
+            div.classList.add('div22');
+            st.append(div)
+            var scoreSt  =document.createElement('h6');
+            scoreSt.innerHTML = myTeam.players[i].newAtr[6];
+            scoreSt.classList.add('example-st');
+            scoreSt.classList.add('example');
+            div.appendChild(scoreSt)
             var line = document.createElement('h5');
             line.innerHTML = myTeam.players[i].name;
-            st.appendChild(line);
+            div.appendChild(line);
             line.addEventListener("click", MyNewFunction)
             line.id = ['st' + i];
             line.index = [i];
             line.classList.add('example');
             line.classList.add('example-st');
+          
 
         }
     }
@@ -163,6 +249,6 @@ function MyNewFunction(e) {
    
   
 }
-SetPlayersOnMatchScreen();
+//SetPlayersOnMatchScreen();  קורא לזה ב slideShow
 
 

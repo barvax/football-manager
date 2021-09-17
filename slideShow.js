@@ -39,12 +39,15 @@ function pickTeam(oparator) {
 }
 pickTeam('test');
 function StartGame(){
+   
 myTeam = teams[teamIndex];
+
 document.querySelector('.slideshow').style.display = 'none';
 document.querySelector('.left-menu-panel').style.visibility = 'visible';
 document.querySelector('.section-main').style.display = 'block';
 
 setMainScreen();
+SetPlayersOnMatchScreen();
 
 }
 

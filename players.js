@@ -60,6 +60,8 @@ function setNewArrayAtr(){
             var def = playerAtr[i][j];
             var phy =playerAtr[i][j];
             var total =playerAtr[i][j];
+          //  var condition = playerAtr[i][j];
+         //   var calcScore = playerAtr[i][j];
        
 		pace.push(10)//pace
                 shot.push(10)//shot
@@ -68,7 +70,8 @@ function setNewArrayAtr(){
                 def.push(10)//def
                 phy.push(10)// phy
                 total.push(20)  
-           
+         //  condition.push(100);
+         //  calcScore.push(100)
                     
                         
         }
