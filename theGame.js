@@ -210,8 +210,9 @@ function SetTimer() {
 
     BuildTHeTableHead();
 
-if(!isPaused){
+
 var interval = setInterval(() => {
+    if(!isPaused){
         var extaPos = document.getElementById('extra');
         gameTime += 1;
 
@@ -496,4 +497,4 @@ function SetNextMatchFixturesInGameView() {
 }
 //קורא לזה בלחיצה כל טאב Match day
 ///SetNextMatchFixturesInGameView();
-alert('ver 9.0')
+alert('ver 10.0')
