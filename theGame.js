@@ -371,6 +371,7 @@ function BuildTHeTableHead() {
     var homeTd = document.createElement('td');
     homeTd.classList.add('tabletdmatch');
     homeTd.id = ('tableMatchHome');
+    
     Tr.append(homeTd);
     homeTd.innerHTML = ''
 
@@ -477,4 +478,4 @@ function SetNextMatchFixturesInGameView() {
 }
 //קורא לזה בלחיצה כל טאב Match day
 ///SetNextMatchFixturesInGameView();
-alert('ver 2.0')
+alert('ver 3.0')
