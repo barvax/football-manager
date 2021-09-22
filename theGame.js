@@ -450,12 +450,12 @@ function SetNextMatchFixturesInGameView() {
     var targetHome;
     var targetAway;
     for (let i = 0; i < finalFixtursArray[0].length; i++) {
-      //  if (theTeamsArray[finalFixtursArray[roundCount][i][0]].name == myTeam.name) {
+        if (theTeamsArray[finalFixtursArray[roundCount][i][0]].name == myTeam.name||theTeamsArray[finalFixtursArray[roundCount][i][1]].name == myTeam.name) {
 
 
             targetHome = theTeamsArray[finalFixtursArray[roundCount][i][0]];
             targetAway = theTeamsArray[finalFixtursArray[roundCount][i][1]];
-      //  } else if (theTeamsArray[finalFixtursArray[roundCount][i][1]].name == myTeam.name) {
+        } //else if (theTeamsArray[finalFixtursArray[roundCount][i][1]].name == myTeam.name) {
 
         //    targetHome = theTeamsArray[finalFixtursArray[roundCount][i][1]];
          //   targetAway = theTeamsArray[finalFixtursArray[roundCount][i][0]];
