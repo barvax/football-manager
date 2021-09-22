@@ -233,6 +233,9 @@ function SetTimer() {
             TheGame();
             document.getElementById('SetNextMatchFixturesInGameView').style.visibility = 'visible';
             gameEnded();
+            alert('testing goals..')
+            alert(myTeamGoals)
+             alert(compTeamGoals)
         }
 
     }, time / 10);
@@ -478,4 +481,4 @@ function SetNextMatchFixturesInGameView() {
 }
 //קורא לזה בלחיצה כל טאב Match day
 ///SetNextMatchFixturesInGameView();
-alert('ver 5.0')
+alert('ver 6.0')
