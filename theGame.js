@@ -63,7 +63,7 @@ function _TheGame(round) {
 
     for (let j = 0; j < finalFixtursArray[0].length; j++) {
         if (wereIsMyTeam == j) {
-
+            console.log('am i home team?: '+isHomeTeam);
             theTeamsArray[finalFixtursArray[round][j][0]].statistics.played++;
             theTeamsArray[finalFixtursArray[round][j][0]].statistics.Gf += myTeamGoals;
             theTeamsArray[finalFixtursArray[round][j][0]].roundResults.push(myTeamGoals)
@@ -481,4 +481,4 @@ function SetNextMatchFixturesInGameView() {
 }
 //קורא לזה בלחיצה כל טאב Match day
 ///SetNextMatchFixturesInGameView();
-alert('ver 6.0')
+alert('ver 7.0')
