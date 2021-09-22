@@ -64,39 +64,48 @@ function _TheGame(round) {
     for (let j = 0; j < finalFixtursArray[0].length; j++) {
         if (wereIsMyTeam == j) {
             console.log('am i home team?: '+isHomeTeam);
-            theTeamsArray[finalFixtursArray[round][j][0]].statistics.played++;
-            theTeamsArray[finalFixtursArray[round][j][0]].statistics.Gf += myTeamGoals;
-            theTeamsArray[finalFixtursArray[round][j][0]].roundResults.push(myTeamGoals)
-            theTeamsArray[finalFixtursArray[round][j][0]].statistics.Ga += compTeamGoals;
-            theTeamsArray[finalFixtursArray[round][j][0]].statistics.Gd = theTeamsArray[finalFixtursArray[round][j][0]].statistics.Gf - theTeamsArray[finalFixtursArray[round][j][0]].statistics.Ga;
+          var me  = 0;
+var comp = 1;
+if(isHomeTeam){
+me=0;
+comp=1
+}else{
+me=1;
+comp=0;
+}
 
-            theTeamsArray[finalFixtursArray[round][j][1]].roundResults.push(compTeamGoals);
-            theTeamsArray[finalFixtursArray[round][j][1]].statistics.played++;
-            theTeamsArray[finalFixtursArray[round][j][1]].statistics.Gf += compTeamGoals;
-            theTeamsArray[finalFixtursArray[round][j][1]].statistics.Ga += myTeamGoals;
-            theTeamsArray[finalFixtursArray[round][j][1]].statistics.Gd = theTeamsArray[finalFixtursArray[round][j][1]].statistics.Gf - theTeamsArray[finalFixtursArray[round][j][1]].statistics.Ga;
+ theTeamsArray[finalFixtursArray[round][j][me]].statistics.played++;
+            theTeamsArray[finalFixtursArray[round][j][me]].statistics.Gf += myTeamGoals;
+            theTeamsArray[finalFixtursArray[round][j][me]].roundResults.push(myTeamGoals)
+            theTeamsArray[finalFixtursArray[round][j][me]].statistics.Ga += compTeamGoals;
+            theTeamsArray[finalFixtursArray[round][j][me]].statistics.Gd = theTeamsArray[finalFixtursArray[round][j][me]].statistics.Gf - theTeamsArray[finalFixtursArray[round][j][me]].statistics.Ga;
+
+            theTeamsArray[finalFixtursArray[round][j][comp]].roundResults.push(compTeamGoals);
+            theTeamsArray[finalFixtursArray[round][j][comp]].statistics.played++;
+            theTeamsArray[finalFixtursArray[round][j][comp]].statistics.Gf += compTeamGoals;
+            theTeamsArray[finalFixtursArray[round][j][comp]].statistics.Ga += myTeamGoals;
+            theTeamsArray[finalFixtursArray[round][j][comp]].statistics.Gd = theTeamsArray[finalFixtursArray[round][j][comp]].statistics.Gf - theTeamsArray[finalFixtursArray[round][j][comp]].statistics.Ga;
 
 
 
 
             if (myTeamGoals == compTeamGoals) {
                 console.log('draw');
-                theTeamsArray[finalFixtursArray[round][j][0]].statistics.draw++;
-                theTeamsArray[finalFixtursArray[round][j][0]].statistics.points += 1;
-                theTeamsArray[finalFixtursArray[round][j][1]].statistics.draw++;
-                theTeamsArray[finalFixtursArray[round][j][1]].statistics.points += 1;
+                theTeamsArray[finalFixtursArray[round][j][me]].statistics.draw++;
+                theTeamsArray[finalFixtursArray[round][j][me]].statistics.points += 1;
+                theTeamsArray[finalFixtursArray[round][j][comp]].statistics.draw++;
+                theTeamsArray[finalFixtursArray[round][j][comp]].statistics.points += 1;
             } else if (myTeamGoals > compTeamGoals) {
 
-                theTeamsArray[finalFixtursArray[round][j][0]].statistics.wins++;
-                theTeamsArray[finalFixtursArray[round][j][0]].statistics.points += 3;
-                theTeamsArray[finalFixtursArray[round][j][1]].statistics.lose++;
+                theTeamsArray[finalFixtursArray[round][j][me]].statistics.wins++;
+                theTeamsArray[finalFixtursArray[round][j][me]].statistics.points += 3;
+                theTeamsArray[finalFixtursArray[round][j][comp]].statistics.lose++;
             } else if (myTeamGoals < compTeamGoals) {
 
-                theTeamsArray[finalFixtursArray[round][j][0]].statistics.lose++;
-                theTeamsArray[finalFixtursArray[round][j][1]].statistics.wins++;
-                theTeamsArray[finalFixtursArray[round][j][1]].statistics.points += 3;
+                theTeamsArray[finalFixtursArray[round][j][me]].statistics.lose++;
+                theTeamsArray[finalFixtursArray[round][j][comp]].statistics.wins++;
+                theTeamsArray[finalFixtursArray[round][j][comp]].statistics.points += 3;
             }
-
 
 
         } else {
@@ -481,4 +490,4 @@ function SetNextMatchFixturesInGameView() {
 }
 //קורא לזה בלחיצה כל טאב Match day
 ///SetNextMatchFixturesInGameView();
-alert('ver 7.0')
+alert('ver 8.0')
