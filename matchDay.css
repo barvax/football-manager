@@ -51,6 +51,7 @@
 .tabletdmatch{
     text-align: center;
     font-size: 12px;
+    width:50%;
 }
 .matchTableHead{
     overflow-y: scroll;
