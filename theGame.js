@@ -196,6 +196,7 @@ tempIdForTimer2 = 0;
 
 
 function SetTimer() {
+    var isPaused = false;
     document.getElementById('extra').innerHTML = "";
     var theRoundCount = document.getElementById('roundMatchInGameView');
     theRoundCount.innerHTML = 'round: ' + (roundCount + 1);
@@ -209,8 +210,8 @@ function SetTimer() {
 
     BuildTHeTableHead();
 
-
-    var interval = setInterval(() => {
+if(!isPaused){
+var interval = setInterval(() => {
         var extaPos = document.getElementById('extra');
         gameTime += 1;
 
@@ -225,7 +226,10 @@ function SetTimer() {
             document.getElementById('away-team').innerHTML = goal1;
         }
 
-
+        if(gameTime==45){
+        isPaused=true;
+        }
+    
         if (gameTime >= 91) {
             timer.innerHTML = 90;
             extaPos.innerHTML = extraTime;
@@ -249,6 +253,8 @@ function SetTimer() {
 
     }, time / 10);
 
+}
+    
 }
 
 function WhoScores() {
@@ -490,4 +496,4 @@ function SetNextMatchFixturesInGameView() {
 }
 //קורא לזה בלחיצה כל טאב Match day
 ///SetNextMatchFixturesInGameView();
-alert('ver 8.0')
+alert('ver 9.0')
