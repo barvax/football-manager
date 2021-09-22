@@ -276,7 +276,7 @@ function WhoScores() {
             goal2 += 1;
         }
         
-         player1 = teamHomeGlobal.players[playerRandom1].name;
+       //  player1 = teamHomeGlobal.players[playerRandom1].name;
         BuildScorers('tableMatchHome', 'home');
       
         Team1Scorers.push(player1);
@@ -478,4 +478,4 @@ function SetNextMatchFixturesInGameView() {
 }
 //קורא לזה בלחיצה כל טאב Match day
 ///SetNextMatchFixturesInGameView();
-alert('ver 4.0')
+alert('ver 5.0')
