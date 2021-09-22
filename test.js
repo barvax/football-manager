@@ -25,6 +25,7 @@ function AVgTeamStats(){
         tempAttack = 0;
         numAttack = 0;
     }
+    alert('1')
 }
 AVgTeamStats();
 
@@ -37,3 +38,18 @@ for (let i = 0; i < theTeamsArray.length; i++) {
     
 }
 */
+/*
+var day = 25
+var  now = new Date(2018, 11, day, 10, 33, 30, 0);
+console.log(now)
+*/
+document.addEventListener('keypress', function (event) {
+    if (event.key == 'd') {
+        //console.log(theTeamsArray[1][0].getCalcScore())
+        console.log(theTeamsArray[1].players[0].newAtr)
+        console.log(theTeamsArray[1].players[1].newAtr)
+      //  console.log(theTeamsArray[1].players[0].getCalcScore())
+    }
+ 
+})
+

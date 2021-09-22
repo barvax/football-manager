@@ -198,3 +198,12 @@ margin-left: 10%;
    display: flex;
    justify-content: space-between;
 }
+.example:hover{
+    cursor: pointer;
+}
+.skills-atk   {
+    width: 90%; background-color: #04AA6D;       
+  } 
+  .skills-def{
+      width: 20%; background-color: #dd691b; 
+  }

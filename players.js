@@ -9,8 +9,25 @@ function Player(name, number, position, img, positionImg,newAtr,shortPos) {
         this.newAtr = newAtr;
         this.shortPos =  shortPos;
 
-        this.GetPosition = function () {
-            return this.position;
+        this.getCalcScore = function () {
+         // var rand  =Math.floor(Math.random() * 11)
+         // this.newAtr[7] = this.newAtr[7]-rand;
+          this.newAtr[8] =Math.floor(this.newAtr[6]* this.newAtr[7]/100)
+           // return this.newAtr[8];
+        }
+        this.healPlayerCondition=function (){
+          var rand  =Math.floor(Math.random() * 7)+5
+          this.newAtr[7] = this.newAtr[7]+rand;
+          if(this.newAtr[7]>100){
+            this.newAtr[7]=100;
+          }
+        }
+        this.reducePlayerCondition=function (){
+           var rand  =Math.floor(Math.random() * 11)
+          this.newAtr[7] = this.newAtr[7]-rand;
+          if(this.newAtr[7]<=0){
+            this.newAtr[7]=0;
+          }
         }
     }
 
@@ -60,8 +77,9 @@ function setNewArrayAtr(){
             var def = playerAtr[i][j];
             var phy =playerAtr[i][j];
             var total =playerAtr[i][j];
-          //  var condition = playerAtr[i][j];
-         //   var calcScore = playerAtr[i][j];
+            var condition = playerAtr[i][j];
+            var calcScore = playerAtr[i][j];
+            var isOnField = playerAtr[i][j];
        
 		pace.push(10)//pace
                 shot.push(10)//shot
@@ -70,9 +88,9 @@ function setNewArrayAtr(){
                 def.push(10)//def
                 phy.push(10)// phy
                 total.push(20)  
-         //  condition.push(100);
-         //  calcScore.push(100)
-                    
+           condition.push(100);
+           calcScore.push(100)
+           isOnField.push(false)     ;              
                         
         }
         
@@ -553,6 +571,8 @@ function UpdateArrayAtr(){
             var def = AllPlayersArray[i][j].newAtr;
             var phy =AllPlayersArray[i][j].newAtr;
             var total =AllPlayersArray[i][j].newAtr;
+            var condition = AllPlayersArray[i][j].newAtr;
+            var calcScore = AllPlayersArray[i][j].newAtr;
             if(AllPlayersArray[i][j].position == 'goal-keeper'||AllPlayersArray[i][j].position=='back'){
              
                
@@ -563,6 +583,8 @@ function UpdateArrayAtr(){
                 def[4]=(Math.floor(Math.random() * (51-bonus))+50+bonus)//def
                 phy[5]=(Math.floor(Math.random() * (51-bonus))+50+bonus)// phy
                 total[6]=(Math.floor((pace[0]+shot[1]+pas[2]+dri[3]+def[4]*10+phy[5]*10)/24))
+                condition[7]=AllPlayersArray[i][j].newAtr[7];
+            calcScore[8] = total[6] *condition[7]/100
                
           }else if(AllPlayersArray[i][j].position == 'center'){
            
@@ -573,6 +595,8 @@ function UpdateArrayAtr(){
             def[4]=(Math.floor(Math.random() * (51-bonus))+50+bonus)//def
             phy[5]=(Math.floor(Math.random() * (51-bonus))+50+bonus)// phy
             total[6]=(Math.floor((pace[0]+shot[1]+pas[2]+dri[3]+def[4]+phy[5])/6))
+            condition[7]=AllPlayersArray[i][j].newAtr[7];
+            calcScore[8] = total[6] *condition[7]/100
            }else if(AllPlayersArray[i][j].position == 'forward'){
            
             pace[0]=(Math.floor(Math.random() * (51-bonus))+50+bonus)//pace
@@ -582,6 +606,8 @@ function UpdateArrayAtr(){
             def[4]=(Math.floor(Math.random() * (31-bonus))+30+bonus)//def
             phy[5]=(Math.floor(Math.random() * (71-bonus))+30+bonus)// phy
             total[6]=(Math.floor((pace[0]*3+shot[1]*5+pas[2]*2+dri[3]*5+def[4]+phy[5]*6)/20))
+            condition[7]=AllPlayersArray[i][j].newAtr[7];
+            calcScore[8] = total[6] *condition[7]/100
            }
             
 
@@ -589,110 +615,7 @@ function UpdateArrayAtr(){
         }
         
     }
-   /*
-	 console.log(' new playerAtr')
-    console.log(playerAtr)
-     console.log(AllPlayersArray[1][22].name)
-      console.log(AllPlayersArray[1][22].newAtr)
-   */
+   
 }
 
 UpdateArrayAtr();
-/*
-	<style>
-	
-	
-	h3{
-	margin:0;
-	margin-top:10%;
-	
-	}
-	.maindiv{
-	color:white;
-
-		background-image: url("1.png");
-  background-repeat: no-repeat;
-  width:400px;
-  height:400px;
-    background-size: contain;
-	background-position: center;
-	text-align:center;
-	}
-	
-	.div1{
-	height:54%;
-	background-image: url("2.jpg");
-	  background-size: 40%;
-	background-position: center;
-	  background-repeat: no-repeat;
-	 
-	}
-	.div2{
-	
-	height:11%;
-	}
-	.div3{
-	
-	height:35%;
-	display:flex;
-	justify-content: space-evenly;
-	}
-	
-	.left{
-	margin-left:9%;
-	margin-top:2%
-	}
-	
-	.right{
-	margin-right:9%;
-	margin-top:2%
-	}
-	
-	h1{
-	margin:0;
-	}
-.score{
-
-padding-right:40%;
-padding-top: 20%;
-font-size:46px;
-}
-.pos{
-padding-right:40%;
-font-size:26px;
-}
-	</style>
-    <title>ron</title>
-   
-  </head>
-  <body>
-<div class="maindiv">
-<div class="div1">
-<h1 class="score">92</h1>
-<h1 class="pos">ST</h1>
-
-</div>
-<div class='div2'>
-<h1>My Name</h1>
-</div>
-<div class='div3'>
-<div class="left">
-<h3>PAC 54</h3>
-<h3>PAC 54</h3>
-<h3>PAC 54</h3>
-</div>
-<div class="right">
-<h3>PAC 54</h3>
-<h3>PAC 54</h3>
-<h3>PAC 54</h3>
-</div>
-
-
-</div>
-
-</div>
-  
-	
-  </body>
-
-*/

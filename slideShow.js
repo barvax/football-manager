@@ -48,6 +48,7 @@ document.querySelector('.section-main').style.display = 'block';
 
 setMainScreen();
 SetPlayersOnMatchScreen();
+updateTeamBar();
 
 }
 
