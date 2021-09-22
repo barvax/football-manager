@@ -193,7 +193,7 @@ function SetTimer() {
     StartTheGame();
     var timer = document.getElementById('timer');
 
-    var time = 1000;
+    var time = 100000;
     var extra = Math.floor(Math.random() * 5) + 1;
     // alert(extra)
     var extraTime = 0;
@@ -477,4 +477,4 @@ function SetNextMatchFixturesInGameView() {
 }
 //קורא לזה בלחיצה כל טאב Match day
 ///SetNextMatchFixturesInGameView();
-alert('ver 1.0')
+alert('ver 2.0')
