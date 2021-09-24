@@ -8,7 +8,8 @@ var wereIsMyTeam; //אני מקבל כאן את האינדקס של המקום �
 var myTeamGoals = 8;
 var compTeamGoals = 8;
 var isHomeTeam = false;
-
+var isPaused = false;
+var coachFactor = 0;
 
 function StartTheGame() {
     _StartTheGame(roundCount);
@@ -63,40 +64,49 @@ function _TheGame(round) {
 
     for (let j = 0; j < finalFixtursArray[0].length; j++) {
         if (wereIsMyTeam == j) {
+            console.log('am i home team?: '+isHomeTeam);
+          var me  = 0;
+var comp = 1;
+if(isHomeTeam){
+me=0;
+comp=1
+}else{
+me=1;
+comp=0;
+}
 
-            theTeamsArray[finalFixtursArray[round][j][0]].statistics.played++;
-            theTeamsArray[finalFixtursArray[round][j][0]].statistics.Gf += myTeamGoals;
-            theTeamsArray[finalFixtursArray[round][j][0]].roundResults.push(myTeamGoals)
-            theTeamsArray[finalFixtursArray[round][j][0]].statistics.Ga += compTeamGoals;
-            theTeamsArray[finalFixtursArray[round][j][0]].statistics.Gd = theTeamsArray[finalFixtursArray[round][j][0]].statistics.Gf - theTeamsArray[finalFixtursArray[round][j][0]].statistics.Ga;
+ theTeamsArray[finalFixtursArray[round][j][me]].statistics.played++;
+            theTeamsArray[finalFixtursArray[round][j][me]].statistics.Gf += myTeamGoals;
+            theTeamsArray[finalFixtursArray[round][j][me]].roundResults.push(myTeamGoals)
+            theTeamsArray[finalFixtursArray[round][j][me]].statistics.Ga += compTeamGoals;
+            theTeamsArray[finalFixtursArray[round][j][me]].statistics.Gd = theTeamsArray[finalFixtursArray[round][j][me]].statistics.Gf - theTeamsArray[finalFixtursArray[round][j][me]].statistics.Ga;
 
-            theTeamsArray[finalFixtursArray[round][j][1]].roundResults.push(compTeamGoals);
-            theTeamsArray[finalFixtursArray[round][j][1]].statistics.played++;
-            theTeamsArray[finalFixtursArray[round][j][1]].statistics.Gf += compTeamGoals;
-            theTeamsArray[finalFixtursArray[round][j][1]].statistics.Ga += myTeamGoals;
-            theTeamsArray[finalFixtursArray[round][j][1]].statistics.Gd = theTeamsArray[finalFixtursArray[round][j][1]].statistics.Gf - theTeamsArray[finalFixtursArray[round][j][1]].statistics.Ga;
+            theTeamsArray[finalFixtursArray[round][j][comp]].roundResults.push(compTeamGoals);
+            theTeamsArray[finalFixtursArray[round][j][comp]].statistics.played++;
+            theTeamsArray[finalFixtursArray[round][j][comp]].statistics.Gf += compTeamGoals;
+            theTeamsArray[finalFixtursArray[round][j][comp]].statistics.Ga += myTeamGoals;
+            theTeamsArray[finalFixtursArray[round][j][comp]].statistics.Gd = theTeamsArray[finalFixtursArray[round][j][comp]].statistics.Gf - theTeamsArray[finalFixtursArray[round][j][comp]].statistics.Ga;
 
 
 
 
             if (myTeamGoals == compTeamGoals) {
                 console.log('draw');
-                theTeamsArray[finalFixtursArray[round][j][0]].statistics.draw++;
-                theTeamsArray[finalFixtursArray[round][j][0]].statistics.points += 1;
-                theTeamsArray[finalFixtursArray[round][j][1]].statistics.draw++;
-                theTeamsArray[finalFixtursArray[round][j][1]].statistics.points += 1;
+                theTeamsArray[finalFixtursArray[round][j][me]].statistics.draw++;
+                theTeamsArray[finalFixtursArray[round][j][me]].statistics.points += 1;
+                theTeamsArray[finalFixtursArray[round][j][comp]].statistics.draw++;
+                theTeamsArray[finalFixtursArray[round][j][comp]].statistics.points += 1;
             } else if (myTeamGoals > compTeamGoals) {
 
-                theTeamsArray[finalFixtursArray[round][j][0]].statistics.wins++;
-                theTeamsArray[finalFixtursArray[round][j][0]].statistics.points += 3;
-                theTeamsArray[finalFixtursArray[round][j][1]].statistics.lose++;
+                theTeamsArray[finalFixtursArray[round][j][me]].statistics.wins++;
+                theTeamsArray[finalFixtursArray[round][j][me]].statistics.points += 3;
+                theTeamsArray[finalFixtursArray[round][j][comp]].statistics.lose++;
             } else if (myTeamGoals < compTeamGoals) {
 
-                theTeamsArray[finalFixtursArray[round][j][0]].statistics.lose++;
-                theTeamsArray[finalFixtursArray[round][j][1]].statistics.wins++;
-                theTeamsArray[finalFixtursArray[round][j][1]].statistics.points += 3;
+                theTeamsArray[finalFixtursArray[round][j][me]].statistics.lose++;
+                theTeamsArray[finalFixtursArray[round][j][comp]].statistics.wins++;
+                theTeamsArray[finalFixtursArray[round][j][comp]].statistics.points += 3;
             }
-
 
 
         } else {
@@ -187,6 +197,7 @@ tempIdForTimer2 = 0;
 
 
 function SetTimer() {
+   
     document.getElementById('extra').innerHTML = "";
     var theRoundCount = document.getElementById('roundMatchInGameView');
     theRoundCount.innerHTML = 'round: ' + (roundCount + 1);
@@ -201,7 +212,8 @@ function SetTimer() {
     BuildTHeTableHead();
 
 
-    var interval = setInterval(() => {
+var interval = setInterval(() => {
+  if(!isPaused){
         var extaPos = document.getElementById('extra');
         gameTime += 1;
 
@@ -216,7 +228,11 @@ function SetTimer() {
             document.getElementById('away-team').innerHTML = goal1;
         }
 
-
+        if(gameTime==45){
+        isPaused=true;
+        alert('half time')
+        }
+    
         if (gameTime >= 91) {
             timer.innerHTML = 90;
             extaPos.innerHTML = extraTime;
@@ -233,18 +249,34 @@ function SetTimer() {
             TheGame();
             document.getElementById('SetNextMatchFixturesInGameView').style.visibility = 'visible';
             gameEnded();
+            alert('testing goals..')
+            alert(myTeamGoals)
+             alert(compTeamGoals)
         }
-
+    }
     }, time / 10);
 
 }
+    
+
+
 
 function WhoScores() {
     var baseChanceToScore = 1980;
-    //alert(teamHomeGlobal.attack);
-    //alert(teamAwayGlobal.defence);
-    var homeAttack = baseChanceToScore - ((teamHomeGlobal.attack - teamAwayGlobal.defence) / 2);
-    var awayAttack = baseChanceToScore - ((teamAwayGlobal.attack - teamHomeGlobal.defence) / 2);
+  var homeAttack;
+  var awayAttack;
+    if(isHomeTeam){
+         homeAttack = baseChanceToScore - ((teamHomeGlobal.attack - teamAwayGlobal.defence) / 2)-(coachFactor*((teamHomeGlobal.attack - teamAwayGlobal.defence) / 2));
+         awayAttack = baseChanceToScore - ((teamAwayGlobal.attack - teamHomeGlobal.defence) / 2)+(coachFactor* ((teamAwayGlobal.attack - teamHomeGlobal.defence) / 2));
+        console.log('my attack'+homeAttack)
+         console.log('comp'+awayAttack)
+    }else{
+         homeAttack = baseChanceToScore - ((teamHomeGlobal.attack - teamAwayGlobal.defence) / 2)+(coachFactor* ((teamHomeGlobal.attack - teamAwayGlobal.defence) / 2));
+         awayAttack = baseChanceToScore - ((teamAwayGlobal.attack - teamHomeGlobal.defence) / 2)-(coachFactor*((teamAwayGlobal.attack - teamHomeGlobal.defence) / 2));
+         console.log('my attack'+awayAttack)
+         console.log('comp'+homeAttack)
+    }
+    console.log('teamHomeGlobal.attack'+teamHomeGlobal.attack)
     //  var team1Chance = 97;
     //   var team2Chance = 97;
 
@@ -254,8 +286,13 @@ function WhoScores() {
     // console.log(player1);
 
     //alert(playerRandom2)
-    var chanceToScore1 = Math.floor(Math.random() * 2000);
-    var chanceToScore2 = Math.floor(Math.random() * 2000);
+    var chanceToScore1;
+    var chanceToScore2;
+   
+        chanceToScore1 = Math.floor(Math.random() * 2000);
+        chanceToScore2 = Math.floor(Math.random() * 2000);
+    
+   
 
 
 
@@ -276,7 +313,7 @@ function WhoScores() {
             goal2 += 1;
         }
         
-         player1 = teamHomeGlobal.players[playerRandom1].name;
+       //  player1 = teamHomeGlobal.players[playerRandom1].name;
         BuildScorers('tableMatchHome', 'home');
       
         Team1Scorers.push(player1);
@@ -371,6 +408,7 @@ function BuildTHeTableHead() {
     var homeTd = document.createElement('td');
     homeTd.classList.add('tabletdmatch');
     homeTd.id = ('tableMatchHome');
+    
     Tr.append(homeTd);
     homeTd.innerHTML = ''
 
@@ -411,7 +449,7 @@ function PlayTest() {
     } else {
 
         document.getElementById('playThisRound').style.visibility = 'hidden';
-        console.log(myTeam.startingLineup)
+       // console.log(myTeam.startingLineup)
         SetTimer();
     }
 
@@ -424,19 +462,20 @@ function gameEnded() {
         if (myTeam.players[i].newAtr[9] == true) {
             myTeam.players[i].reducePlayerCondition();
             myTeam.players[i].getCalcScore();
-            console.log(myTeam.players[i].name + ' played and  condition is: ' + myTeam.players[i].newAtr[7] + 'and new calcScore is: ' + myTeam.players[i].newAtr[8]);
+           // console.log(myTeam.players[i].name + ' played and  condition is: ' + myTeam.players[i].newAtr[7] + 'and new calcScore is: ' + myTeam.players[i].newAtr[8]);
 
         } else {
-            console.log(myTeam.players[i].name + ' im not playing')
+          //  console.log(myTeam.players[i].name + ' im not playing')
             myTeam.players[i].healPlayerCondition();
             myTeam.players[i].getCalcScore();
-            console.log(myTeam.players[i].name + ' healed and newatr is: ' + myTeam.players[i].newAtr);
+         //   console.log(myTeam.players[i].name + ' healed and newatr is: ' + myTeam.players[i].newAtr);
 
         }
     }
     updatethePlayerlist();
     updateTheTeamAttack()
     updateTeamBar();
+    defaultCoachBoxColor(3);
 }
 function SetNextMatchFixturesInGameView() {
 
@@ -450,16 +489,16 @@ function SetNextMatchFixturesInGameView() {
     var targetHome;
     var targetAway;
     for (let i = 0; i < finalFixtursArray[0].length; i++) {
-        if (theTeamsArray[finalFixtursArray[roundCount][i][0]].name == myTeam.name) {
+        if (theTeamsArray[finalFixtursArray[roundCount][i][0]].name == myTeam.name||theTeamsArray[finalFixtursArray[roundCount][i][1]].name == myTeam.name) {
 
 
             targetHome = theTeamsArray[finalFixtursArray[roundCount][i][0]];
             targetAway = theTeamsArray[finalFixtursArray[roundCount][i][1]];
-        } else if (theTeamsArray[finalFixtursArray[roundCount][i][1]].name == myTeam.name) {
+        } //else if (theTeamsArray[finalFixtursArray[roundCount][i][1]].name == myTeam.name) {
 
-            targetHome = theTeamsArray[finalFixtursArray[roundCount][i][1]];
-            targetAway = theTeamsArray[finalFixtursArray[roundCount][i][0]];
-        }
+        //    targetHome = theTeamsArray[finalFixtursArray[roundCount][i][1]];
+         //   targetAway = theTeamsArray[finalFixtursArray[roundCount][i][0]];
+       // }
 
     }
 
@@ -478,3 +517,37 @@ function SetNextMatchFixturesInGameView() {
 //קורא לזה בלחיצה כל טאב Match day
 ///SetNextMatchFixturesInGameView();
 
+
+//// coach ///
+function changeCoachBoxColor(id){
+    for (let i = 1; i < 6; i++) {
+        document.getElementById('coach'+i).style.borderColor = "rgb(48, 47, 46)";
+        
+    }
+    document.getElementById('coach'+id).style.borderColor = "white";
+    if(id==1||id==5){
+        document.getElementById('coach'+id).style.borderColor = "red";
+    }
+   
+if(id==1){
+    coachFactor = -1.1;
+}else if (id==2){
+    coachFactor = -0.5;
+}else if(id==3){
+    coachFactor = 0;
+}else if (id==4){
+    coachFactor = 0.7;
+}else if(id==5){
+    coachFactor = 1.5;
+}
+}
+function defaultCoachBoxColor(id){
+    for (let i = 1; i < 6; i++) {
+        document.getElementById('coach'+i).style.borderColor = "rgb(48, 47, 46)";
+        
+    }
+    document.getElementById('coach'+id).style.borderColor = "white";
+   coachFactor = 0;
+   
+
+}

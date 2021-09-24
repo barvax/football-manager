@@ -51,6 +51,7 @@
 .tabletdmatch{
     text-align: center;
     font-size: 12px;
+    width:50%;
 }
 .matchTableHead{
     overflow-y: scroll;
@@ -72,4 +73,28 @@
 }
 #playThisRound{
     visibility: hidden;
+}
+
+.coach{
+    position: absolute;
+    top:5%;
+    left: 8%;
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+}
+.coach > div{
+
+    background-color: rgba(228, 217, 217,0.4);
+    width: 200px;
+    height: 70px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(48, 47, 46);
+    padding: 15px;
+   font-size: 12px;
+
+}
+.coach > div:hover{
+    cursor: pointer;
 }
