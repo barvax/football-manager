@@ -327,11 +327,15 @@
 
                 </div>
                 <div class='coach'>
-                    <div id="coach1" onclick=" changeCoachBoxColor('1')">שחקו בונקר,כולם על קו השער. לשבור רגליים ולהעיף כדורים ליציע</div>
-                    <div id="coach2" onclick=" changeCoachBoxColor('2')">לשמור חזק בהגנה</div>
-                    <div style="border-color: cornsilk;" id="coach3" onclick=" changeCoachBoxColor('3')">שחקו רגיל , הכל טוב</div>
-                    <div id="coach4" onclick=" changeCoachBoxColor('4')">ללחוץ חזק בהתקפה</div>
-                    <div id="coach5" onclick=" changeCoachBoxColor('5')">כולם למעלה בהתקפה כולל השוער </div>
+                    <ul>
+                        <li id="coach1" onclick=" changeCoachBoxColor('1')">שחקו בונקר,כולם על קו השער. לשבור רגליים ולהעיף כדורים ליציע</li>
+                        <li id="coach2" onclick=" changeCoachBoxColor('2')">לשמור חזק בהגנה</li>
+                        <li style="border-color: cornsilk;" id="coach3" onclick=" changeCoachBoxColor('3')">שחקו רגיל , הכל טוב</li>
+                        <li id="coach4" onclick=" changeCoachBoxColor('4')">ללחוץ חזק בהתקפה</li>
+                        <li id="coach5" onclick=" changeCoachBoxColor('5')">כולם למעלה בהתקפה כולל השוער </li>
+                        <li  id="pickTeamCoach" onclick="openClosepickTeamMain('visible') ">Tactics </li>
+                    </ul>
+                   
                 </div>
                 
             </section>
@@ -362,7 +366,7 @@
     <!-- pick Team-->
 <div id='pickTeamMain'>
   <div class='pickTeamMainUl'>
-      <div>Close</div>
+      <div style='cursor: pointer;' onclick="openClosepickTeamMain('hidden')">Close</div>
       <div style="margin-left: 5%;">4-4-2</div>
       <div>4-5-1</div>
       <div>3-5-2</div>

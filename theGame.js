@@ -64,18 +64,18 @@ function _TheGame(round) {
 
     for (let j = 0; j < finalFixtursArray[0].length; j++) {
         if (wereIsMyTeam == j) {
-            console.log('am i home team?: '+isHomeTeam);
-          var me  = 0;
-var comp = 1;
-if(isHomeTeam){
-me=0;
-comp=1
-}else{
-me=1;
-comp=0;
-}
+            console.log('am i home team?: ' + isHomeTeam);
+            var me = 0;
+            var comp = 1;
+            if (isHomeTeam) {
+                me = 0;
+                comp = 1
+            } else {
+                me = 1;
+                comp = 0;
+            }
 
- theTeamsArray[finalFixtursArray[round][j][me]].statistics.played++;
+            theTeamsArray[finalFixtursArray[round][j][me]].statistics.played++;
             theTeamsArray[finalFixtursArray[round][j][me]].statistics.Gf += myTeamGoals;
             theTeamsArray[finalFixtursArray[round][j][me]].roundResults.push(myTeamGoals)
             theTeamsArray[finalFixtursArray[round][j][me]].statistics.Ga += compTeamGoals;
@@ -197,7 +197,7 @@ tempIdForTimer2 = 0;
 
 
 function SetTimer() {
-   
+
     document.getElementById('extra').innerHTML = "";
     var theRoundCount = document.getElementById('roundMatchInGameView');
     theRoundCount.innerHTML = 'round: ' + (roundCount + 1);
@@ -212,71 +212,71 @@ function SetTimer() {
     BuildTHeTableHead();
 
 
-var interval = setInterval(() => {
-  if(!isPaused){
-        var extaPos = document.getElementById('extra');
-        gameTime += 1;
+    var interval = setInterval(() => {
+        if (!isPaused) {
+            var extaPos = document.getElementById('extra');
+            gameTime += 1;
 
-        timer.innerHTML = gameTime;
-        WhoScores();
+            timer.innerHTML = gameTime;
+            WhoScores();
 
-        if (isHomeTeam) {
-            document.getElementById('home-team').innerHTML = goal1;
-            document.getElementById('away-team').innerHTML = goal2;
-        } else {
-            document.getElementById('home-team').innerHTML = goal2;
-            document.getElementById('away-team').innerHTML = goal1;
-        }
+            if (isHomeTeam) {
+                document.getElementById('home-team').innerHTML = goal1;
+                document.getElementById('away-team').innerHTML = goal2;
+            } else {
+                document.getElementById('home-team').innerHTML = goal2;
+                document.getElementById('away-team').innerHTML = goal1;
+            }
 
-        if(gameTime==45){
-        isPaused=true;
-        alert('half time')
-        }
-    
-        if (gameTime >= 91) {
-            timer.innerHTML = 90;
-            extaPos.innerHTML = extraTime;
-            extraTime += 1;
-        }
-        if (gameTime == 91 + extra + 1) {
-            clearInterval(interval);
+            if (gameTime == 45) {
+                isPaused = true;
+                alert('half time')
+            }
 
-            goal1 = 0;
-            goal2 = 0;
-            gameTime = 0;
-            alert('game ended');
-            ClearMatchRealTimeTable();
-            TheGame();
-            document.getElementById('SetNextMatchFixturesInGameView').style.visibility = 'visible';
-            gameEnded();
-            alert('testing goals..')
-            alert(myTeamGoals)
-             alert(compTeamGoals)
+            if (gameTime >= 91) {
+                timer.innerHTML = 90;
+                extaPos.innerHTML = extraTime;
+                extraTime += 1;
+            }
+            if (gameTime == 91 + extra + 1) {
+                clearInterval(interval);
+
+                goal1 = 0;
+                goal2 = 0;
+                gameTime = 0;
+                alert('game ended');
+                ClearMatchRealTimeTable();
+                TheGame();
+                document.getElementById('SetNextMatchFixturesInGameView').style.visibility = 'visible';
+                gameEnded();
+                alert('testing goals..')
+                alert(myTeamGoals)
+                alert(compTeamGoals)
+            }
         }
-    }
     }, time / 10);
 
 }
-    
+
 
 
 
 function WhoScores() {
     var baseChanceToScore = 1980;
-  var homeAttack;
-  var awayAttack;
-    if(isHomeTeam){
-         homeAttack = baseChanceToScore - ((teamHomeGlobal.attack - teamAwayGlobal.defence) / 2)-(coachFactor*((teamHomeGlobal.attack - teamAwayGlobal.defence) / 2));
-         awayAttack = baseChanceToScore - ((teamAwayGlobal.attack - teamHomeGlobal.defence) / 2)+(coachFactor* ((teamAwayGlobal.attack - teamHomeGlobal.defence) / 2));
-        console.log('my attack'+homeAttack)
-         console.log('comp'+awayAttack)
-    }else{
-         homeAttack = baseChanceToScore - ((teamHomeGlobal.attack - teamAwayGlobal.defence) / 2)+(coachFactor* ((teamHomeGlobal.attack - teamAwayGlobal.defence) / 2));
-         awayAttack = baseChanceToScore - ((teamAwayGlobal.attack - teamHomeGlobal.defence) / 2)-(coachFactor*((teamAwayGlobal.attack - teamHomeGlobal.defence) / 2));
-         console.log('my attack'+awayAttack)
-         console.log('comp'+homeAttack)
+    var homeAttack;
+    var awayAttack;
+    if (isHomeTeam) {
+        homeAttack = baseChanceToScore - ((teamHomeGlobal.attack - teamAwayGlobal.defence) / 2) - (coachFactor * ((teamHomeGlobal.attack - teamAwayGlobal.defence) / 2));
+        awayAttack = baseChanceToScore - ((teamAwayGlobal.attack - teamHomeGlobal.defence) / 2) + (coachFactor * ((teamAwayGlobal.attack - teamHomeGlobal.defence) / 2));
+        console.log('my attack' + homeAttack)
+        console.log('comp' + awayAttack)
+    } else {
+        homeAttack = baseChanceToScore - ((teamHomeGlobal.attack - teamAwayGlobal.defence) / 2) + (coachFactor * ((teamHomeGlobal.attack - teamAwayGlobal.defence) / 2));
+        awayAttack = baseChanceToScore - ((teamAwayGlobal.attack - teamHomeGlobal.defence) / 2) - (coachFactor * ((teamAwayGlobal.attack - teamHomeGlobal.defence) / 2));
+        console.log('my attack' + awayAttack)
+        console.log('comp' + homeAttack)
     }
-    console.log('teamHomeGlobal.attack'+teamHomeGlobal.attack)
+    console.log('teamHomeGlobal.attack' + teamHomeGlobal.attack)
     //  var team1Chance = 97;
     //   var team2Chance = 97;
 
@@ -288,11 +288,11 @@ function WhoScores() {
     //alert(playerRandom2)
     var chanceToScore1;
     var chanceToScore2;
-   
-        chanceToScore1 = Math.floor(Math.random() * 2000);
-        chanceToScore2 = Math.floor(Math.random() * 2000);
-    
-   
+
+    chanceToScore1 = Math.floor(Math.random() * 2000);
+    chanceToScore2 = Math.floor(Math.random() * 2000);
+
+
 
 
 
@@ -303,19 +303,19 @@ function WhoScores() {
         console.log('-------');
         var playerRandom1;
         var player1;
-        if(isHomeTeam){
-             playerRandom1 = Math.floor(Math.random() * myTeam.startingLineup.length ) ;
-             player1 = myTeam.startingLineup[playerRandom1].name;
-             goal1 += 1;
-        }else{
-            playerRandom1 = Math.floor(Math.random() * teamHomeGlobal.players.length ) ;
+        if (isHomeTeam) {
+            playerRandom1 = Math.floor(Math.random() * myTeam.startingLineup.length);
+            player1 = myTeam.startingLineup[playerRandom1].name;
+            goal1 += 1;
+        } else {
+            playerRandom1 = Math.floor(Math.random() * teamHomeGlobal.players.length);
             player1 = teamHomeGlobal.players[playerRandom1].name;
             goal2 += 1;
         }
-        
-       //  player1 = teamHomeGlobal.players[playerRandom1].name;
+
+        //  player1 = teamHomeGlobal.players[playerRandom1].name;
         BuildScorers('tableMatchHome', 'home');
-      
+
         Team1Scorers.push(player1);
         timeOfScore1.push(gameTime);
         // alert(player1)
@@ -339,19 +339,19 @@ function WhoScores() {
         console.log('-------');
         var playerRandom2;
         var player2;
-        if(isHomeTeam==false){
-            playerRandom2 = Math.floor(Math.random() * myTeam.startingLineup.length ) ;
-             player2 = myTeam.startingLineup[playerRandom2].name;
-             goal1 += 1;
-        }else{
-            playerRandom2 = Math.floor(Math.random() * teamAwayGlobal.players.length ) ;
-             player2 = teamAwayGlobal.players[playerRandom2].name;
-             goal2 += 1;
+        if (isHomeTeam == false) {
+            playerRandom2 = Math.floor(Math.random() * myTeam.startingLineup.length);
+            player2 = myTeam.startingLineup[playerRandom2].name;
+            goal1 += 1;
+        } else {
+            playerRandom2 = Math.floor(Math.random() * teamAwayGlobal.players.length);
+            player2 = teamAwayGlobal.players[playerRandom2].name;
+            goal2 += 1;
         }
-       
-       
+
+
         BuildScorers('tableMatchAway', 'away');
-       
+
         Team2Scorers.push(player2);
         timeOfScore2.push(gameTime);
 
@@ -408,7 +408,7 @@ function BuildTHeTableHead() {
     var homeTd = document.createElement('td');
     homeTd.classList.add('tabletdmatch');
     homeTd.id = ('tableMatchHome');
-    
+
     Tr.append(homeTd);
     homeTd.innerHTML = ''
 
@@ -445,11 +445,11 @@ function RonTest() {
 function PlayTest() {
 
     if (myTeam.startingLineup.length != 11) {
-        alert('cant play yet. choose your players for the game.. press "w" on the keyboard')
+        alert('cant play yet. choose your players for the game.. press "w" on the keyboard or enter "Tactics"')
     } else {
 
         document.getElementById('playThisRound').style.visibility = 'hidden';
-       // console.log(myTeam.startingLineup)
+        // console.log(myTeam.startingLineup)
         SetTimer();
     }
 
@@ -462,13 +462,13 @@ function gameEnded() {
         if (myTeam.players[i].newAtr[9] == true) {
             myTeam.players[i].reducePlayerCondition();
             myTeam.players[i].getCalcScore();
-           // console.log(myTeam.players[i].name + ' played and  condition is: ' + myTeam.players[i].newAtr[7] + 'and new calcScore is: ' + myTeam.players[i].newAtr[8]);
+            // console.log(myTeam.players[i].name + ' played and  condition is: ' + myTeam.players[i].newAtr[7] + 'and new calcScore is: ' + myTeam.players[i].newAtr[8]);
 
         } else {
-          //  console.log(myTeam.players[i].name + ' im not playing')
+            //  console.log(myTeam.players[i].name + ' im not playing')
             myTeam.players[i].healPlayerCondition();
             myTeam.players[i].getCalcScore();
-         //   console.log(myTeam.players[i].name + ' healed and newatr is: ' + myTeam.players[i].newAtr);
+            //   console.log(myTeam.players[i].name + ' healed and newatr is: ' + myTeam.players[i].newAtr);
 
         }
     }
@@ -489,7 +489,7 @@ function SetNextMatchFixturesInGameView() {
     var targetHome;
     var targetAway;
     for (let i = 0; i < finalFixtursArray[0].length; i++) {
-        if (theTeamsArray[finalFixtursArray[roundCount][i][0]].name == myTeam.name||theTeamsArray[finalFixtursArray[roundCount][i][1]].name == myTeam.name) {
+        if (theTeamsArray[finalFixtursArray[roundCount][i][0]].name == myTeam.name || theTeamsArray[finalFixtursArray[roundCount][i][1]].name == myTeam.name) {
 
 
             targetHome = theTeamsArray[finalFixtursArray[roundCount][i][0]];
@@ -497,8 +497,8 @@ function SetNextMatchFixturesInGameView() {
         } //else if (theTeamsArray[finalFixtursArray[roundCount][i][1]].name == myTeam.name) {
 
         //    targetHome = theTeamsArray[finalFixtursArray[roundCount][i][1]];
-         //   targetAway = theTeamsArray[finalFixtursArray[roundCount][i][0]];
-       // }
+        //   targetAway = theTeamsArray[finalFixtursArray[roundCount][i][0]];
+        // }
 
     }
 
@@ -519,35 +519,35 @@ function SetNextMatchFixturesInGameView() {
 
 
 //// coach ///
-function changeCoachBoxColor(id){
+function changeCoachBoxColor(id) {
     for (let i = 1; i < 6; i++) {
-        document.getElementById('coach'+i).style.borderColor = "rgb(48, 47, 46)";
-        
+        document.getElementById('coach' + i).style.borderColor = "rgb(48, 47, 46)";
+
     }
-    document.getElementById('coach'+id).style.borderColor = "white";
-    if(id==1||id==5){
-        document.getElementById('coach'+id).style.borderColor = "red";
+    document.getElementById('coach' + id).style.borderColor = "white";
+    if (id == 1 || id == 5) {
+        document.getElementById('coach' + id).style.borderColor = "red";
     }
-   
-if(id==1){
-    coachFactor = -1.1;
-}else if (id==2){
-    coachFactor = -0.5;
-}else if(id==3){
+
+    if (id == 1) {
+        coachFactor = -1.1;
+    } else if (id == 2) {
+        coachFactor = -0.5;
+    } else if (id == 3) {
+        coachFactor = 0;
+    } else if (id == 4) {
+        coachFactor = 0.7;
+    } else if (id == 5) {
+        coachFactor = 1.5;
+    }
+}
+function defaultCoachBoxColor(id) {
+    for (let i = 1; i < 6; i++) {
+        document.getElementById('coach' + i).style.borderColor = "rgb(48, 47, 46)";
+
+    }
+    document.getElementById('coach' + id).style.borderColor = "white";
     coachFactor = 0;
-}else if (id==4){
-    coachFactor = 0.7;
-}else if(id==5){
-    coachFactor = 1.5;
-}
-}
-function defaultCoachBoxColor(id){
-    for (let i = 1; i < 6; i++) {
-        document.getElementById('coach'+i).style.borderColor = "rgb(48, 47, 46)";
-        
-    }
-    document.getElementById('coach'+id).style.borderColor = "white";
-   coachFactor = 0;
-   
+
 
 }

@@ -9,6 +9,10 @@ document.addEventListener('keypress', function (event) {
         document.querySelector('.player-profile').style.visibility = 'visible';
     }
 })
+
+function openClosepickTeamMain(state){
+    document.getElementById('pickTeamMain').style.visibility = state;
+}
 var bottonPlaceId;
 
 function Test(pos, id) {
@@ -225,7 +229,7 @@ function MyNewFunction(e) {
                 var name = document.getElementById(bottonPlaceId).innerHTML;
                 for (let i = 0; i < myTeam.startingLineup.length; i++) {
                     if (myTeam.startingLineup[i].name == myTeam.players[(e.target.index)].name) {
-                        alert(myTeam.startingLineup[i].name)
+                      //  alert(myTeam.startingLineup[i].name)
                         return;
     
     
@@ -262,11 +266,13 @@ function MyNewFunction(e) {
     
         console.log(myTeam.startingLineup)
       
-        
+       
 
     }
     
-   
+    if(myTeam.startingLineup.length==11){
+        updateTeamBar();
+    }
   
 }
 

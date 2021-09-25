@@ -25,7 +25,7 @@ function AVgTeamStats(){
         tempAttack = 0;
         numAttack = 0;
     }
-    alert('1')
+ 
 }
 AVgTeamStats();
 

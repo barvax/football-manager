@@ -605,7 +605,7 @@ function UpdateArrayAtr(){
             dri[3]=(Math.floor(Math.random() * (51-bonus))+50+bonus)//dribling
             def[4]=(Math.floor(Math.random() * (31-bonus))+30+bonus)//def
             phy[5]=(Math.floor(Math.random() * (71-bonus))+30+bonus)// phy
-            total[6]=(Math.floor((pace[0]*3+shot[1]*5+pas[2]*2+dri[3]*5+def[4]+phy[5]*6)/20))
+            total[6]=(Math.floor((pace[0]*3+shot[1]*5+pas[2]*2+dri[3]*5+def[4]+phy[5]*6)/22))
             condition[7]=AllPlayersArray[i][j].newAtr[7];
             calcScore[8] = total[6] *condition[7]/100
            }
