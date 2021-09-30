@@ -23,7 +23,7 @@ function _StartTheGame(round) {
             teamAwayGlobal = theTeamsArray[finalFixtursArray[round][j][1]]
             wereIsMyTeam = j;
             isHomeTeam = true;
-            alert(isHomeTeam)
+          
             break;
 
         } else if (theTeamsArray[finalFixtursArray[round][j][1]].name == myTeam.name) {
@@ -32,7 +32,7 @@ function _StartTheGame(round) {
             teamHomeGlobal = theTeamsArray[finalFixtursArray[round][j][0]]
             wereIsMyTeam = j;
             isHomeTeam = false;
-            alert(isHomeTeam)
+          
             break;
         }
 
@@ -230,7 +230,7 @@ function SetTimer() {
 
             if (gameTime == 45) {
                 isPaused = true;
-                alert('half time')
+                alert('half time..press "p" to resume game')
             }
 
             if (gameTime >= 91) {
@@ -244,14 +244,14 @@ function SetTimer() {
                 goal1 = 0;
                 goal2 = 0;
                 gameTime = 0;
-                alert('game ended');
+              //  alert('game ended');
                 ClearMatchRealTimeTable();
                 TheGame();
                 document.getElementById('SetNextMatchFixturesInGameView').style.visibility = 'visible';
                 gameEnded();
-                alert('testing goals..')
-                alert(myTeamGoals)
-                alert(compTeamGoals)
+               // alert('testing goals..')
+               // alert(myTeamGoals)
+               // alert(compTeamGoals)
             }
         }
     }, time / 10);
